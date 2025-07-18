@@ -218,6 +218,13 @@
                     YouTube
                 </a>
 
+                <a href="https://www.youtube.com/@TheRealMayo_" target="_blank" class="social-link-button">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
+                        <path d="M19.615 3.184c-.31-.082-.672-.14-1.05-.18C17.152 2.7 12 2.7 12 2.7s-5.152 0-6.565.304c-.378.04-.74.098-1.05.18C3.72 3.447 3.05 4.117 2.78 4.787c-.27.67-.304 1.29-.304 1.29s-.304 2.513-.304 5.013c0 2.5.304 5.013.304 5.013s.034.62.304 1.29c.27.67.94 1.34 1.928 1.604c.31.082.672.14 1.05.18C6.848 21.3 12 21.3 12 21.3s5.152 0 6.565-.304c.378-.04.74-.098 1.05-.18c.988-.264 1.658-.934 1.928-1.604c.27-.67.304-1.29.304-1.29s.304-2.513.304-5.013c0-2.5-.304-5.013-.304-5.013s-.034-.62-.304-1.29c-.27-.67-.94-1.34-1.928-1.604zM9.987 15.424V8.576L15.8 12l-5.813 3.424z" />
+                    </svg>
+                    Gaming Channel
+                </a>
+
                 <!-- Bandlab Link -->
                 <a href="https://www.bandlab.com/youngdollazz1700" target="_blank" class="social-link-button">
                     <!-- Placeholder SVG for Bandlab - you might need to find a proper icon or use a generic music icon -->
@@ -226,5 +233,122 @@
                     </svg>
                     Bandlab
                 </a>
+
+                <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const popoutPlayer = document.getElementById('popout-player');
+            const playerAudio = document.getElementById('player-audio');
+            const playerTrackTitle = document.getElementById('player-track-title');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const audioElements = document.querySelectorAll('.audio-embed');
+
+            let currentTrackIndex = -1;
+            const tracks = [];
+
+            // Populate tracks array and set up event listeners for each audio element
+            audioElements.forEach((audio, index) => {
+                const src = audio.dataset.src;
+                const title = audio.dataset.title;
+                tracks.push({ src, title });
+
+                audio.addEventListener('play', function() {
+                    // Stop other audio elements
+                    audioElements.forEach(otherAudio => {
+                        if (otherAudio !== audio && !otherAudio.paused) {
+                            otherAudio.pause();
+                        }
+                    });
+
+                    // Load and play in pop-out player
+                    playerAudio.src = src;
+                    playerTrackTitle.textContent = title;
+                    playerAudio.play();
+                    popoutPlayer.classList.add('active');
+                    popoutPlayer.classList.remove('hidden');
+                    currentTrackIndex = index;
+                });
+            });
+
+            // Handle play/pause on the pop-out player
+            playerAudio.addEventListener('play', () => {
+                // Pause the original audio element if it's playing
+                audioElements.forEach((audio, index) => {
+                    if (index !== currentTrackIndex && !audio.paused) {
+                        audio.pause();
+                    }
+                });
+            });
+
+            // Next track functionality
+            nextButton.addEventListener('click', () => {
+                if (tracks.length > 0) {
+                    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+                    const nextTrack = tracks[currentTrackIndex];
+                    playerAudio.src = nextTrack.src;
+                    playerTrackTitle.textContent = nextTrack.title;
+                    playerAudio.play();
+                    popoutPlayer.classList.add('active');
+                    popoutPlayer.classList.remove('hidden');
+                }
+            });
+
+            // Previous track functionality
+            prevButton.addEventListener('click', () => {
+                if (tracks.length > 0) {
+                    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+                    const prevTrack = tracks[currentTrackIndex];
+                    playerAudio.src = prevTrack.src;
+                    playerTrackTitle.textContent = prevTrack.title;
+                    playerAudio.play();
+                    popoutPlayer.classList.add('active');
+                    popoutPlayer.classList.remove('hidden');
+                }
+            });
+
+            // Hamburger menu logic
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                mobileMenu.classList.toggle('flex-col');
+                // Adjust alignment for mobile menu when open
+                if (mobileMenu.classList.contains('flex')) {
+                    mobileMenu.style.position = 'absolute';
+                    mobileMenu.style.top = '100%'; /* Position below the header */
+                    mobileMenu.style.left = '0';
+                    mobileMenu.style.right = '0';
+                    mobileMenu.style.backgroundColor = 'black'; /* Match navbar background */
+                    mobileMenu.style.padding = '1rem';
+                    mobileMenu.style.width = '100%';
+                    mobileMenu.style.boxShadow = '0 4.px 6px rgba(0, 0, 0, 0.1)';
+                    mobileMenu.style.borderRadius = '0.5rem';
+                    mobileMenu.style.zIndex = '40'; /* Below sticky header */
+                    mobileMenu.querySelector('ul').classList.remove('md:flex-row', 'md:space-x-8');
+                    mobileMenu.querySelector('ul').classList.add('flex-col', 'space-y-2');
+                } else {
+                    // Reset inline styles when hidden
+                    mobileMenu.removeAttribute('style');
+                    mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
+                    mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
+                }
+            });
+
+            // Close menu when a link is clicked (for smoother navigation on mobile)
+            const navLinks = mobileMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex', 'flex-col');
+                        mobileMenu.removeAttribute('style'); // Reset inline styles
+                        mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
+                        mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
+                    }
+                });
+            });
+        });
+    </script>
                 </body>
 </html>
