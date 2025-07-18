@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoungDollazz - Social Links</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/pfp.png">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background (Tailwind gray-900) */
+            color: #f8fafc; /* Light text (Tailwind slate-50) */
+            padding-bottom: 80px; /* Space for the fixed player */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #f30000; /* Red on hover */
+        }
+        .btn-primary {
+            background-color: #418dff; /* Changed to red */
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #28569bab; /* Darker red on hover */
+        }
+        .card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .input-field {
+            background-color: #4a5568; /* Dark input field background */
+            border: 1px solid #718096; /* Lighter border */
+            color: #f8fafc; /* Light text */
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+        .input-field::placeholder {
+            color: #cbd5e0; /* Lighter placeholder */
+        }
+        /* Custom styles for hamburger menu toggle */
+        .hidden-mobile {
+            display: none;
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .hidden-mobile {
+                display: flex; /* or block, depending on context */
+            }
+        }
+        /* Hero section background image with overlay for brightness adjustment */
+        .hero-background {
+            background-image: url('https://placehold.co/1200x400/6A0DAD/ffffff?text=Social+Links+Background'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #6A0DAD; /* Fallback background color */
+            position: relative; /* Needed for pseudo-element positioning */
+            overflow: hidden; /* Ensures overlay doesn't spill out */
+        }
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.74); /* Black overlay with 40% opacity */
+            z-index: 1; /* Place over the background image */
+        }
+        .hero-background .container {
+            position: relative; /* Ensure content is above the overlay */
+            z-index: 2; /* Higher z-index than the overlay */
+        }
+        /* Style for audio embeds */
+        .audio-embed {
+            background-color: #2d3748; /* Dark background for audio player */
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        audio::-webkit-media-controls-panel{
+            background: linear-gradient(to right, #0084fffb, #0069ccfb);
+        }
+
+        /* Pop-out music player styles */
+        .popout-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #0084fffb, #0084ff4b); /* Dark gradient red */
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            z-index: 100; /* Ensure it's on top */
+            transform: translateY(100%); /* Start hidden below the screen */
+            transition: transform 0.3s ease-in-out;
+        }
+        .popout-player.active {
+            transform: translateY(0); /* Slide up when active */
+        }
+        .popout-player audio {
+            width: 70%; /* Adjust width as needed */
+            max-width: 600px;
+        }
+        .popout-player .player-controls button {
+            background-color: #418dff; /* Red */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .popout-player .player-controls button:hover {
+            background-color: #306bc4; /* Darker red on hover */
+        }
+        .popout-player .track-info {
+            flex-grow: 1;
+            text-align: left; /* Changed to left alignment */
+        }
+        .popout-player .track-info h4 {
+            font-weight: bold;
+        }
+
+        /* Styles for social links */
+        .social-link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4a5568; /* Darker gray for buttons */
+            color: #f8fafc;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            text-align: center;
+            text-decoration: none; /* Remove underline from links */
+        }
+        .social-link-button:hover {
+            background-color: #636b77; /* Lighter gray on hover */
+            transform: translateY(-2px);
+        }
+        .social-link-button svg {
+            margin-right: 0.75rem;
+            width: 1.5em;
+            height: 1.5em;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation -->
+    <header class="bg-black shadow-lg py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold text-white"><a href="index.html">YoungDollazz</a></h1>
+
+            <!-- Hamburger menu button for mobile -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation links - hidden on mobile by default, shown on md and up -->
+            <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg mt-4 md:mt-0">
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg">
+                    <li><a href="index.html#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
+                    <li><a href="https://soundcloud.com/youngdollazz1700" class="nav-link text-gray-300 hover:text-red-600">SoundCloud</a></li>
+                    <li><a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" class="nav-link text-gray-300 hover:text-red-600">YouTube</a></li>
+                    <li><a href="links.html" class="nav-link text-gray-300 hover:text-red-600">Socials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content for Social Links -->
+    <main class="flex-grow flex items-center justify-center py-16 px-4">
+        <div class="container mx-auto text-center max-w-md">
+            <img src="assets/pfp.png" alt="Profile Picture" class="rounded-full w-32 h-32 mx-auto mb-6 shadow-lg">
+            <h2 class="text-4xl font-extrabold mb-2 text-white">YoungDollazz</h2>
+            <p class="text-xl text-gray-400 mb-10">Connect with me everywhere!</p>
+
+            <div class="space-y-6">
+                <!-- SoundCloud Link -->
+                <a href="https://soundcloud.com/youngdollazz1700" target="_blank" class="social-link-button">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 15.5h-2V8h2v9.5zm4 0h-2V6h2v11.5z" clip-rule="evenodd" />
+                    </svg>
+                    SoundCloud
+                </a>
+
+                <!-- YouTube Link -->
+                <a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" target="_blank" class="social-link-button">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
+                        <path d="M19.615 3.184c-.31-.082-.672-.14-1.05-.18C17.152 2.7 12 2.7 12 2.7s-5.152 0-6.565.304c-.378.04-.74.098-1.05.18C3.72 3.447 3.05 4.117 2.78 4.787c-.27.67-.304 1.29-.304 1.29s-.304 2.513-.304 5.013c0 2.5.304 5.013.304 5.013s.034.62.304 1.29c.27.67.94 1.34 1.928 1.604c.31.082.672.14 1.05.18C6.848 21.3 12 21.3 12 21.3s5.152 0 6.565-.304c.378-.04.74-.098 1.05-.18c.988-.264 1.658-.934 1.928-1.604c.27-.67.304-1.29.304-1.29s.304-2.513.304-5.013c0-2.5-.304-5.013-.304-5.013s-.034-.62-.304-1.29c-.27-.67-.94-1.34-1.928-1.604zM9.987 15.424V8.576L15.8 12l-5.813 3.424z" />
+                    </svg>
+                    YouTube
+                </a>
+
+                <!-- Bandlab Link -->
+                <a href="https://www.bandlab.com/youngdollazz1700" target="_blank" class="social-link-button">
+                    <!-- Placeholder SVG for Bandlab - you might need to find a proper icon or use a generic music icon -->
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-2 15.5V6.5L16 12l-6 5.5z" />
+                    </svg>
+                    Bandlab
+                </a>
+                </body>
+</html>
