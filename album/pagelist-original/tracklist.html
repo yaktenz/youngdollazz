@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz - Albums</title>
-    <!-- Tailwind CSS CDN -->
+    <title>YoungDollazz - Original Dollazz Tracklist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/pfp.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/pfp.png">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -25,14 +24,14 @@
             color: #f30000; /* Red on hover */
         }
         .btn-primary {
-            background-color: #57bcff; /* Changed to red */
+            background-color: #3cb1ff; /* Changed to red */
             color: #ffffff;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #57bcff9a; /* Darker red on hover */
+            background-color: #3cb1ff8c; /* Darker red on hover */
         }
         .card {
             background-color: #2d3748; /* Darker card background */
@@ -62,7 +61,7 @@
         }
         /* Hero section background image with overlay for brightness adjustment */
         .hero-background {
-            background-image: url('assets/herosection.jpg'); /* Placeholder image */
+            background-image: url('../originaldollazz.png'); /* Placeholder image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -121,7 +120,7 @@
             max-width: 600px;
         }
         .popout-player .player-controls button {
-            background-color: #418dff; /* Red */
+            background-color: #ff4141; /* Red */
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -129,7 +128,7 @@
             transition: background-color 0.2s;
         }
         .popout-player .player-controls button:hover {
-            background-color: #306bc4; /* Darker red on hover */
+            background-color: #9e0000; /* Darker red on hover */
         }
         .popout-player .track-info {
             flex-grow: 1;
@@ -141,86 +140,92 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Header/Navigation -->
     <header class="bg-black shadow-lg py-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-3xl font-bold text-white"><a href="index.html">YoungDollazz</a></h1>
+            <h1 class="text-3xl font-bold text-white"><a href="../../index.html">YoungDollazz</a></h1>
 
-            <!-- Hamburger menu button for mobile -->
             <button id="menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
 
-            <!-- Navigation links - hidden on mobile by default, shown on md and up -->
             <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg mt-4 md:mt-0">
                 <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg">
-                    <li><a href="index.html#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
-                    <li><a href="albums.html" class="nav-link text-gray-300 hover:text-red-600">Albums</a></li>
+                    <li><a href="../../index.html" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
+                    <li><a href="../../albums.html" class="nav-link text-gray-300 hover:text-red-600">Albums</a></li>
                     <li><a href="https://soundcloud.com/youngdollazz1700" class="nav-link text-gray-300 hover:text-red-600">SoundCloud</a></li>
                     <li><a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" class="nav-link text-gray-300 hover:text-red-600">YouTube</a></li>
-                    <li><a href="links.html" class="nav-link text-gray-300 hover:text-red-600">Socials</a></li>
+                    <li><a href="../../links.html" class="nav-link text-gray-300 hover:text-red-600">Socials</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Albums Section -->
-    <section id="albums" class="py-16 px-4">
+    <section class="hero-background text-white py-20 text-center rounded-b-lg mx-4 mt-4 shadow-xl">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold mb-4 animate-fade-in">Original Dollazz</h2>
+            <a href="../../albums.html" class="btn-primary inline-block animate-bounce-in">Back to Albums</a>
+        </div>
+    </section>
+
+    <section id="tracklist" class="py-16 px-4">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Albums</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Album Card 1 - Existing -->
-                <div class="card">
-                    <img src="album/dollazztime.png" alt="DollazzTime Album Art" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">DollazzTime</h3>
-                    <p class="text-gray-400 mb-2">Artist: YoungDollazz</p>
-                    <p class="text-gray-400 mb-4">Release Date: Coming Soon!</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="album/pagelist-dollazztime/tracklist.html" class="btn-primary inline-block text-sm">Listen Now</a>
-                        <a href="album/pagelist-dollazztime/tracklist.html" class="text-blue-400 hover:underline text-sm">View Tracklist</a>
-                    </div>
-                </div>
-
-                <!-- New Album Card - Added and adjusted -->
-                <div class="card">
-                    <img src="album/originaldollazz.png" alt="New Album Art Placeholder" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Original Dollazz</h3>
-                    <p class="text-gray-400 mb-2">Artist: YoungDollazz</p>
-                    <p class="text-gray-400 mb-4">Release Date: 7-19-2025</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="album/pagelist-original/tracklist.html" class="btn-primary inline-block text-sm">Listen Now</a>
-                        <a href="album/pagelist-original/tracklist.html" class="text-blue-400 hover:underline text-sm">View Tracklist</a>
-                    </div>
-                </div>
-                <!-- End New Album Card -->
-
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Tracks</h2>
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6">
+                <ul class="divide-y divide-gray-700">
+                    <li class="py-4 flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white">1. Greatest</h3>
+                            <p class="text-gray-400">YoungDollazz</p>
+                        </div>
+                        <a href="#" class="btn-primary inline-block text-sm btn-play-track" data-audio-src="../../music/Greatest.m4a" data-track-title="OriginalDollazz - Greatest">Listen Now</a>
+                    </li>
+                    <li class="py-4 flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white">2. Bathroom Freestyle</h3>
+                            <p class="text-gray-400">YoungDollazz</p>
+                        </div>
+                        <a href="#" class="btn-primary inline-block text-sm btn-play-track" data-audio-src="../../music/bathroomfreestyle.m4a" data-track-title="OriginalDollazz - Bathroom Freestyle">Listen Now</a>
+                    </li>
+                    <li class="py-4 flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white">3. Bathroom Freestyle V2</h3>
+                            <p class="text-gray-400">YoungDollazz</p>
+                        </div>
+                        <a href="#" class="btn-primary inline-block text-sm btn-play-track" data-audio-src="../../music/bathroomfreestylev2.m4a" data-track-title="OriginalDollazz - Bathroom Freestyle V2">Listen Now</a>
+                    </li>
+                    <li class="py-4 flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white">4. Nothin' but a Day Treatment Thang</h3>
+                            <p class="text-gray-400">YoungDollazz</p>
+                        </div>
+                        <a href="#" class="btn-primary inline-block text-sm btn-play-track" data-audio-src="../../music/Nothin_but_a_day_treatment_thang.m4a" data-track-title="OriginalDollazz - Nothin' but a Day Treatment Thang">Listen Now</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 py-6 mt-8 rounded-t-lg mx-4 shadow-lg">
         <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 YoungDollazz. All rights reserved.</p>
+            <p>© 2025 YoungDollazz. All rights reserved.</p>
             <a class="text-blue-400 hover:underline text-sm" href="https://www.youtube.com/@TheRealMayo_">Gaming Channel</a>
             <span> | </span>
             <a class="text-blue-400 hover:underline text-sm" href="https://yaktenz.github.io/mayolibrary/">Gaming Website</a>
             <span> | </span>
-            <a class="text-blue-400 hover:underline text-sm" href="albums.html">Albums</a>
+            <a class="text-blue-400 hover:underline text-sm" href="../../albums.html">Albums</a>
         </div>
     </footer>
 
-    <!-- Pop-out Music Player (kept for consistency, though not directly used by album cards) -->
     <div id="popout-player" class="popout-player hidden">
         <div class="track-info">
             <h4 id="player-track-title"></h4>
         </div>
         <audio id="player-audio" controls></audio>
         <div class="player-controls">
-            <button id="prev-button">Previous</button>
-            <button id="next-button">Next</button>
+            <button id="prev-button" class="hidden">Previous</button>
+            <button id="next-button" class="hidden">Next</button>
         </div>
     </div>
 
@@ -231,51 +236,61 @@
             const popoutPlayer = document.getElementById('popout-player');
             const playerAudio = document.getElementById('player-audio');
             const playerTrackTitle = document.getElementById('player-track-title');
-            const prevButton = document.getElementById('prev-button');
-            const nextButton = document.getElementById('next-button');
-            // Note: audioElements is not directly used on this page as albums link externally
-            // const audioElements = document.querySelectorAll('.audio-embed'); 
+            const playTrackButtons = document.querySelectorAll('.btn-play-track');
 
-            let currentTrackIndex = -1;
-            const tracks = []; // No tracks loaded directly on this page
-
-            // Hamburger menu logic (copied from index.html for consistency)
+            // Hamburger menu logic
             menuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
                 mobileMenu.classList.toggle('flex');
                 mobileMenu.classList.toggle('flex-col');
-                // Adjust alignment for mobile menu when open
                 if (mobileMenu.classList.contains('flex')) {
                     mobileMenu.style.position = 'absolute';
-                    mobileMenu.style.top = '100%'; /* Position below the header */
+                    mobileMenu.style.top = '100%';
                     mobileMenu.style.left = '0';
                     mobileMenu.style.right = '0';
-                    mobileMenu.style.backgroundColor = 'black'; /* Match navbar background */
+                    mobileMenu.style.backgroundColor = 'black';
                     mobileMenu.style.padding = '1rem';
                     mobileMenu.style.width = '100%';
-                    mobileMenu.style.boxShadow = '0 4.px 6px rgba(0, 0, 0, 0.1)';
+                    mobileMenu.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
                     mobileMenu.style.borderRadius = '0.5rem';
-                    mobileMenu.style.zIndex = '40'; /* Below sticky header */
+                    mobileMenu.style.zIndex = '40';
                     mobileMenu.querySelector('ul').classList.remove('md:flex-row', 'md:space-x-8');
                     mobileMenu.querySelector('ul').classList.add('flex-col', 'space-y-2');
                 } else {
-                    // Reset inline styles when hidden
                     mobileMenu.removeAttribute('style');
                     mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
                     mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
                 }
             });
 
-            // Close menu when a link is clicked (for smoother navigation on mobile)
+            // Close menu when a link is clicked
             const navLinks = mobileMenu.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                         mobileMenu.classList.remove('flex', 'flex-col');
-                        mobileMenu.removeAttribute('style'); // Reset inline styles
+                        mobileMenu.removeAttribute('style');
                         mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
                         mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
+                    }
+                });
+            });
+
+            // Handle "Listen Now" button clicks
+            playTrackButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    const audioSrc = this.getAttribute('data-audio-src');
+                    const trackTitle = this.getAttribute('data-track-title');
+
+                    if (audioSrc) {
+                        playerAudio.src = audioSrc;
+                        playerTrackTitle.textContent = trackTitle;
+                        popoutPlayer.classList.add('active'); // Show the player
+                        popoutPlayer.classList.remove('hidden'); // Ensure it's not hidden
+                        playerAudio.play(); // Play the audio
                     }
                 });
             });
