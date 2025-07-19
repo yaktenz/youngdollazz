@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz</title>
+    <title>YoungDollazz - Albums</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,14 +25,14 @@
             color: #f30000; /* Red on hover */
         }
         .btn-primary {
-            background-color: #ff1d1d; /* Changed to red */
+            background-color: #ff4141; /* Changed to red */
             color: #ffffff;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #ff4141ab; /* Darker red on hover */
+            background-color: #ff0000ab; /* Darker red on hover */
         }
         .card {
             background-color: #2d3748; /* Darker card background */
@@ -121,7 +121,7 @@
             max-width: 600px;
         }
         .popout-player .player-controls button {
-            background-color: #ff4141; /* Red */
+            background-color: #418dff; /* Red */
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -129,7 +129,7 @@
             transition: background-color 0.2s;
         }
         .popout-player .player-controls button:hover {
-            background-color: #b41a1a; /* Darker red on hover */
+            background-color: #306bc4; /* Darker red on hover */
         }
         .popout-player .track-info {
             flex-grow: 1;
@@ -156,7 +156,7 @@
             <!-- Navigation links - hidden on mobile by default, shown on md and up -->
             <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg mt-4 md:mt-0">
                 <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg">
-                    <li><a href="#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
+                    <li><a href="index.html#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
                     <li><a href="albums.html" class="nav-link text-gray-300 hover:text-red-600">Albums</a></li>
                     <li><a href="https://soundcloud.com/youngdollazz1700" class="nav-link text-gray-300 hover:text-red-600">SoundCloud</a></li>
                     <li><a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" class="nav-link text-gray-300 hover:text-red-600">YouTube</a></li>
@@ -166,96 +166,26 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-background text-white py-20 text-center rounded-b-lg mx-4 mt-4 shadow-xl">
-        <div class="container mx-auto px-4">
-            <h2 class="text-5xl font-extrabold mb-4 animate-fade-in">YoungDollazz</h2>
-            <p class="text-xl mb-8 animate-fade-in-delay">Here you can find my latest music</p>
-            <a href="#music" class="btn-primary inline-block animate-bounce-in">Explore Music</a>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section id="music" class="py-16 px-4">
+    <!-- Albums Section -->
+    <section id="albums" class="py-16 px-4">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Latest Releases</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Albums</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Music Card 1 -->
+                <!-- Album Card 1 -->
                 <div class="card">
-                    <img src="assets/dirtydiana.jpg" alt="Album Art 1" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Dirty Diana Ft. Lil Perky</h3>
-                    <p class="text-gray-400 mb-4">Genre: Sample 80s | Release Date: 2025-07-18</p>
-                    <audio controls class="w-full audio-embed" data-src="music/Dirty_Diana.mp3" data-title="Dirty Diana Ft. Lil Perky">
-                        <source src="music/Dirty_Diana.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+                    <img src="album/dollazztime.png" alt="Album Art 1" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold text-white mb-2">DollazzTime</h3>
+                    <p class="text-gray-400 mb-2">Artist: YoungDollazz</p>
+                    <p class="text-gray-400 mb-4">Release Date: Coming Soon!</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/dirty-diana-ft-lil-perky?si=45146cf35cba4e74bef04f1d7f5311d7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/da7476e7-ec63-f011-8dc9-000d3a960be3" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
-
-                <!-- Music Card 2 -->
-                <div class="card">
-                    <img src="assets/iwonder.jfif" alt="Album Art 2" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">I Wonder Ft. Lil Perky</h3>
-                    <p class="text-gray-400 mb-4">Genre: Sample | Release Date: 2025-02-15</p>
-                    <audio controls class="w-full audio-embed" data-src="music/i_Wonder.mp3" data-title="I Wonder Ft. Lil Perky">
-                        <source src="music/i_Wonder.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/youngdollazz-i-wonder-ft-lil-perky-prod-wxck?si=f1a240c021f145c290e2b7806f7625fe&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/280e763a-a1ea-ef11-88f6-6045bd3473c0" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
-
-                <!-- Music Card 3 -->
-                <div class="card">
-                    <img src="assets/3am.jfif" alt="Album Art 3" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">3.A.M</h3>
-                    <p class="text-gray-400 mb-4">Genre: Rap | Release Date: 2025-02-2</p>
-                    <audio controls class="w-full audio-embed" data-src="music/3AM.mp3" data-title="3.A.M">
-                        <source src="music/3AM.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/3am-prod-saybreezy?si=4642b8601f5246d180062311442f00f7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/4052c561-48e1-ef11-88f6-6045bd3473c0" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/DifferentPriorites.jfif" alt="Album Art 3" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Different Priorities Ft. T$moke</h3>
-                    <p class="text-gray-400 mb-4">Genre: Rap | Release Date: 2025-02-15</p>
-                    <audio controls class="w-full audio-embed" data-src="music/Different_Prioritys.m4a" data-title="Different Priorities Ft. T$moke">
-                        <source src="music/Different_Prioritys.m4a" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/youngdollazz-differentpriorites-remix?si=85b6eb7b69b441d89d92d36d53eb692e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.youtube.com/watch?v=tJLZql-GcBI&ab_channel=YoungDollazz" class="text-blue-400 hover:underline text-sm">Listen on YouTube</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/timeless.jfif" alt="Album Art 3" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Timeless</h3>
-                    <p class="text-gray-400 mb-4">Genre: Rap | Release Date: 2025-02-2</p>
-                    <audio controls class="w-full audio-embed" data-src="music/timeless.m4a" data-title="Timeless">
-                        <source src="music/timeless.m4a" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/timeless-prod-mig?si=195c1dead02b4633b60a6a4fbf0e87a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/16bb2570-d3e1-ef11-88f6-6045bd3473c0" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
+                        <a href="album/pagelist-dollazztime/tracklist.html" class="btn-primary inline-block text-sm">Listen Now</a>
+                        <a href="album/pagelist-dollazztime/tracklist.html" class="text-blue-400 hover:underline text-sm">View Tracklist</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <!-- Footer -->
     <footer class="bg-gray-800 py-6 mt-8 rounded-t-lg mx-4 shadow-lg">
         <div class="container mx-auto text-center text-gray-400">
@@ -266,7 +196,7 @@
         </div>
     </footer>
 
-    <!-- Pop-out Music Player -->
+    <!-- Pop-out Music Player (kept for consistency, though not directly used by album cards) -->
     <div id="popout-player" class="popout-player hidden">
         <div class="track-info">
             <h4 id="player-track-title"></h4>
@@ -287,72 +217,13 @@
             const playerTrackTitle = document.getElementById('player-track-title');
             const prevButton = document.getElementById('prev-button');
             const nextButton = document.getElementById('next-button');
-            const audioElements = document.querySelectorAll('.audio-embed');
+            // Note: audioElements is not directly used on this page as albums link externally
+            // const audioElements = document.querySelectorAll('.audio-embed'); 
 
             let currentTrackIndex = -1;
-            const tracks = [];
+            const tracks = []; // No tracks loaded directly on this page
 
-            // Populate tracks array and set up event listeners for each audio element
-            audioElements.forEach((audio, index) => {
-                const src = audio.dataset.src;
-                const title = audio.dataset.title;
-                tracks.push({ src, title });
-
-                audio.addEventListener('play', function() {
-                    // Stop other audio elements
-                    audioElements.forEach(otherAudio => {
-                        if (otherAudio !== audio && !otherAudio.paused) {
-                            otherAudio.pause();
-                        }
-                    });
-
-                    // Load and play in pop-out player
-                    playerAudio.src = src;
-                    playerTrackTitle.textContent = title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                    currentTrackIndex = index;
-                });
-            });
-
-            // Handle play/pause on the pop-out player
-            playerAudio.addEventListener('play', () => {
-                // Pause the original audio element if it's playing
-                audioElements.forEach((audio, index) => {
-                    if (index !== currentTrackIndex && !audio.paused) {
-                        audio.pause();
-                    }
-                });
-            });
-
-            // Next track functionality
-            nextButton.addEventListener('click', () => {
-                if (tracks.length > 0) {
-                    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-                    const nextTrack = tracks[currentTrackIndex];
-                    playerAudio.src = nextTrack.src;
-                    playerTrackTitle.textContent = nextTrack.title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                }
-            });
-
-            // Previous track functionality
-            prevButton.addEventListener('click', () => {
-                if (tracks.length > 0) {
-                    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-                    const prevTrack = tracks[currentTrackIndex];
-                    playerAudio.src = prevTrack.src;
-                    playerTrackTitle.textContent = prevTrack.title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                }
-            });
-
-            // Hamburger menu logic
+            // Hamburger menu logic (copied from index.html for consistency)
             menuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
                 mobileMenu.classList.toggle('flex');

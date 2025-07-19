@@ -153,7 +153,7 @@
             border-radius: 0.75rem;
             font-size: 1.25rem;
             font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added box-shadow to transition */
             width: 100%;
             text-align: center;
             text-decoration: none; /* Remove underline from links */
@@ -161,6 +161,7 @@
         .social-link-button:hover {
             background-color: #636b77; /* Lighter gray on hover */
             transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(243, 0, 0, 0.6); /* Red glow effect */
         }
         .social-link-button svg {
             margin-right: 0.75rem;
@@ -186,6 +187,7 @@
             <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg mt-4 md:mt-0">
                 <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg">
                     <li><a href="index.html#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
+                    <li><a href="albums.html" class="nav-link text-gray-300 hover:text-red-600">Albums</a></li>
                     <li><a href="https://soundcloud.com/youngdollazz1700" class="nav-link text-gray-300 hover:text-red-600">SoundCloud</a></li>
                     <li><a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" class="nav-link text-gray-300 hover:text-red-600">YouTube</a></li>
                     <li><a href="links.html" class="nav-link text-gray-300 hover:text-red-600">Socials</a></li>
@@ -233,80 +235,43 @@
                     </svg>
                     Bandlab
                 </a>
+            </div>
+        </div>
+    </main>
 
-                <script>
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 mt-8 rounded-t-lg mx-4 shadow-lg">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2025 YoungDollazz. All rights reserved.</p>
+            <a class="text-blue-400 hover:underline text-sm" href="https://www.youtube.com/@TheRealMayo_">Gaming Channel</a>
+            <span> | </span>
+            <a class="text-blue-400 hover:underline text-sm" href="https://yaktenz.github.io/mayolibrary/">Gaming Website</a>
+        </div>
+    </footer>
+
+    <!-- Pop-out Music Player (kept for consistency, but not functional on this page) -->
+    <div id="popout-player" class="popout-player hidden">
+        <div class="track-info">
+            <h4 id="player-track-title"></h4>
+        </div>
+        <audio id="player-audio" controls></audio>
+        <div class="player-controls">
+            <button id="prev-button">Previous</button>
+            <button id="next-button">Next</button>
+        </div>
+    </div>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuButton = document.getElementById('menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            const popoutPlayer = document.getElementById('popout-player');
-            const playerAudio = document.getElementById('player-audio');
-            const playerTrackTitle = document.getElementById('player-track-title');
-            const prevButton = document.getElementById('prev-button');
-            const nextButton = document.getElementById('next-button');
-            const audioElements = document.querySelectorAll('.audio-embed');
-
-            let currentTrackIndex = -1;
-            const tracks = [];
-
-            // Populate tracks array and set up event listeners for each audio element
-            audioElements.forEach((audio, index) => {
-                const src = audio.dataset.src;
-                const title = audio.dataset.title;
-                tracks.push({ src, title });
-
-                audio.addEventListener('play', function() {
-                    // Stop other audio elements
-                    audioElements.forEach(otherAudio => {
-                        if (otherAudio !== audio && !otherAudio.paused) {
-                            otherAudio.pause();
-                        }
-                    });
-
-                    // Load and play in pop-out player
-                    playerAudio.src = src;
-                    playerTrackTitle.textContent = title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                    currentTrackIndex = index;
-                });
-            });
-
-            // Handle play/pause on the pop-out player
-            playerAudio.addEventListener('play', () => {
-                // Pause the original audio element if it's playing
-                audioElements.forEach((audio, index) => {
-                    if (index !== currentTrackIndex && !audio.paused) {
-                        audio.pause();
-                    }
-                });
-            });
-
-            // Next track functionality
-            nextButton.addEventListener('click', () => {
-                if (tracks.length > 0) {
-                    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-                    const nextTrack = tracks[currentTrackIndex];
-                    playerAudio.src = nextTrack.src;
-                    playerTrackTitle.textContent = nextTrack.title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                }
-            });
-
-            // Previous track functionality
-            prevButton.addEventListener('click', () => {
-                if (tracks.length > 0) {
-                    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-                    const prevTrack = tracks[currentTrackIndex];
-                    playerAudio.src = prevTrack.src;
-                    playerTrackTitle.textContent = prevTrack.title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                }
-            });
+            // Pop-out player elements are not used on this page, but kept for consistency if needed elsewhere.
+            // const popoutPlayer = document.getElementById('popout-player');
+            // const playerAudio = document.getElementById('player-audio');
+            // const playerTrackTitle = document.getElementById('player-track-title');
+            // const prevButton = document.getElementById('prev-button');
+            // const nextButton = document.getElementById('next-button');
+            // const audioElements = document.querySelectorAll('.audio-embed'); // No audio embeds on this page
 
             // Hamburger menu logic
             menuButton.addEventListener('click', function() {
@@ -324,7 +289,7 @@
                     mobileMenu.style.width = '100%';
                     mobileMenu.style.boxShadow = '0 4.px 6px rgba(0, 0, 0, 0.1)';
                     mobileMenu.style.borderRadius = '0.5rem';
-                    mobileMenu.style.zIndex = '40'; /* Below sticky header */
+                    mobileMenu.style.zIndex = '60'; /* Higher z-index than sticky header (z-50) */
                     mobileMenu.querySelector('ul').classList.remove('md:flex-row', 'md:space-x-8');
                     mobileMenu.querySelector('ul').classList.add('flex-col', 'space-y-2');
                 } else {
@@ -350,5 +315,5 @@
             });
         });
     </script>
-                </body>
+</body>
 </html>
