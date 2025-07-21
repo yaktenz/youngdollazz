@@ -3,175 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join YoungDollazz Discord</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="YoungDollazz">
-    <link rel="apple-touch-icon" href="assets/pfp.png">
-    <link rel="manifest" href="manifest.json">
+    <title>YoungDollazz | Community</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/pfp.png">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background (Tailwind gray-900) */
-            color: #f8fafc; /* Light text (Tailwind slate-50) */
-            padding-bottom: 80px; /* Space for the fixed player */
-        }
-        .container {
-            max-width: 1200px;
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #f30000; /* Red on hover */
-        }
-        .btn-primary {
-            background-color: #3cb1ff; /* Changed to red */
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #3cb1ff8c; /* Darker red on hover */
-        }
-        .card {
-            background-color: #2d3748; /* Darker card background */
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .input-field {
-            background-color: #4a5568; /* Dark input field background */
-            border: 1px solid #718096; /* Lighter border */
-            color: #f8fafc; /* Light text */
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            width: 100%;
-        }
-        .input-field::placeholder {
-            color: #cbd5e0; /* Lighter placeholder */
-        }
-        /* Custom styles for hamburger menu toggle */
-        .hidden-mobile {
-            display: none;
-        }
-        @media (min-width: 768px) { /* md breakpoint */
-            .hidden-mobile {
-                display: flex; /* or block, depending on context */
-            }
-        }
-        /* Hero section background image with overlay for brightness adjustment */
-        .hero-background {
-            background-image: url(''); /* Placeholder image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #6A0DAD; /* Fallback background color */
-            position: relative; /* Needed for pseudo-element positioning */
-            overflow: hidden; /* Ensures overlay doesn't spill out */
-        }
-        .hero-background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.74); /* Black overlay with 40% opacity */
-            z-index: 1; /* Place over the background image */
-        }
-        .hero-background .container {
-            position: relative; /* Ensure content is above the overlay */
-            z-index: 2; /* Higher z-index than the overlay */
-        }
-        /* Style for audio embeds */
-        .audio-embed {
-            background-color: #2d3748; /* Dark background for audio player */
-            border-radius: 0.5rem;
-            padding: 0.5rem;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text */
         }
 
-        audio::-webkit-media-controls-panel{
-            background: linear-gradient(to right, #57bcff, #57bcff);
+        /* Custom Scrollbar Styles */
+        /* For Webkit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
         }
 
-        /* Pop-out music player styles */
-        .popout-player {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to right, #ff4545fb, #ff454593); /* Dark gradient red */
-            color: white;
-            padding: 1rem;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            z-index: 100; /* Ensure it's on top */
-            transform: translateY(100%); /* Start hidden below the screen */
-            transition: transform 0.3s ease-in-out;
+        ::-webkit-scrollbar-track {
+            background: #2d3748; /* Color of the track */
+            border-radius: 10px;
         }
-        .popout-player.active {
-            transform: translateY(0); /* Slide up when active */
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #4a5568; /* Color of the scroll thumb */
+            border-radius: 10px;
+            border: 3px solid #2d3748; /* Space around scroll thumb */
         }
-        .popout-player audio {
-            width: 70%; /* Adjust width as needed */
-            max-width: 600px;
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #636b77; /* Color of the scroll thumb on hover */
         }
-        .popout-player .player-controls button {
-            background-color: #ff4141; /* Red */
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .popout-player .player-controls button:hover {
-            background-color: #b41a1a; /* Darker red on hover */
-        }
-        .popout-player .track-info {
-            flex-grow: 1;
-            text-align: left; /* Changed to left alignment */
-        }
-        .popout-player .track-info h4 {
-            font-weight: bold;
+
+        /* For Firefox */
+        html {
+            scrollbar-width: thin; /* "auto" or "thin" */
+            scrollbar-color: #4a5568 #2d3748; /* thumb color track color */
         }
     </style>
 </head>
 <body class="antialiased">
-    <header class="bg-black shadow-lg py-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-3xl font-bold text-white"><a href="index.html">YoungDollazz</a></h1>
-
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-
-            <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg mt-4 md:mt-0">
-                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg">
-                    <li><a href="index.html#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
-                    <li><a href="albums.html" class="nav-link text-gray-300 hover:text-red-600">Albums</a></li>
-                    <li><a href="https://soundcloud.com/youngdollazz1700" class="nav-link text-gray-300 hover:text-red-600">SoundCloud</a></li>
-                    <li><a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" class="nav-link text-gray-300 hover:text-red-600">YouTube</a></li>
-                    <li><a href="links.html" class="nav-link text-gray-300 hover:text-red-600">Socials</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Header Section -->
+    <header class="bg-gray-900 shadow-lg py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-400 rounded-md p-2 hover:text-blue-300 transition duration-300">
+                YoungDollazz | Community
+            </a>
+            <div class="space-x-4">
+                <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Features</a>
+                <a href="#join" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Join Us</a>
+            </div>
+        </nav>
     </header>
 
-    <section class="hero-background text-white py-20 text-center rounded-b-lg mx-4 mt-4 shadow-xl">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-purple-700 to-indigo-800 text-white py-20 md:py-32 flex items-center justify-center min-h-screen-75 rounded-b-lg shadow-xl">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                Welcome to Our Awesome Discord Server!
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                Connect, chat, and grow with a vibrant community of like-minded individuals.
+            </p>
+            <a href="https://discord.gg/5BhcyBtx9e" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out animate-bounce-once">
+                Join Our Discord Now!
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-800 rounded-lg mx-auto my-8 shadow-lg">
         <div class="container mx-auto px-4">
-            <h2 class="text-5xl font-extrabold mb-4 animate-fade-in">Join the YoungDollazz Discord Server!</h2>
-            <p class="text-xl mb-8 animate-fade-in-delay">Connect with other fans, get unreleased music with premium, and chat with YoungDollazz.</p>
-            <a href="https://discord.gg/5BhcyBtx9e" class="btn-primary inline-block animate-bounce-in text-2xl font-bold" target="_blank" rel="noopener noreferrer">Join Now!</a>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">About Our Community</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="assets/discord.gif" alt="Community Image" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-4">
+                        Friendly community where other members/rappers can chat, in a safe place. Theirs also a Premium feature users can pay to unlock & Get exclusive features such as Unreleased Music and Premium Chats
+                    </p>
+                    <p>
+                        Rules Include: No Re-Uploading unreleased songs, No spamming No Links (Timeout + Block Message) No Racisim (N-ER = Timeout + Block Message)
+                    </p><br>
+                    <p>
+                        If you want to Purchase premium put in a ticket, The cost is "$3.00 USD" Acceptions: Apple Pay, Cash App.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-gray-900 rounded-lg mx-auto my-8 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 2 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-400 text-4xl mb-4 text-center">💬</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Free Chatting!</h3>
+                    <p class="text-gray-300 text-center">Engage in conversations on a wide range of topics.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-400 text-4xl mb-4 text-center">📣</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Release Announcments</h3>
+                    <p class="text-gray-300 text-center">Get Notified when i Drop!</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-400 text-4xl mb-4 text-center">🤝</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Ask for Features</h3>
+                    <p class="text-gray-300 text-center">Find people to feature with, Or even me.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-400 text-4xl mb-4 text-center">💎</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Premium Channels</h3>
+                    <p class="text-gray-300 text-center">Get Premium, See unreleased Music.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-400 text-4xl mb-4 text-center">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Safe & Moderated Environment</h3>
+                    <p class="text-gray-300 text-center">We ensure a respectful and safe space for all our members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="join" class="py-16 md:py-24 bg-gradient-to-r from-indigo-800 to-purple-700 text-white text-center rounded-t-lg shadow-xl">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Join the Fun?</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                Don't miss out on the conversations, events, and friendships waiting for you. Click the button below to become a part of our growing community!
+            </p>
+            <a href="https://discord.gg/5BhcyBtx9e" target="_blank" class="inline-block bg-white text-blue-700 hover:bg-gray-200 font-bold py-4 px-10 rounded-full text-xl shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                Join Our Discord Server!
+            </a>
         </div>
     </section>
 
@@ -185,64 +158,5 @@
             <a class="text-blue-400 hover:underline text-sm" href="albums.html">Albums</a>
         </div>
     </footer>
-
-    <div id="popout-player" class="popout-player hidden">
-        <div class="track-info">
-            <h4 id="player-track-title"></h4>
-        </div>
-        <audio id="player-audio" controls></audio>
-        <div class="player-controls">
-            <button id="prev-button">Previous</button>
-            <button id="next-button">Next</button>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.getElementById('menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            // Hamburger menu logic
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-                mobileMenu.classList.toggle('flex-col');
-                // Adjust alignment for mobile menu when open
-                if (mobileMenu.classList.contains('flex')) {
-                    mobileMenu.style.position = 'absolute';
-                    mobileMenu.style.top = '100%'; /* Position below the header */
-                    mobileMenu.style.left = '0';
-                    mobileMenu.style.right = '0';
-                    mobileMenu.style.backgroundColor = 'black'; /* Match navbar background */
-                    mobileMenu.style.padding = '1rem';
-                    mobileMenu.style.width = '100%';
-                    mobileMenu.style.boxShadow = '0 4.px 6px rgba(0, 0, 0, 0.1)';
-                    mobileMenu.style.borderRadius = '0.5rem';
-                    mobileMenu.style.zIndex = '40'; /* Below sticky header */
-                    mobileMenu.querySelector('ul').classList.remove('md:flex-row', 'md:space-x-8');
-                    mobileMenu.querySelector('ul').classList.add('flex-col', 'space-y-2');
-                } else {
-                    // Reset inline styles when hidden
-                    mobileMenu.removeAttribute('style');
-                    mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
-                    mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
-                }
-            });
-
-            // Close menu when a link is clicked (for smoother navigation on mobile)
-            const navLinks = mobileMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenu.classList.remove('flex', 'flex-col');
-                        mobileMenu.removeAttribute('style'); // Reset inline styles
-                        mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
-                        mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
