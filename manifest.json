@@ -8,12 +8,12 @@
   "theme_color": "#1a202c",
   "icons": [
     {
-      "src": "album/dollazztime.png",
+      "src": "assets/pfp.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "album/dollazztime.png",
+      "src": "assets/pfp.png",
       "sizes": "512x512",
       "type": "image/png"
     }
