@@ -2,7 +2,7 @@
   "name": "YoungDollazz",
   "short_name": "YoungDollazz",
   "description": "Official website of YoungDollazz - Music, Albums, Socials.",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#1a202c",
   "theme_color": "#1a202c",
