@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz - Social Links</title>
+    <title>Join YoungDollazz Discord</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="YoungDollazz">
@@ -18,9 +18,6 @@
             background-color: #1a202c; /* Dark background (Tailwind gray-900) */
             color: #f8fafc; /* Light text (Tailwind slate-50) */
             padding-bottom: 80px; /* Space for the fixed player */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Ensure body takes full viewport height */
         }
         .container {
             max-width: 1200px;
@@ -32,14 +29,14 @@
             color: #f30000; /* Red on hover */
         }
         .btn-primary {
-            background-color: #418dff; /* Changed to red */
+            background-color: #3cb1ff; /* Changed to red */
             color: #ffffff;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #28569bab; /* Darker red on hover */
+            background-color: #3cb1ff8c; /* Darker red on hover */
         }
         .card {
             background-color: #2d3748; /* Darker card background */
@@ -69,7 +66,7 @@
         }
         /* Hero section background image with overlay for brightness adjustment */
         .hero-background {
-            background-image: url('https://placehold.co/1200x400/6A0DAD/ffffff?text=Social+Links+Background'); /* Placeholder image */
+            background-image: url(''); /* Placeholder image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -99,7 +96,7 @@
         }
 
         audio::-webkit-media-controls-panel{
-            background: linear-gradient(to right, #0084fffb, #0069ccfb);
+            background: linear-gradient(to right, #57bcff, #57bcff);
         }
 
         /* Pop-out music player styles */
@@ -108,7 +105,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(to right, #0084fffb, #0084ff4b); /* Dark gradient red */
+            background: linear-gradient(to right, #ff4545fb, #ff454593); /* Dark gradient red */
             color: white;
             padding: 1rem;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -128,7 +125,7 @@
             max-width: 600px;
         }
         .popout-player .player-controls button {
-            background-color: #418dff; /* Red */
+            background-color: #ff4141; /* Red */
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -136,7 +133,7 @@
             transition: background-color 0.2s;
         }
         .popout-player .player-controls button:hover {
-            background-color: #306bc4; /* Darker red on hover */
+            background-color: #b41a1a; /* Darker red on hover */
         }
         .popout-player .track-info {
             flex-grow: 1;
@@ -144,33 +141,6 @@
         }
         .popout-player .track-info h4 {
             font-weight: bold;
-        }
-
-        /* Styles for social links */
-        .social-link-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #4a5568; /* Darker gray for buttons */
-            color: #f8fafc;
-            padding: 1rem 1.5rem;
-            border-radius: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added box-shadow to transition */
-            width: 100%;
-            text-align: center;
-            text-decoration: none; /* Remove underline from links */
-        }
-        .social-link-button:hover {
-            background-color: #636b77; /* Lighter gray on hover */
-            transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(243, 0, 0, 0.6); /* Red glow effect */
-        }
-        .social-link-button svg {
-            margin-right: 0.75rem;
-            width: 1.5em;
-            height: 1.5em;
         }
     </style>
 </head>
@@ -197,50 +167,13 @@
         </div>
     </header>
 
-    <main class="flex-grow flex items-center justify-center py-16 px-4">
-        <div class="container mx-auto text-center max-w-md">
-            <img src="assets/pfp.png" alt="Profile Picture" class="rounded-full w-32 h-32 mx-auto mb-6 shadow-lg">
-            <h2 class="text-4xl font-extrabold mb-2 text-white">YoungDollazz</h2>
-            <p class="text-xl text-gray-400 mb-10">Connect with me everywhere!</p>
-
-            <div class="space-y-6">
-                <a href="https://soundcloud.com/youngdollazz1700" target="_blank" class="social-link-button">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 15.5h-2V8h2v9.5zm4 0h-2V6h2v11.5z" clip-rule="evenodd" />
-                    </svg>
-                    SoundCloud
-                </a>
-
-                <a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" target="_blank" class="social-link-button">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
-                        <path d="M19.615 3.184c-.31-.082-.672-.14-1.05-.18C17.152 2.7 12 2.7 12 2.7s-5.152 0-6.565.304c-.378.04-.74.098-1.05.18C3.72 3.447 3.05 4.117 2.78 4.787c-.27.67-.304 1.29-.304 1.29s-.304 2.513-.304 5.013c0 2.5.304 5.013.304 5.013s.034.62.304 1.29c.27.67.94 1.34 1.928 1.604c.31.082.672.14 1.05.18C6.848 21.3 12 21.3 12 21.3s5.152 0 6.565-.304c.378-.04.74-.098 1.05-.18c.988-.264 1.658-.934 1.928-1.604c.27-.67.304-1.29.304-1.29s.304-2.513.304-5.013c0-2.5-.304-5.013-.304-5.013s-.034-.62-.304-1.29c-.27-.67-.94-1.34-1.928-1.604zM9.987 15.424V8.576L15.8 12l-5.813 3.424z" />
-                    </svg>
-                    YouTube
-                </a>
-
-                <a href="https://www.youtube.com/@TheRealMayo_" target="_blank" class="social-link-button">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
-                        <path d="M19.615 3.184c-.31-.082-.672-.14-1.05-.18C17.152 2.7 12 2.7 12 2.7s-5.152 0-6.565.304c-.378.04-.74.098-1.05.18C3.72 3.447 3.05 4.117 2.78 4.787c-.27.67-.304 1.29-.304 1.29s-.304 2.513-.304 5.013c0 2.5.304 5.013.304 5.013s.034.62.304 1.29c.27.67.94 1.34 1.928 1.604c.31.082.672.14 1.05.18C6.848 21.3 12 21.3 12 21.3s5.152 0 6.565-.304c.378-.04.74-.098 1.05-.18c.988-.264 1.658-.934 1.928-1.604c.27-.67.304-1.29.304-1.29s.304-2.513.304-5.013c0-2.5-.304-5.013-.304-5.013s-.034-.62-.304-1.29c-.27-.67-.94-1.34-1.928-1.604zM9.987 15.424V8.576L15.8 12l-5.813 3.424z" />
-                    </svg>
-                    Gaming Channel
-                </a>
-
-                <a href="invite.html" target="_blank" class="social-link-button">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
-                        <path d="M20.211 2.221A1.977 1.977 0 0018.232 0h-1.92c-.113.125-.224.256-.33.393-.948 1.228-2.585 3.328-4.322 3.328-1.737 0-3.374-2.1-4.322-3.328-.106-.137-.217-.268-.33-.393H5.768A1.977 1.977 0 003.789 2.221c-1.206 5.006-1.127 9.87.164 13.175 1.574 4.025 5.567 6.071 9.947 6.071 4.38 0 8.373-2.046 9.947-6.071 1.291-3.305 1.37-8.169.164-13.175zM8.336 15.341c-.911 0-1.636-.723-1.636-1.614S7.425 12.096 8.336 12.096c.911 0 1.636.723 1.636 1.614s-.725 1.631-1.636 1.631zm7.328 0c-.911 0-1.636-.723-1.636-1.614s.725-1.631 1.636-1.631c.911 0 1.636.723 1.636 1.614s-.725 1.631-1.636 1.631z"/>
-                    </svg>
-                    Discord
-                </a>
-
-                <a href="https://www.bandlab.com/youngdollazz1700" target="_blank" class="social-link-button">
-                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
-                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-2 15.5V6.5L16 12l-6 5.5z" />
-                    </svg>
-                    Bandlab
-                </a>
-            </div>
+    <section class="hero-background text-white py-20 text-center rounded-b-lg mx-4 mt-4 shadow-xl">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold mb-4 animate-fade-in">Join the YoungDollazz Discord Server!</h2>
+            <p class="text-xl mb-8 animate-fade-in-delay">Connect with other fans, get unreleased music with premium, and chat with YoungDollazz.</p>
+            <a href="https://discord.gg/invite/YWwyFsAevw" class="btn-primary inline-block animate-bounce-in text-2xl font-bold" target="_blank" rel="noopener noreferrer">Join Now!</a>
         </div>
-    </main>
+    </section>
 
     <footer class="bg-gray-800 py-6 mt-8 rounded-t-lg mx-4 shadow-lg">
         <div class="container mx-auto text-center text-gray-400">
@@ -268,13 +201,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuButton = document.getElementById('menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            // Pop-out player elements are not used on this page, but kept for consistency if needed elsewhere.
-            // const popoutPlayer = document.getElementById('popout-player');
-            // const playerAudio = document.getElementById('player-audio');
-            // const playerTrackTitle = document.getElementById('player-track-title');
-            // const prevButton = document.getElementById('prev-button');
-            // const nextButton = document.getElementById('next-button');
-            // const audioElements = document.querySelectorAll('.audio-embed'); // No audio embeds on this page
 
             // Hamburger menu logic
             menuButton.addEventListener('click', function() {
@@ -292,7 +218,7 @@
                     mobileMenu.style.width = '100%';
                     mobileMenu.style.boxShadow = '0 4.px 6px rgba(0, 0, 0, 0.1)';
                     mobileMenu.style.borderRadius = '0.5rem';
-                    mobileMenu.style.zIndex = '60'; /* Higher z-index than sticky header (z-50) */
+                    mobileMenu.style.zIndex = '40'; /* Below sticky header */
                     mobileMenu.querySelector('ul').classList.remove('md:flex-row', 'md:space-x-8');
                     mobileMenu.querySelector('ul').classList.add('flex-col', 'space-y-2');
                 } else {
