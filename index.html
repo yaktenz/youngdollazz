@@ -69,7 +69,7 @@
         }
         /* Hero section background image with overlay for brightness adjustment */
         .hero-background {
-            background-image: url('assets/discord.gif'); /* Placeholder image */
+            background-image: url('assets/banner.jpg'); /* Placeholder image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -84,7 +84,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0); /* Black overlay with 40% opacity */
+            background-color: rgba(0, 0, 0, 0.589); /* Black overlay with 40% opacity */
             z-index: 1; /* Place over the background image */
         }
         .hero-background .container {
@@ -99,7 +99,7 @@
         }
 
         audio::-webkit-media-controls-panel{
-            background: linear-gradient(to right, #57bcff, #57bcff);
+            background: linear-gradient(to right, #72c7ff, #3ac1ff);
         }
 
         /* Pop-out music player styles */
@@ -108,8 +108,8 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(to right, #ff4545fb, #ff454593); /* Dark gradient red */
-            color: white;
+            background: linear-gradient(to right, #59bcf5fb, #74c1ff); /* Dark gradient red */
+            color: black;
             padding: 1rem;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -128,15 +128,15 @@
             max-width: 600px;
         }
         .popout-player .player-controls button {
-            background-color: #ff4141; /* Red */
-            color: white;
+            background-color: #41a3ff; /* Red */
+            color: blackwhite;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             cursor: pointer;
             transition: background-color 0.2s;
         }
         .popout-player .player-controls button:hover {
-            background-color: #b41a1a; /* Darker red on hover */
+            background-color: #1a76b4; /* Darker red on hover */
         }
         .popout-player .track-info {
             flex-grow: 1;
@@ -176,8 +176,10 @@
     <!-- Hero Section -->
     <section class="hero-background text-white py-20 text-center rounded-b-lg mx-4 mt-4 shadow-xl">
         <div class="container mx-auto px-4">
-            <br><br><br><br><br><br>
-            <br><br><br><br><br><br>
+            <!-- Added a title to the hero section -->
+            <h2 class="text-5xl font-extrabold mb-4 leading-tight">Welcome to YoungDollazz Official</h2>
+            <p class="text-xl mb-8">Your ultimate destination for the latest music and updates.</p>
+            <a href="https://stadiastudios.github.io/rapper-tycoon"><button>Play My Game</button></a>
         </div>
     </section>
 
@@ -329,6 +331,10 @@
                 // Pause the original audio element if it's playing
                 audioElements.forEach((audio, index) => {
                     if (index !== currentTrackIndex && !audio.paused) {
+                        audio.pause();
+                    }
+                    // If the current track is playing in the pop-out player, pause the original embed
+                    if (index === currentTrackIndex && !audio.paused) {
                         audio.pause();
                     }
                 });
