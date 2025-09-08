@@ -3,410 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz</title>
-    <!-- PWA Meta Tags for iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="YoungDollazz">
-    <link rel="apple-touch-icon" href="assets/pfp.png">
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <title>Under Maintenance</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/pfp.png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background (Tailwind gray-900) */
-            color: #f8fafc; /* Light text (Tailwind slate-50) */
-            padding-bottom: 80px; /* Space for the fixed player */
-        }
-        .container {
-            max-width: 1200px;
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #f30000; /* Red on hover */
-        }
-        .btn-primary {
-            background-color: #3cb1ff; /* Changed to red */
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #3cb1ff8c; /* Darker red on hover */
-        }
-        .card {
-            background-color: #2d3748; /* Darker card background */
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .input-field {
-            background-color: #4a5568; /* Dark input field background */
-            border: 1px solid #718096; /* Lighter border */
-            color: #f8fafc; /* Light text */
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            width: 100%;
-        }
-        .input-field::placeholder {
-            color: #cbd5e0; /* Lighter placeholder */
-        }
-        /* Custom styles for hamburger menu toggle */
-        .hidden-mobile {
-            display: none;
-        }
-        @media (min-width: 768px) { /* md breakpoint */
-            .hidden-mobile {
-                display: flex; /* or block, depending on context */
-            }
-        }
-        /* Hero section background image with overlay for brightness adjustment */
-        .hero-background {
-            background-image: url('assets/banner.jpg'); /* Placeholder image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #6A0DAD; /* Fallback background color */
-            position: relative; /* Needed for pseudo-element positioning */
-            overflow: hidden; /* Ensures overlay doesn't spill out */
-        }
-        .hero-background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.589); /* Black overlay with 40% opacity */
-            z-index: 1; /* Place over the background image */
-        }
-        .hero-background .container {
-            position: relative; /* Ensure content is above the overlay */
-            z-index: 2; /* Higher z-index than the overlay */
-        }
-        /* Style for audio embeds */
-        .audio-embed {
-            background-color: #2d3748; /* Dark background for audio player */
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-        }
-
-        audio::-webkit-media-controls-panel{
-            background: linear-gradient(to right, #72c7ff, #3ac1ff);
-        }
-
-        /* Pop-out music player styles */
-        .popout-player {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to right, #59bcf5fb, #74c1ff); /* Dark gradient red */
-            color: black;
-            padding: 1rem;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            z-index: 100; /* Ensure it's on top */
-            transform: translateY(100%); /* Start hidden below the screen */
-            transition: transform 0.3s ease-in-out;
-        }
-        .popout-player.active {
-            transform: translateY(0); /* Slide up when active */
-        }
-        .popout-player audio {
-            width: 70%; /* Adjust width as needed */
-            max-width: 600px;
-        }
-        .popout-player .player-controls button {
-            background-color: #41a3ff; /* Red */
-            color: blackwhite;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .popout-player .player-controls button:hover {
-            background-color: #1a76b4; /* Darker red on hover */
-        }
-        .popout-player .track-info {
-            flex-grow: 1;
-            text-align: left; /* Changed to left alignment */
-        }
-        .popout-player .track-info h4 {
-            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
         }
     </style>
 </head>
-<body class="antialiased">
-    <!-- Header/Navigation -->
-    <header class="bg-black shadow-lg py-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-3xl font-bold text-white"><a href="index.html">YoungDollazz</a></h1>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
 
-            <!-- Hamburger menu button for mobile -->
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    <!-- Main container for the maintenance message -->
+    <div class="bg-gray-800 p-8 md:p-12 rounded-xl shadow-lg text-center max-w-lg w-full">
+        <!-- Maintenance icon or visual element -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto mb-6 text-yellow-500">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.944 3.374h14.71c1.727 0 2.813-1.874 1.944-3.374L12 2.25 2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+        </svg>
+
+        <!-- Main heading -->
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">Under Maintenance</h1>
+
+        <!-- Subheading and status details -->
+        <p class="text-gray-400 mb-6 text-lg">
+            We are currently performing scheduled maintenance. The site will be back online as soon as possible.
+        </p>
+
+        <!-- Status information block -->
+        <div class="space-y-4">
+            <div class="flex items-center justify-center p-4 bg-gray-700 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-blue-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9.75 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-            </button>
-
-            <!-- Navigation links - hidden on mobile by default, shown on md and up -->
-            <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg mt-4 md:mt-0">
-                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg">
-                    <li><a href="#music" class="nav-link text-gray-300 hover:text-red-600">Browse</a></li>
-                    <li><a href="albums.html" class="nav-link text-gray-300 hover:text-red-600">Albums</a></li>
-                    <li><a href="https://soundcloud.com/youngdollazz1700" class="nav-link text-gray-300 hover:text-red-600">SoundCloud</a></li>
-                    <li><a href="https://www.youtube.com/@YoungDollazz1700?sub_confirmation=1" class="nav-link text-gray-300 hover:text-red-600">YouTube</a></li>
-                    <li><a href="links.html" class="nav-link text-gray-300 hover:text-red-600">Socials</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-background text-white py-20 text-center rounded-b-lg mx-4 mt-4 shadow-xl">
-        <div class="container mx-auto px-4">
-            <!-- Added a title to the hero section -->
-            <h2 class="text-5xl font-extrabold mb-4 leading-tight">Welcome to YoungDollazz Official</h2>
-            <p class="text-xl mb-8">Your ultimate destination for the latest music and updates.</p>
-            <a href="https://stadiastudios.github.io/rapper-tycoon"><button>Play My Game</button></a>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section id="music" class="py-16 px-4">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Latest Releases</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Music Card 1 -->
-                <div class="card">
-                    <img src="assets/dirtydiana.jpg" alt="Album Art 1" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Dirty Diana Ft. Lil Perky</h3>
-                    <p class="text-gray-400 mb-4">Genre: Sample 80s | Release Date: 2025-07-18</p>
-                    <audio controls class="w-full audio-embed" data-src="music/Dirty_Diana.mp3" data-title="Dirty Diana Ft. Lil Perky">
-                        <source src="music/Dirty_Diana.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/dirty-diana-ft-lil-perky?si=45146cf35cba4e74bef04f1d7f5311d7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/da7476e7-ec63-f011-8dc9-000d3a960be3" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
-
-                <!-- Music Card 2 -->
-                <div class="card">
-                    <img src="assets/iwonder.jfif" alt="Album Art 2" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">I Wonder Ft. Lil Perky</h3>
-                    <p class="text-gray-400 mb-4">Genre: Sample | Release Date: 2025-02-15</p>
-                    <audio controls class="w-full audio-embed" data-src="music/i_Wonder.mp3" data-title="I Wonder Ft. Lil Perky">
-                        <source src="music/i_Wonder.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/youngdollazz-i-wonder-ft-lil-perky-prod-wxck?si=f1a240c021f145c290e2b7806f7625fe&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/280e763a-a1ea-ef11-88f6-6045bd3473c0" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
-
-                <!-- Music Card 3 -->
-                <div class="card">
-                    <img src="assets/3am.jfif" alt="Album Art 3" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">3.A.M</h3>
-                    <p class="text-gray-400 mb-4">Genre: Rap | Release Date: 2025-02-2</p>
-                    <audio controls class="w-full audio-embed" data-src="music/3AM.mp3" data-title="3.A.M">
-                        <source src="music/3AM.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/3am-prod-saybreezy?si=4642b8601f5246d180062311442f00f7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/4052c561-48e1-ef11-88f6-6045bd3473c0" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/DifferentPriorites.jfif" alt="Album Art 3" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Different Priorities Ft. T$moke</h3>
-                    <p class="text-gray-400 mb-4">Genre: Rap | Release Date: 2025-02-15</p>
-                    <audio controls class="w-full audio-embed" data-src="music/Different_Prioritys.m4a" data-title="Different Priorities Ft. T$moke">
-                        <source src="music/Different_Prioritys.m4a" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/youngdollazz-differentpriorites-remix?si=85b6eb7b69b441d89d92d36d53eb692e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.youtube.com/watch?v=tJLZql-GcBI&ab_channel=YoungDollazz" class="text-blue-400 hover:underline text-sm">Listen on YouTube</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/timeless.jfif" alt="Album Art 3" class="w-full h-auto rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Timeless</h3>
-                    <p class="text-gray-400 mb-4">Genre: Rap | Release Date: 2025-02-2</p>
-                    <audio controls class="w-full audio-embed" data-src="music/timeless.m4a" data-title="Timeless">
-                        <source src="music/timeless.m4a" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://soundcloud.com/youngdollazz1700/timeless-prod-mig?si=195c1dead02b4633b60a6a4fbf0e87a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="text-blue-400 hover:underline text-sm">Listen on SoundCloud</a>
-                        <a href="https://www.bandlab.com/post/16bb2570-d3e1-ef11-88f6-6045bd3473c0" class="text-blue-400 hover:underline text-sm">Listen on Bandlab</a>
-                    </div>
-                </div>
+                <span class="font-semibold text-gray-200">Update Time:</span>
+                <span class="ml-2 text-red-400">Unknown</span>
             </div>
-        </div>
-    </section>
-
-    
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-6 mt-8 rounded-t-lg mx-4 shadow-lg">
-        <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 YoungDollazz. All rights reserved.</p>
-            <a class="text-blue-400 hover:underline text-sm" href="https://www.youtube.com/@TheRealMayo_">Gaming Channel</a>
-            <span> | </span>
-            <a class="text-blue-400 hover:underline text-sm" href="https://yaktenz.github.io/mayolibrary/">Gaming Website</a>
-            <span> | </span>
-            <a class="text-blue-400 hover:underline text-sm" href="albums.html">Albums</a>
-        </div>
-    </footer>
-
-    <!-- Pop-out Music Player -->
-    <div id="popout-player" class="popout-player hidden">
-        <div class="track-info">
-            <h4 id="player-track-title"></h4>
-        </div>
-        <audio id="player-audio" controls></audio>
-        <div class="player-controls">
-            <button id="prev-button">Previous</button>
-            <button id="next-button">Next</button>
+            <div class="flex items-center justify-center p-4 bg-gray-700 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-green-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-semibold text-gray-200">Last Status Update:</span>
+                <span id="updateTime" class="ml-2 font-mono text-gray-300"></span>
+            </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.getElementById('menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const popoutPlayer = document.getElementById('popout-player');
-            const playerAudio = document.getElementById('player-audio');
-            const playerTrackTitle = document.getElementById('player-track-title');
-            const prevButton = document.getElementById('prev-button');
-            const nextButton = document.getElementById('next-button');
-            const audioElements = document.querySelectorAll('.audio-embed');
+        // Function to format the date and time
+        function updateTime() {
+            const now = new Date();
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formattedTime = now.toLocaleDateString('en-US', options);
+            document.getElementById('updateTime').textContent = formattedTime;
+        }
 
-            let currentTrackIndex = -1;
-            const tracks = [];
-
-            // Populate tracks array and set up event listeners for each audio element
-            audioElements.forEach((audio, index) => {
-                const src = audio.dataset.src;
-                const title = audio.dataset.title;
-                tracks.push({ src, title });
-
-                audio.addEventListener('play', function() {
-                    // Stop other audio elements
-                    audioElements.forEach(otherAudio => {
-                        if (otherAudio !== audio && !otherAudio.paused) {
-                            otherAudio.pause();
-                        }
-                    });
-
-                    // Load and play in pop-out player
-                    playerAudio.src = src;
-                    playerTrackTitle.textContent = title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                    currentTrackIndex = index;
-                });
-            });
-
-            // Handle play/pause on the pop-out player
-            playerAudio.addEventListener('play', () => {
-                // Pause the original audio element if it's playing
-                audioElements.forEach((audio, index) => {
-                    if (index !== currentTrackIndex && !audio.paused) {
-                        audio.pause();
-                    }
-                    // If the current track is playing in the pop-out player, pause the original embed
-                    if (index === currentTrackIndex && !audio.paused) {
-                        audio.pause();
-                    }
-                });
-            });
-
-            // Next track functionality
-            nextButton.addEventListener('click', () => {
-                if (tracks.length > 0) {
-                    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-                    const nextTrack = tracks[currentTrackIndex];
-                    playerAudio.src = nextTrack.src;
-                    playerTrackTitle.textContent = nextTrack.title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                }
-            });
-
-            // Previous track functionality
-            prevButton.addEventListener('click', () => {
-                if (tracks.length > 0) {
-                    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-                    const prevTrack = tracks[currentTrackIndex];
-                    playerAudio.src = prevTrack.src;
-                    playerTrackTitle.textContent = prevTrack.title;
-                    playerAudio.play();
-                    popoutPlayer.classList.add('active');
-                    popoutPlayer.classList.remove('hidden');
-                }
-            });
-
-            // Hamburger menu logic
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-                mobileMenu.classList.toggle('flex-col');
-                // Adjust alignment for mobile menu when open
-                if (mobileMenu.classList.contains('flex')) {
-                    mobileMenu.style.position = 'absolute';
-                    mobileMenu.style.top = '100%'; /* Position below the header */
-                    mobileMenu.style.left = '0';
-                    mobileMenu.style.right = '0';
-                    mobileMenu.style.backgroundColor = 'black'; /* Match navbar background */
-                    mobileMenu.style.padding = '1rem';
-                    mobileMenu.style.width = '100%';
-                    mobileMenu.style.boxShadow = '0 4.px 6px rgba(0, 0, 0, 0.1)';
-                    mobileMenu.style.borderRadius = '0.5rem';
-                    mobileMenu.style.zIndex = '40'; /* Below sticky header */
-                    mobileMenu.querySelector('ul').classList.remove('md:flex-row', 'md:space-x-8');
-                    mobileMenu.querySelector('ul').classList.add('flex-col', 'space-y-2');
-                } else {
-                    // Reset inline styles when hidden
-                    mobileMenu.removeAttribute('style');
-                    mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
-                    mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
-                }
-            });
-
-            // Close menu when a link is clicked (for smoother navigation on mobile)
-            const navLinks = mobileMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenu.classList.remove('flex', 'flex-col');
-                        mobileMenu.removeAttribute('style'); // Reset inline styles
-                        mobileMenu.querySelector('ul').classList.remove('flex-col', 'space-y-2');
-                        mobileMenu.querySelector('ul').classList.add('md:flex-row', 'md:space-x-8');
-                    }
-                });
-            });
-        });
+        // Run the function on page load
+        window.onload = function() {
+            updateTime();
+            // Update the time every minute
+            setInterval(updateTime, 60000);
+        };
     </script>
 </body>
 </html>
