@@ -3,339 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz</title>
+    <title>YoungDollazz | Official Site</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="assets/pfp.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Use Inter font family for a modern look -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            scroll-behavior: smooth;
+            background-color: rgba(12, 14, 13); /* Main body background color */
+            /* Custom scrollbar styles for Firefox */
+            scrollbar-color: #ef4444 #1f2937;
+            scrollbar-width: thin;
         }
-        /* Custom scrollbar styles */
+
+        /* Custom scrollbar styles for Webkit browsers (Chrome, Safari) */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #30acff;
+            background: #1f2937; /* Gray-800 track */
         }
         ::-webkit-scrollbar-thumb {
-            background: #2cdbfa;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #888;
-        }
-
-        .accent-color {
-            color: #00bcd4; /* A vibrant teal */
-        }
-        a {
-            color: gray;
-        }
-        a:hover {
-            color:white;
-        }
-        .accent-bg {
-            background-color: rgb(255, 54, 54);
-        }
-        .card {
-            background-color: #1e1e1e;
-            border: 5px solid #333;
-        }
-        .btn {
-            @apply px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg;
-            background-image: linear-gradient(to right, #ff0000, #ff0000);
-            width: 160px;
-            border: none;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            border-radius: 0px;
-            text-align: center;
-            z-index: 1;
-        }
-        .btn:hover {
-            background-position: right center;
-            background-image: linear-gradient(to right, #ff000070, #ff00006b);
-        }
-        
-        .play-button {
-            @apply w-12 h-12 rounded-full bg-red-600 flex items-center justify-center transition-transform duration-300 transform hover:scale-110 shadow-lg cursor-pointer;
-            animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
-        }
-        .play-button:hover {
-            animation-play-state: paused;
-        }
-        
-        @keyframes pulse {
-            to {
-                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-            }
-        }
-        
-        .play-icon {
-            color: white;
-            font-size: 1.25rem;
-        }
-
-        /* Styles for the YouTube embed header */
-        .youtube-header {
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            overflow: hidden;
-            background-color: #000;
-        }
-
-        .youtube-header iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Disable interaction until played */
-        }
-
-        .youtube-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.801));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-            transition: opacity 0.5s;
-            z-index: 10;
-            cursor: pointer;
-        }
-
-        .youtube-overlay.playing {
-            opacity: 0;
-            pointer-events: none;
+            background-color: #ef4444; /* Red-500 thumb */
+            border-radius: 20px;
+            border: 3px solid rgba(12, 14, 13); /* Border matching new body background */
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="text-white min-h-screen antialiased">
 
-    <!-- Audio Element for Playback -->
-    <audio id="audioPlayer" src="music/all-for-you/song.mp3" preload="auto"></audio>
-
-    <!-- Header & Hero Section with YouTube Embed -->
-    <header class="youtube-header">
-        <iframe id="youtube-player" src="https://www.youtube.com/embed/MO2uvg47F8U?enablejsapi=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;playlist=MO2uvg47F8U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div id="youtube-overlay" class="youtube-overlay">
-            <div class="max-w-2xl">
-                <h1 class="text-6xl md:text-3xl font-bold text-white mb-4">YOUNGDOLLAZZ</h1>
-                <p class="text-xl md:text-2xl text-gray-300">New Release <span class="accent-color font-bold">"ALL FOR YOU"</span> out now!</p>
-                <div id="play-btn" class="mt-8 play-button">
-                    <i class="fas fa-play play-icon"></i>
+    <header class="sticky top-0 z-50 bg-[#111] shadow-xl border-b border-red-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo/Artist Name -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-extrabold tracking-widest text-red-500 hover:text-white transition duration-300">
+                        YOUNGDOLLAZZ
+                    </a>
                 </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md py-4 transition-all duration-300">
-        <div class="container mx-auto flex justify-between items-center text-white text-lg px-4">
-            <div>
-                <a href="#" class="text-white text-xl font-bold">YoungDollazz Music</a>
-            </div>
-            <!-- Desktop navigation links -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#music" class="hover:text-gray-400 transition-colors">Music</a>
-                <a href="#albums" class="hover:text-gray-400 transition-colors">Albums</a>
-                <a href="#bio" class="hover:text-gray-400 transition-colors">About Me</a>
-            </div>
-            <!-- Hamburger menu for mobile -->
-            <div class="md:hidden">
-                <button id="hamburger-menu" class="text-white focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <!-- Desktop Navigation Links - Updated to point to #featured-releases -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#featured-releases" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg">Releases</a>
+                    <a href="#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg">Music</a>
+                    <a href="#news" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg">News</a>
+                </nav>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button" class="md:hidden text-white hover:text-red-500 focus:outline-none" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
         </div>
-    </nav>
-    <!-- Mobile navigation overlay -->
-    <div id="mobile-menu-overlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 backdrop-blur-lg z-50 flex flex-col items-center justify-center transform -translate-x-full transition-transform duration-300 ease-in-out">
-        <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl">
-            &times;
-        </button>
-        <nav class="flex flex-col items-center space-y-8 text-3xl">
-            <a href="#music" class="text-white hover:text-gray-400 transition-colors">Music</a>
-            <a href="#albums" class="text-white hover:text-gray-400 transition-colors">Albums</a>
-            <a href="#bio" class="text-white hover:text-gray-400 transition-colors">About Me</a>
-        </nav>
-    </div>
+        <!-- Mobile Menu (Hidden by default) - Updated to point to #featured-releases -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-red-900/50">
+            <a href="#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Releases</a>
+            <a href="#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Music</a>
+            <a href="#news" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">News</a>
+        </div>
+    </header>
 
-    <!-- Music Section -->
-    <section id="music" class="py-20 px-4">
-        <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Latest Release</h2>
-            <div class="max-w-xl mx-auto card rounded-2xl p-6 shadow-xl flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
-                <img src="music/all-for-you/allforyou.png" alt="Album Art" class="w-48 h-48 rounded-lg shadow-lg">
-                <div class="text-center md:text-left">
-                    <h3 class="text-3xl font-semibold mb-2">All For You (Prod. Luto Beats)</h3>
-                    <p class="text-gray-400 mb-4">Released 9/21/25</p>
-                    <div class="flex items-center space-x-4">
-                        <div id="playPauseBtn" class="play-button">
-                            <i id="playIcon" class="fas fa-play play-icon"></i>
+    <main>
+        <!-- Hero Section: Latest Release -->
+        <section id="hero" class="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-40 bg-cover bg-center" style="background-image: url('assets/banners/banner.jpg');">
+            <!-- Overlay for contrast -->
+            <div class="absolute inset-0 bg-black/70"></div>
+
+            <div class="relative max-w-4xl mx-auto px-4 text-center z-10">
+                <p class="text-xl font-semibold text-red-500 uppercase tracking-widest mb-4">New Release</p>
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-shadow-lg">
+                    ALL FOR YOU
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Out Now, All My Platforms
+                </p>
+                <!-- Link points to the new #featured-releases section -->
+                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-red-700 text-white rounded-full shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-105 active:scale-95">
+                    STREAM NOW
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Releases Section (NEW MULTI-COLUMN LAYOUT) -->
+        <section id="featured-releases" class="py-16 md:py-24 border-b border-red-900/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Releases</h2>
+
+                <!-- Grid of Releases (2 columns on mobile, 3 on medium screens) -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+                    
+                    <!-- Release Item 1: ALL FOR YOU -->
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                        <!-- Cover Image -->
+                        <div class="aspect-square rounded-lg overflow-hidden mb-4">
+                            <img src="assets/releases/allforyou.png" alt="ALL FOR YOU cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
-                        <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" class="btn text-white">Stream on YouTube</a>
-                        <a href="https://drive.google.com/uc?export=download&id=1fe0KKjxAGog3Uv20rOD-IE7-F6wGUgYl" download class="inline-block text-gray-400 hover:text-white transition-colors">
-                                <i class="fas fa-download text-lg"></i>
-                            </a>
+                        <h3 class="text-xl font-bold text-white mb-2">ALL FOR YOU</h3>
+                        <p class="text-sm text-gray-400 mb-4">Ten Toez (2025)</p>
+                        
+                        <!-- Stream Button -->
+                        <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                            STREAM NOW
+                        </a>
+                    </div>
+
+                    <!-- Release Item 2: Another Placeholder Release -->
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                        <!-- Cover Image -->
+                        <div class="aspect-square rounded-lg overflow-hidden mb-4">
+                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
+                            <img src="assets/releases/diditagain.jpg" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">DID IT AGAIN</h3>
+                        <p class="text-sm text-gray-400 mb-4">Ten Toez (2025)</p>
+                        
+                        <!-- Stream Button -->
+                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                            STREAM NOW
+                        </a>
+                    </div>
+                    
+                    <!-- Release Item 3: Older Single Placeholder -->
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                        <!-- Cover Image -->
+                        <div class="aspect-square rounded-lg overflow-hidden mb-4">
+                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
+                            <img src="assets/releases/dirtydiana.png" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Dirty Diana</h3>
+                        <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
+                        
+                        <!-- Stream Button -->
+                        <a href="https://www.youtube.com/watch?v=_gbRTLxeeO0" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                            STREAM NOW
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-8">
-                <a href="releases.html" class="text-gray-400 hover:text-white transition-colors">View all releases &rarr;</a>
-            </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Music Section -->
+        <section id="music" class="py-16 md:py-24 border-b border-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Listen Anywhere</h2>
+                
+                <!-- Grid of Streaming Links -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    
+                    <!-- YouTube - Changed background to bg-gray-900 for brighter contrast -->
+                    <a href="https://www.youtube.com/@YoungDollazz1700" class="p-6 bg-[#222] rounded-xl shadow-2xl hover:bg-red-700 transition duration-300 transform hover:scale-[1.02]">
+                        <img src="assets/yt.png" alt="YouTube" class="w-12 h-12 mx-auto mb-4 rounded-full">
+                        <span class="text-lg font-semibold text-white">YouTube</span>
+                    </a>
 
-    <!-- Albums Section -->
-    <section id="albums" class="py-20 px-4">
-        <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Albums</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Album Card 1 -->
-                <div class="card rounded-xl p-4 shadow-lg text-center">
-                    <img src="albums/ten-toez/cover.png" alt="Album Art" class="w-full h-auto rounded-lg mb-4 border border-black">
-                    <h3 class="text-lg font-semibold mb-1">Ten Toez</h3>
-                    <p class="text-gray-400 text-sm">Coming 2025!</p>
-                    <a href="albums/ten-toez/Description.txt" class="mt-4 inline-block text-sm text-red-500 hover:text-red-400 transition-colors">View Album &rarr;</a>
-                </div>
-                <!-- Add more album cards here as needed -->
-            </div>
-        </div>
-    </section>
+                    <!-- SoundCloud - Changed background to bg-gray-900 for brighter contrast -->
+                    <a href="https://soundcloud.com/youngdollazz1700" class="p-6 bg-[#222] rounded-xl shadow-2xl hover:bg-orange-700 transition duration-300 transform hover:scale-[1.02]">
+                        <img src="assets/soundcloud.png" alt="SoundCloud" class="w-12 h-12 mx-auto mb-4 rounded-full">
+                        <span class="text-lg font-semibold text-white">SoundCloud</span>
+                    </a>
 
-    <!-- Bio Section -->
-    <section id="bio" class="py-20 px-4">
-        <div class="container mx-auto max-w-4xl flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
-            <img src="assets/pfp.jpg" alt="YoungDollazz" class="w-full md:w-1/3 rounded-full shadow-lg">
-            <div class="text-center md:text-left">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
-                <p class="text-lg text-gray-300">
-                    YoungDollazz Music Channel. Only dropping hot sh!t i do not intend to make money off this channel, It is made because i get bored and wanna make music.  You can subscribe to my <a href="https://www.youtube.com/@TheRealMayo_?sub_confirmation=1">Other YouTube Channel</a> where i post more content about gaming.
-                </p>
-                <div class="mt-8 flex justify-center md:justify-start space-x-6">
-                    <a href="https://soundcloud.com/youngdollazz1700" aria-label="Soundcloud">
-                        <img src="assets/soundcloud.png" alt="Soundcloud logo" class="w-8 h-8 rounded-full">
+                    <!-- BandLab - Changed background to bg-gray-900 for brighter contrast -->
+                    <a href="https://www.bandlab.com/youngdollazz1700" class="p-6 bg-[#222] rounded-xl shadow-2xl hover:bg-red-800 transition duration-300 transform hover:scale-[1.02]">
+                        <img src="assets/bandlab.png" alt="BandLab" class="w-12 h-12 mx-auto mb-4 rounded-full">
+                        <span class="text-lg font-semibold text-white">BandLab</span>
                     </a>
-                    <a href="https://www.bandlab.com/youngdollazz1700" aria-label="Bandlab">
-                        <img src="assets/bandlab.png" alt="Bandlab logo" class="w-8 h-8 rounded-full">
-                    </a>
-                    <a href="https://www.youtube.com/@youngdollazz1700?sub_confirmation=1" aria-label="YouTube">
-                        <img src="assets/yt.png" alt="YouTube logo" class="w-8 h-8 rounded-full">
-                    </a>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- News/Updates Section -->
+        <section id="news" class="py-16 md:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">Latest News</h2>
+                
+                <!-- News Item 3 - Changed background to bg-gray-900 for brighter contrast -->
+                <article class="bg-[#222] rounded-xl shadow-xl overflow-hidden border border-gray-800 transition duration-300 hover:border-red-600">
+                    <img src="assets/banners/tentoez.png" alt="TenToez Album" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <!-- Changed text color to red -->
+                        <p class="text-sm font-semibold text-red-500 uppercase mb-2">September 26, 2025</p>
+                        <h3 class="text-2xl font-bold mb-3 hover:text-red-500 transition duration-300">
+                            Ten Toez Official Album By YoungDollazz Coming Soon!
+                        </h3>
+                        <p class="text-gray-400 line-clamp-3">
+                            Coming Soon "Ten Toez" The Album By YoungDollazz, Its been in the works for a while it'll be here soon.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-gray-500">
-        <p>&copy; 2025 YoungDollazz. All Rights Reserved.</p>
+    <footer class="bg-black border-t border-red-900/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <a href="#" class="text-3xl font-extrabold tracking-widest text-red-500 hover:text-white transition duration-300 block mb-6">
+                YOUNGDOLLAZZ
+            </a>
+
+            <!-- Social Media Icons (PNG Images used for consistency) -->
+            <div class="flex justify-center space-x-6 mb-8">
+                 <a href="https://www.bandlab.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
+                    <img src="assets/bandlab.png" alt="BandLab" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                </a>
+                <a href="https://soundcloud.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
+                    <img src="assets/soundcloud.png" alt="SoundCloud" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                </a>
+                <a href="https://www.youtube.com/@YoungDollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
+                    <img src="assets/yt.png" alt="YouTube" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                </a>
+            </div>
+
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 YOUNGDOLLAZZ. All Rights Reserved.
+            </p>
+        </div>
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle -->
     <script>
-        // Hamburger menu logic
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const closeMenu = document.getElementById('close-menu');
-        const mobileNavLinks = mobileMenuOverlay.querySelectorAll('a');
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        hamburgerMenu.addEventListener('click', () => {
-            mobileMenuOverlay.classList.remove('-translate-x-full');
-        });
-
-        closeMenu.addEventListener('click', () => {
-            mobileMenuOverlay.classList.add('-translate-x-full');
-        });
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuOverlay.classList.add('-translate-x-full');
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Close menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
             });
         });
-
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const playIcon = document.getElementById('playIcon');
-
-        let isPlaying = false;
-
-        playPauseBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                audioPlayer.pause();
-                playIcon.classList.remove('fa-pause');
-                playIcon.classList.add('fa-play');
-                playPauseBtn.classList.remove('animate-pulse');
-            } else {
-                audioPlayer.play();
-                playIcon.classList.remove('fa-play');
-                playIcon.classList.add('fa-pause');
-                playPauseBtn.classList.add('animate-pulse');
-            }
-            isPlaying = !isPlaying;
-        });
-
-        // Reset icon when the song ends
-        audioPlayer.addEventListener('ended', () => {
-            playIcon.classList.remove('fa-pause');
-            playIcon.classList.add('fa-play');
-            isPlaying = false;
-        });
-
-        // YouTube embed header logic
-        const youtubePlayer = document.getElementById('youtube-player');
-        const youtubeOverlay = document.getElementById('youtube-overlay');
-        const playBtn = document.getElementById('play-btn');
-        let player;
-
-        // Load YouTube IFrame Player API
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        window.onYouTubeIframeAPIReady = () => {
-            player = new YT.Player('youtube-player', {
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
-        };
-
-        const onPlayerReady = (event) => {
-            youtubeOverlay.addEventListener('click', () => {
-                playVideo();
-            });
-
-            playBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                playVideo();
-            });
-        };
-
-        const playVideo = () => {
-            player.playVideo();
-            youtubeOverlay.classList.add('playing');
-            youtubePlayer.style.pointerEvents = 'auto'; // Enable interaction
-        };
     </script>
 </body>
 </html>
