@@ -24,7 +24,8 @@
             font-family: 'Inter', sans-serif;
             background-color: rgba(12, 14, 13); /* Main body background color */
             /* Custom scrollbar styles for Firefox */
-            scrollbar-color: #ef4444 #1f2937;
+            /* Updated scrollbar color from red to a light blue (#3b82f6 is blue-500) */
+            scrollbar-color: #3b82f6 #1f2937; 
             scrollbar-width: thin;
         }
 
@@ -36,7 +37,7 @@
             background: #1f2937; /* Gray-800 track */
         }
         ::-webkit-scrollbar-thumb {
-            background-color: #ef4444; /* Red-500 thumb */
+            background-color: #3b82f6; /* Blue-500 thumb */
             border-radius: 20px;
             border: 3px solid rgba(12, 14, 13); /* Border matching new body background */
         }
@@ -49,7 +50,8 @@
 </head>
 <body class="text-white min-h-screen antialiased">
 
-    <header class="sticky top-0 z-50 bg-[#111] shadow-xl border-b border-red-900/50">
+    <!-- Updated Header: border-b from red-900/50 to blue-900/50 -->
+    <header class="sticky top-0 z-50 bg-[#111] shadow-xl border-b border-blue-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Updated Flex container for Centered Logo and Distributed Links -->
             <div class="flex items-center justify-between h-20 md:justify-around">
@@ -82,7 +84,8 @@
                 </nav>
                 
                 <!-- Mobile Menu Button (Hamburger) - Remains on the far right on mobile -->
-                <button id="mobile-menu-button" class="md:hidden text-white hover:text-red-500 focus:outline-none" aria-label="Open menu">
+                <!-- Updated hover:text-red-500 to hover:text-blue-500 -->
+                <button id="mobile-menu-button" class="md:hidden text-white hover:text-blue-500 focus:outline-none" aria-label="Open menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -93,8 +96,8 @@
 
             </div>
         </div>
-        <!-- Mobile Menu (Hidden by default) - Updated to include Wallpapers -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-red-900/50">
+        <!-- Mobile Menu (Hidden by default) - Updated border-t from red-900/50 to blue-900/50 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-blue-900/50">
             <a href="#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Releases</a>
             <a href="#albums" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Albums</a>
             <a href="#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Music</a>
@@ -111,22 +114,24 @@
             <div class="absolute inset-0 bg-black/70"></div>
 
             <div class="relative max-w-4xl mx-auto px-4 text-center z-10">
-                <p class="text-xl font-semibold text-red-500 uppercase tracking-widest mb-4">New Release</p>
+                <!-- Updated text color from red-500 to blue-500 -->
+                <p class="text-xl font-semibold text-blue-500 uppercase tracking-widest mb-4">New Release</p>
                 <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-shadow-lg">
                     ALL FOR YOU
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
                     Out Now, All My Platforms
                 </p>
-                <!-- Link points to the new #featured-releases section -->
-                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-red-700 text-white rounded-full shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-105 active:scale-95">
+                <!-- Updated button colors from red-700/red-600 to blue-700/blue-600 -->
+                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 active:scale-95">
                     STREAM NOW
                 </a>
             </div>
         </section>
 
         <!-- Featured Releases Section (NEW MULTI-COLUMN LAYOUT) -->
-        <section id="featured-releases" class="py-16 md:py-24 border-b border-red-900/50">
+        <!-- Updated border-b from red-900/50 to blue-900/50 -->
+        <section id="featured-releases" class="py-16 md:py-24 border-b border-blue-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Releases</h2>
 
@@ -134,7 +139,8 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                     
                     <!-- Release Item 1: ALL FOR YOU -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <!-- Updated shadow-2xl shadow-red-900/50 to shadow-2xl shadow-blue-900/50 -->
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <img src="assets/releases/allforyou.png" alt="ALL FOR YOU" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
@@ -142,14 +148,14 @@
                         <h3 class="text-xl font-bold text-white mb-2">ALL FOR YOU</h3>
                         <p class="text-sm text-gray-400 mb-4">Ten Toez (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
                     <!-- Release Item 2: Another Placeholder Release -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -158,13 +164,13 @@
                         <h3 class="text-xl font-bold text-white mb-2">DID IT AGAIN</h3>
                         <p class="text-sm text-gray-400 mb-4">Ten Toez (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -173,13 +179,13 @@
                         <h3 class="text-xl font-bold text-white mb-2">SHIPMENT TEAM</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=nu2ilDZtYVU" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=nu2ilDZtYVU" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -188,13 +194,13 @@
                         <h3 class="text-xl font-bold text-white mb-2">RUNAWAY</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=arn9ElkQedE" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=arn9ElkQedE" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -203,13 +209,13 @@
                         <h3 class="text-xl font-bold text-white mb-2">DIFFERENT PRIORITIES FT. T$MOKE</h3>
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=tJLZql-GcBI" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=tJLZql-GcBI" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -218,13 +224,13 @@
                         <h3 class="text-xl font-bold text-white mb-2">I WONDER FT. LIL PERKY</h3>
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=WtPlvOPYb1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=WtPlvOPYb1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -233,14 +239,14 @@
                         <h3 class="text-xl font-bold text-white mb-2">3.A.M</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
                     
                     <!-- Release Item 3: Older Single Placeholder -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -249,8 +255,8 @@
                         <h3 class="text-xl font-bold text-white mb-2">Dirty Diana</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="https://www.youtube.com/watch?v=_gbRTLxeeO0" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="https://www.youtube.com/watch?v=_gbRTLxeeO0" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
@@ -259,16 +265,17 @@
         </section>
 
         <!-- Albums Section (NEW) -->
-        <section id="albums" class="py-16 md:py-24 border-b border-red-900/50">
+        <!-- Updated border-b from red-900/50 to blue-900/50 -->
+        <section id="albums" class="py-16 md:py-24 border-b border-blue-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Albums</h2>
 
                 <!-- Album Grid (Centered, 1 column on mobile, 2 on medium screens) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-2xl mx-auto">
+                <div class="flex flex-col items-center md:flex-row md:justify-center gap-8 md:gap-12 max-w-2xl mx-auto">
                     
                     <!-- Album Item 1: Ten Toez (NO BORDER-RADIUS on the card or image) -->
-                    <!-- Note: Removed 'rounded-xl' from the card and 'rounded-lg' from the image container -->
-                    <div class="bg-[#222] shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <!-- Updated shadow-2xl shadow-red-900/50 to shadow-2xl shadow-blue-900/50 -->
+                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image Container (Square look) -->
                         <div class="aspect-square overflow-hidden mb-4">
                             <img src="assets/banners/tentoez.jfif" alt="Ten Toez Album Cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
@@ -276,8 +283,8 @@
                         <h3 class="text-xl font-bold text-white mb-2">TEN TOEZ</h3>
                         <p class="text-sm text-gray-400 mb-4">Album (2025)</p>
                         
-                        <!-- Stream Button -->
-                        <a href="#" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
+                        <a href="#" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
                             COMING SOON
                         </a>
                     </div>
@@ -288,51 +295,56 @@
             </div>
         </section>
 
-        <!-- Wallpapers Section (NEW) -->
-        <section id="wallpapers" class="py-16 md:py-24 border-b border-red-900/50">
+        <!-- Wallpapers Section (REVISED: Full-screen Preview with Carousel Navigation) -->
+        <!-- Updated border-b from red-900/50 to blue-900/50 -->
+        <section id="wallpapers" class="py-16 md:py-24 border-b border-blue-900/50 bg-[#151515]">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-8 text-white">Wallpapers</h2>
-                <p class="text-lg text-gray-400 mb-12">Download official YoungDollazz artwork for your desktop and mobile devices.</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Wallpapers</h2>
+                <p class="text-lg text-gray-400 mb-12">Swipe or click to browse official YoungDollazz artwork for your devices.</p>
 
-                <div class="max-w-xl mx-auto">
-                    <!-- Dropdown and Wallpaper Display -->
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
-                        <label for="wallpaper-select" class="text-xl font-medium text-white whitespace-nowrap">Choose Style:</label>
-                        <select 
-                            id="wallpaper-select" 
-                            class="w-full md:w-64 p-3 bg-gray-800 border border-red-700 text-white rounded-lg shadow-xl focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-200 cursor-pointer"
-                            onchange="updateWallpaper()"
-                        >
-                            <option value="" disabled selected>Select a Wallpaper</option>
-                            <option value="style-1">Desktop 1</option>
-                            <option value="style-2">Desktop 2</option>
-                            <option value="style-3">Mobile 1</option>
-                            <option value="style-4">Mobile 2</option>
-                            <option value="style-5">Mobile 3</option>
-                            <option value="style-6">Mobile 3 Black</option>
-                        </select>
-                    </div>
+                <!-- Wallpaper Carousel Container -->
+                <div class="relative w-full max-w-4xl mx-auto">
 
                     <!-- Wallpaper Display Card -->
-                    <!-- Added mx-auto for better centering of the potentially smaller mobile card on desktop -->
-                    <div id="wallpaper-card" class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 hidden mx-auto">
-                        <!-- Aspect Container: Added ID for JS manipulation -->
-                        <div id="wallpaper-aspect-container" class="aspect-video w-full overflow-hidden rounded-lg mb-6 border border-gray-700">
-                            <!-- Image will be displayed here -->
-                            <img id="wallpaper-image" src="" alt="Selected Wallpaper" class="w-full h-full object-cover transition-opacity duration-500 opacity-0" 
-                                onerror="this.onerror=null; this.src='https://placehold.co/1280x720/1f2937/d1d5db?text=Image+Not+Found';"
-                            >
+                    <!-- Updated shadow-2xl shadow-red-900/50 to shadow-2xl shadow-blue-900/50 -->
+                    <div id="wallpaper-card" class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 relative transition-all duration-300">
+                        
+                        <!-- Image Container with Arrows -->
+                        <!-- Updated border from red-900 to blue-900 -->
+                        <div id="wallpaper-preview-container" class="relative w-full overflow-hidden rounded-lg border border-blue-900 shadow-inner">
+                            
+                            <!-- Image Aspect Container (Will be dynamically set by JS) -->
+                            <div id="wallpaper-aspect-container" class="aspect-video w-full overflow-hidden rounded-lg">
+                                <img id="wallpaper-image" src="" alt="Selected Wallpaper" class="w-full h-full object-cover transition-opacity duration-500 opacity-0" 
+                                    onerror="this.onerror=null; this.src='https://placehold.co/1280x720/1f2937/d1d5db?text=Image+Not+Found';"
+                                >
+                            </div>
+
+                            <!-- Navigation Arrows (Left) - Updated hover:bg-red-700 to hover:bg-blue-700 -->
+                            <button onclick="navigateWallpaper('prev')" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-blue-700 p-3 md:p-4 rounded-r-xl transition duration-300 z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-95" aria-label="Previous Wallpaper">
+                                <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Navigation Arrows (Right) - Updated hover:bg-red-700 to hover:bg-blue-700 -->
+                            <button onclick="navigateWallpaper('next')" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-blue-700 p-3 md:p-4 rounded-l-xl transition duration-300 z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-95" aria-label="Next Wallpaper">
+                                <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+
                         </div>
                         
-                        <!-- Download Button -->
-                        <a id="download-button" href="#" download="youngdollazz_wallpaper.jpg" class="inline-block w-full px-8 py-3 text-xl font-bold bg-red-700 text-white rounded-full shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-[1.01] active:scale-98">
-                            Download Image
-                        </a>
-                        <p id="wallpaper-info" class="mt-4 text-sm text-gray-400"></p>
-                    </div>
+                        <!-- Info and Download Button -->
+                        <div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p id="wallpaper-info" class="text-md md:text-lg font-medium text-gray-300 order-2 md:order-1 transition-opacity duration-500">Loading...</p>
 
-                    <div id="wallpaper-placeholder" class="p-8 bg-[#222] rounded-xl shadow-xl shadow-red-900/50">
-                        <p class="text-xl text-gray-400">Select a style from the dropdown menu to view a wallpaper.</p>
+                            <!-- Updated button colors from red-700/red-600 to blue-700/blue-600 -->
+                            <a id="download-button" href="#" download="youngdollazz_wallpaper.jpg" class="inline-block w-full md:w-auto px-8 py-3 text-xl font-bold bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-[1.01] active:scale-98 order-1 md:order-2">
+                                Download
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -348,19 +360,19 @@
                 <!-- Grid of Streaming Links -->
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                     
-                    <!-- YouTube - Changed background to bg-gray-900 for brighter contrast -->
+                    <!-- YouTube - Updated hover:bg-red-700 to hover:bg-blue-700 -->
                     <a href="https://www.youtube.com/@YoungDollazz1700" class="p-6 bg-[#222] rounded-xl shadow-2xl hover:bg-red-700 transition duration-300 transform hover:scale-[1.02]">
                         <img src="assets/yt.png" alt="YouTube" class="w-12 h-12 mx-auto mb-4 rounded-full">
                         <span class="text-lg font-semibold text-white">YouTube</span>
                     </a>
 
-                    <!-- SoundCloud - Changed background to bg-gray-900 for brighter contrast -->
+                    <!-- SoundCloud - Maintained orange hover as it matches SoundCloud's brand color -->
                     <a href="https://soundcloud.com/youngdollazz1700" class="p-6 bg-[#222] rounded-xl shadow-2xl hover:bg-orange-700 transition duration-300 transform hover:scale-[1.02]">
                         <img src="assets/soundcloud.png" alt="SoundCloud" class="w-12 h-12 mx-auto mb-4 rounded-full">
                         <span class="text-lg font-semibold text-white">SoundCloud</span>
                     </a>
 
-                    <!-- BandLab - Changed background to bg-gray-900 for brighter contrast -->
+                    <!-- BandLab - Updated hover:bg-red-800 to hover:bg-blue-800 -->
                     <a href="https://www.bandlab.com/youngdollazz1700" class="p-6 bg-[#222] rounded-xl shadow-2xl hover:bg-red-800 transition duration-300 transform hover:scale-[1.02]">
                         <img src="assets/bandlab.png" alt="BandLab" class="w-12 h-12 mx-auto mb-4 rounded-full">
                         <span class="text-lg font-semibold text-white">BandLab</span>
@@ -376,12 +388,14 @@
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">Latest News</h2>
                 
                 <!-- News Item 3 - Changed background to bg-gray-900 for brighter contrast -->
-                <article class="bg-[#222] rounded-xl shadow-xl overflow-hidden border border-gray-800 transition duration-300 hover:border-red-600">
+                <!-- Updated hover:border-red-600 to hover:border-blue-600 -->
+                <article class="bg-[#222] rounded-xl shadow-xl overflow-hidden border border-gray-800 transition duration-300 hover:border-blue-600">
                     <img src="assets/banners/tentoez.png" alt="TenToez Album" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <!-- Changed text color to red -->
-                        <p class="text-sm font-semibold text-red-500 uppercase mb-2">September 26, 2025</p>
-                        <h3 class="text-2xl font-bold mb-3 hover:text-red-500 transition duration-300">
+                        <!-- Updated text color from red-500 to blue-500 -->
+                        <p class="text-sm font-semibold text-blue-500 uppercase mb-2">September 26, 2025</p>
+                        <!-- Updated hover:text-red-500 to hover:text-blue-500 -->
+                        <h3 class="text-2xl font-bold mb-3 hover:text-blue-500 transition duration-300">
                             Ten Toez Official Album By YoungDollazz Coming Soon!
                         </h3>
                         <p class="text-gray-400 line-clamp-3">
@@ -395,7 +409,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-red-900/50 py-12">
+    <!-- Updated border-t from red-900/50 to blue-900/50 -->
+    <footer class="bg-black border-t border-blue-900/50 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
             <!-- Updated Logo in Footer -->
@@ -412,13 +427,16 @@
             <!-- Social Media Icons (PNG Images used for consistency) -->
             <div class="flex justify-center space-x-6 mb-8">
                  <a href="https://www.bandlab.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
-                    <img src="assets/bandlab.png" alt="BandLab" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                    <!-- Updated hover:border-red-500 to hover:border-blue-500 -->
+                    <img src="assets/bandlab.png" alt="BandLab" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-blue-500">
                 </a>
                 <a href="https://soundcloud.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
-                    <img src="assets/soundcloud.png" alt="SoundCloud" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                    <!-- Updated hover:border-red-500 to hover:border-blue-500 -->
+                    <img src="assets/soundcloud.png" alt="SoundCloud" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-blue-500">
                 </a>
                 <a href="https://www.youtube.com/@YoungDollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
-                    <img src="assets/yt.png" alt="YouTube" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                    <!-- Updated hover:border-red-500 to hover:border-blue-500 -->
+                    <img src="assets/yt.png" alt="YouTube" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-blue-500">
                 </a>
             </div>
 
@@ -428,118 +446,137 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle and Wallpaper Logic -->
+    <!-- JavaScript for Mobile Menu Toggle and Wallpaper Logic (REVISED) -->
     <script>
-        // Data structure for wallpapers. Updated paths for better case-sensitivity compliance on GitHub Pages.
+        // Data structure for wallpapers.
         const wallpapers = {
             'style-1': {
                 name: 'Desktop 1',
-                // Changed 'wallpapers/desktop-wallpaper-1.png' to lowercase paths
                 url: 'wallpapers/desktop-wallpaper-1.png',
-                filename: 'desktop-wallpaper-1.png',
+                filename: 'youngdollazz_desktop_1.png', // New descriptive filename for download
                 resolution: '1920x1080 (Desktop)',
                 isMobile: false
             },
             'style-2': {
                 name: 'Desktop 2',
-                // Changed 'wallpapers/desktop-wallpaper-2.png' to lowercase paths
                 url: 'wallpapers/desktop-wallpaper-2.png',
-                filename: 'desktop-wallpaper-2.png',
+                filename: 'youngdollazz_desktop_2.png',
                 resolution: '1920x1080 (Desktop)',
                 isMobile: false
             },
             'style-3': {
                 name: 'Mobile 1',
-                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-1.png' to 'wallpapers/iphone-wallpaper-1.png'
-                // You must ensure the actual file name on your GitHub repository is 'iphone-wallpaper-1.png'
-                url: 'wallpapers/iphone-wallpaper-1.png',
-                filename: 'iphone-wallpaper-1.png',
+                url: 'wallpapers/iPhone-Wallpaper-1.png',
+                filename: 'youngdollazz_mobile_1.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             },
             'style-4': {
                 name: 'Mobile 2',
-                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-2.png' to 'wallpapers/iphone-wallpaper-2.png'
-                url: 'wallpapers/iphone-wallpaper-2.png',
-                filename: 'iphone-wallpaper-2.png',
+                url: 'wallpapers/iPhone-Wallpaper-2.png',
+                filename: 'youngdollazz_mobile_2.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             },
             'style-5': {
                 name: 'Mobile 3',
-                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-3.png' to 'wallpapers/iphone-wallpaper-3.png'
-                url: 'wallpapers/iphone-wallpaper-3.png',
-                filename: 'iphone-wallpaper-3.png',
+                url: 'wallpapers/iPhone-Wallpaper-3.png',
+                filename: 'youngdollazz_mobile_3.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             },
             'style-6': {
                 name: 'Mobile 3 Black',
-                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-3-Black.png' to 'wallpapers/iphone-wallpaper-3-black.png'
-                url: 'wallpapers/iphone-wallpaper-3-black.png',
-                filename: 'iphone-wallpaper-3-black.png',
+                url: 'wallpapers/iPhone-Wallpaper-3-Black.png',
+                filename: 'youngdollazz_mobile_3_black.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             }
         };
 
-        function updateWallpaper() {
-            const select = document.getElementById('wallpaper-select');
+        // NEW: Get an array of wallpaper keys and the initial index
+        const wallpaperKeys = Object.keys(wallpapers);
+        let currentWallpaperIndex = 0; // Start with the first wallpaper
+
+        /**
+         * Updates the displayed wallpaper based on the given index.
+         * @param {number} index The index of the wallpaper to display.
+         */
+        function displayWallpaper(index) {
+            // Safety check for index bounds
+            if (index < 0 || index >= wallpaperKeys.length) return;
+
+            currentWallpaperIndex = index; // Update the global index
+            const selectedKey = wallpaperKeys[currentWallpaperIndex];
+            const wallpaper = wallpapers[selectedKey];
+            
             const image = document.getElementById('wallpaper-image');
             const card = document.getElementById('wallpaper-card');
-            const placeholder = document.getElementById('wallpaper-placeholder');
             const downloadButton = document.getElementById('download-button');
             const infoText = document.getElementById('wallpaper-info');
-            // NEW: Get the aspect container
             const aspectContainer = document.getElementById('wallpaper-aspect-container');
             
-            const selectedStyle = select.value;
-            
-            if (selectedStyle && wallpapers[selectedStyle]) {
-                const wallpaper = wallpapers[selectedStyle];
-                
-                // --- LOGIC FOR ASPECT RATIO AND MOBILE PREVIEW SIZE ---
-                // Toggle aspect ratio classes based on 'isMobile' flag
-                aspectContainer.classList.toggle('aspect-[9/16]', wallpaper.isMobile);
-                aspectContainer.classList.toggle('aspect-video', !wallpaper.isMobile);
-                
-                // Toggle the card's maximum width for a realistic mobile preview size on desktop
-                card.classList.toggle('md:max-w-xs', wallpaper.isMobile);
-                // --- END LOGIC ---
-
-                // Hide placeholder, show card
-                placeholder.classList.add('hidden');
-                card.classList.remove('hidden');
-
-                // Fade out current image
-                image.classList.remove('opacity-100');
-                image.classList.add('opacity-0');
-
-                // Update image source and metadata after a short delay for the fade effect
-                setTimeout(() => {
-                    image.src = wallpaper.url;
-                    downloadButton.href = wallpaper.url; // Use URL for download href
-                    // Set the file name for the download attribute
-                    downloadButton.setAttribute('download', wallpaper.filename); 
-                    infoText.textContent = `Style: ${wallpaper.name} | Resolution: ${wallpaper.resolution}`;
-
-                    // Fade in new image
-                    image.onload = () => {
-                        image.classList.remove('opacity-0');
-                        image.classList.add('opacity-100');
-                    };
-                    // Handle case where image might be cached and onload doesn't fire
-                    if (image.complete) {
-                        image.classList.remove('opacity-0');
-                        image.classList.add('opacity-100');
-                    }
-                }, 100); // Small delay to allow fade out
-                
+            // --- LOGIC FOR ASPECT RATIO AND MOBILE PREVIEW SIZE ---
+            // Set the aspect ratio and max-width based on if it's a mobile wallpaper
+            if (wallpaper.isMobile) {
+                // For mobile: vertical aspect ratio and constrained max-width
+                aspectContainer.classList.remove('aspect-video');
+                // aspect-[9/16] is a Tailwind arbitrary value utility class
+                aspectContainer.classList.add('aspect-[9/16]'); 
+                card.classList.add('md:max-w-xs'); // Make mobile previews narrower on desktop
             } else {
-                // No wallpaper selected
-                card.classList.add('hidden');
-                placeholder.classList.remove('hidden');
+                // For desktop: horizontal aspect ratio and wider max-width
+                aspectContainer.classList.add('aspect-video');
+                aspectContainer.classList.remove('aspect-[9/16]');
+                card.classList.remove('md:max-w-xs');
             }
+            // --- END LOGIC ---
+
+            // Fade out current image
+            image.classList.remove('opacity-100');
+            image.classList.add('opacity-0');
+            infoText.textContent = "Loading..."; // Update info text while fading
+
+            // Update image source and metadata after a short delay for the fade effect
+            setTimeout(() => {
+                image.src = wallpaper.url;
+                downloadButton.href = wallpaper.url;
+                downloadButton.setAttribute('download', wallpaper.filename);
+                
+                // Function to fade in the image once loaded
+                const fadeIn = () => {
+                    image.classList.remove('opacity-0');
+                    image.classList.add('opacity-100');
+                    infoText.textContent = `${wallpaper.name} | ${wallpaper.resolution}`;
+                    image.removeEventListener('load', fadeIn); // Clean up
+                };
+                
+                // Add event listener for when the image finishes loading
+                image.addEventListener('load', fadeIn);
+
+                // Handle case where image might be cached and onload doesn't fire
+                if (image.complete) {
+                    fadeIn();
+                }
+            }, 100); // Small delay to allow fade out transition
+        }
+
+        /**
+         * Navigates to the next or previous wallpaper, wrapping around at the ends.
+         * @param {('next'|'prev')} direction The direction of navigation.
+         */
+        function navigateWallpaper(direction) {
+            let newIndex = currentWallpaperIndex;
+            
+            if (direction === 'next') {
+                // Modulo operator handles the wrap-around
+                newIndex = (currentWallpaperIndex + 1) % wallpaperKeys.length;
+            } else if (direction === 'prev') {
+                // Handles negative index by adding array length before modulo
+                newIndex = (currentWallpaperIndex - 1 + wallpaperKeys.length) % wallpaperKeys.length;
+            }
+            
+            displayWallpaper(newIndex);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -556,6 +593,11 @@
                     mobileMenu.classList.add('hidden');
                 });
             });
+
+            // NEW: Initialize the wallpaper view with the first item on load
+            if (wallpaperKeys.length > 0) {
+                displayWallpaper(currentWallpaperIndex);
+            }
         });
     </script>
 </body>
