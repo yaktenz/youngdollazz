@@ -1,0 +1,29 @@
+{
+  "name": "YoungDollazz App",
+  "short_name": "YoungDollazz",
+  "description": "Official music and news hub for the artist YoungDollazz. Stream new releases and check out the latest updates.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#111",
+  "theme_color": "#111",
+  "icons": [
+    {
+      "src": "assets/webicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/webicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/webicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}
