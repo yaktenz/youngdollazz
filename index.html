@@ -29,31 +29,54 @@
             border-radius: 20px;
             border: 3px solid rgba(12, 14, 13); /* Border matching new body background */
         }
+
+        /* Custom utility for text shadow */
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
     </style>
 </head>
 <body class="text-white min-h-screen antialiased">
 
     <header class="sticky top-0 z-50 bg-[#111] shadow-xl border-b border-red-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo/Artist Name -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-3xl font-extrabold tracking-widest text-red-500 hover:text-white transition duration-300">
-                        YOUNGDOLLAZZ
+            <!-- Updated Flex container for Centered Logo and Distributed Links -->
+            <div class="flex items-center justify-between h-20 md:justify-around">
+                
+                <!-- Left Links (Hidden on Mobile) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#featured-releases" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Releases</a>
+                </nav>
+
+                <!-- Logo/Artist Image (Centered on Desktop) -->
+                <!-- Changed object-cover to object-contain -->
+                <div class="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 md:relative md:left-auto md:transform-none">
+                    <a href="#" class="block p-1 transition duration-500">
+                        <img 
+                            src="assets/favicon.png" 
+                            onerror="this.onerror=null; this.src='assets/favicon.png';" 
+                            alt="YoungDollazz Logo" 
+                            class="w-19 h-10 object-contain shadow-lg"
+                        >
                     </a>
                 </div>
-                <!-- Desktop Navigation Links - Updated to point to #featured-releases -->
+                
+                <!-- Right Links (Hidden on Mobile) -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#featured-releases" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg">Releases</a>
-                    <a href="#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg">Music</a>
-                    <a href="#news" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg">News</a>
+                    <a href="#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Music</a>
+                    <a href="#news" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">News</a>
                 </nav>
-                <!-- Mobile Menu Button (Hamburger) -->
+                
+                <!-- Mobile Menu Button (Hamburger) - Remains on the far right on mobile -->
                 <button id="mobile-menu-button" class="md:hidden text-white hover:text-red-500 focus:outline-none" aria-label="Open menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
+
+                <!-- Spacer div for mobile layout to prevent logo overlap with button -->
+                <div class="w-16 h-16 md:hidden"></div>
+
             </div>
         </div>
         <!-- Mobile Menu (Hidden by default) - Updated to point to #featured-releases -->
@@ -97,7 +120,7 @@
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <img src="assets/releases/allforyou.png" alt="ALL FOR YOU cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/allforyou.png" alt="ALL FOR YOU" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">ALL FOR YOU</h3>
                         <p class="text-sm text-gray-400 mb-4">Ten Toez (2025)</p>
@@ -113,7 +136,7 @@
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/diditagain.jpg" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/diditagain.jpg" alt="Did It Again" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">DID IT AGAIN</h3>
                         <p class="text-sm text-gray-400 mb-4">Ten Toez (2025)</p>
@@ -128,7 +151,7 @@
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/shipmentteam.jfif" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/shipmentteam.jfif" alt="Shipment Team" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">SHIPMENT TEAM</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
@@ -143,7 +166,7 @@
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/runaway.jfif" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/runaway.jfif" alt="Runaway" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">RUNAWAY</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
@@ -158,7 +181,7 @@
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/differentpriorities.jfif" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/differentpriorities.jfif" alt="Different Priorities Ft. T$moke" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">DIFFERENT PRIORITIES FT. T$MOKE</h3>
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
@@ -173,7 +196,7 @@
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/iwonder.jfif" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/iwonder.jfif" alt="I Wonder Ft. Lil Perky" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">I WONDER FT. LIL PERKY</h3>
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
@@ -188,7 +211,7 @@
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/3.am.jfif" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/releases/3.am.jfif" alt="3.A.M" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">3.A.M</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
@@ -276,8 +299,15 @@
     <footer class="bg-black border-t border-red-900/50 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
-            <a href="#" class="text-3xl font-extrabold tracking-widest text-red-500 hover:text-white transition duration-300 block mb-6">
-                YOUNGDOLLAZZ
+            <!-- Updated Logo in Footer -->
+            <!-- Changed object-cover to object-contain -->
+            <a href="#" class="block mb-6">
+                <img 
+                    src="assets/favicon.png" 
+                    onerror="this.onerror=null; this.src='assets/favicon.png';" 
+                    alt="YoungDollazz Logo" 
+                    class="w-13 h-13 object-contain shadow-lg mx-auto transition duration-500"
+                >
             </a>
 
             <!-- Social Media Icons (PNG Images used for consistency) -->
