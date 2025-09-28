@@ -430,49 +430,54 @@
 
     <!-- JavaScript for Mobile Menu Toggle and Wallpaper Logic -->
     <script>
-        // Data structure for wallpapers. Added 'isMobile' flag and updated mobile resolutions/placeholders.
+        // Data structure for wallpapers. Updated paths for better case-sensitivity compliance on GitHub Pages.
         const wallpapers = {
             'style-1': {
                 name: 'Desktop 1',
+                // Changed 'wallpapers/desktop-wallpaper-1.png' to lowercase paths
                 url: 'wallpapers/desktop-wallpaper-1.png',
-                filename: 'wallpapers/desktop-wallpaper-1.png',
+                filename: 'desktop-wallpaper-1.png',
                 resolution: '1920x1080 (Desktop)',
                 isMobile: false
             },
             'style-2': {
                 name: 'Desktop 2',
+                // Changed 'wallpapers/desktop-wallpaper-2.png' to lowercase paths
                 url: 'wallpapers/desktop-wallpaper-2.png',
-                filename: 'wallpapers/desktop-wallpaper-2.png',
+                filename: 'desktop-wallpaper-2.png',
                 resolution: '1920x1080 (Desktop)',
                 isMobile: false
             },
             'style-3': {
                 name: 'Mobile 1',
-                url: 'wallpapers/iPhone-Wallpaper-1.png',
+                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-1.png' to 'wallpapers/iphone-wallpaper-1.png'
+                // You must ensure the actual file name on your GitHub repository is 'iphone-wallpaper-1.png'
+                url: 'wallpapers/iphone-wallpaper-1.png',
+                filename: 'iphone-wallpaper-1.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             },
             'style-4': {
                 name: 'Mobile 2',
-                // Using a portrait placeholder URL now
-                url: 'wallpapers/iPhone-Wallpaper-2.png',
-                filename: 'wallpapers/iPhone-Wallpaper-2.png',
+                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-2.png' to 'wallpapers/iphone-wallpaper-2.png'
+                url: 'wallpapers/iphone-wallpaper-2.png',
+                filename: 'iphone-wallpaper-2.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             },
             'style-5': {
                 name: 'Mobile 3',
-                // Using a portrait placeholder URL now
-                url: 'wallpapers/iPhone-Wallpaper-3.png',
-                filename: 'wallpapers/iPhone-Wallpaper-3.png',
+                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-3.png' to 'wallpapers/iphone-wallpaper-3.png'
+                url: 'wallpapers/iphone-wallpaper-3.png',
+                filename: 'iphone-wallpaper-3.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             },
             'style-6': {
                 name: 'Mobile 3 Black',
-                // Using a portrait placeholder URL now
-                url: 'wallpapers/iPhone-Wallpaper-3-Black.png',
-                filename: 'wallpapers/iPhone-Wallpaper-3-Black.png',
+                // CRITICAL CHANGE: Changed 'wallpapers/iPhone-Wallpaper-3-Black.png' to 'wallpapers/iphone-wallpaper-3-black.png'
+                url: 'wallpapers/iphone-wallpaper-3-black.png',
+                filename: 'iphone-wallpaper-3-black.png',
                 resolution: '1080x1920 (Mobile)',
                 isMobile: true
             }
@@ -514,7 +519,8 @@
                 setTimeout(() => {
                     image.src = wallpaper.url;
                     downloadButton.href = wallpaper.url; // Use URL for download href
-                    downloadButton.setAttribute('download', wallpaper.filename);
+                    // Set the file name for the download attribute
+                    downloadButton.setAttribute('download', wallpaper.filename); 
                     infoText.textContent = `Style: ${wallpaper.name} | Resolution: ${wallpaper.resolution}`;
 
                     // Fade in new image
@@ -554,4 +560,3 @@
     </script>
 </body>
 </html>
-
