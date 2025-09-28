@@ -66,6 +66,8 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Music</a>
                     <a href="#news" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">News</a>
+                    <!-- New Wallpaper Link -->
+                    <a href="#wallpapers" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Wallpapers</a>
                 </nav>
                 
                 <!-- Mobile Menu Button (Hamburger) - Remains on the far right on mobile -->
@@ -80,12 +82,14 @@
 
             </div>
         </div>
-        <!-- Mobile Menu (Hidden by default) - Updated to point to #featured-releases -->
+        <!-- Mobile Menu (Hidden by default) - Updated to include Wallpapers -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-red-900/50">
             <a href="#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Releases</a>
             <a href="#albums" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Albums</a>
             <a href="#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Music</a>
             <a href="#news" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">News</a>
+            <!-- New Wallpaper Link for Mobile -->
+            <a href="#wallpapers" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Wallpapers</a>
         </div>
     </header>
 
@@ -272,6 +276,58 @@
                 </div>
             </div>
         </section>
+
+        <!-- Wallpapers Section (NEW) -->
+        <section id="wallpapers" class="py-16 md:py-24 border-b border-red-900/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-8 text-white">Wallpapers</h2>
+                <p class="text-lg text-gray-400 mb-12">Download official YoungDollazz artwork for your desktop and mobile devices.</p>
+
+                <div class="max-w-xl mx-auto">
+                    <!-- Dropdown and Wallpaper Display -->
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
+                        <label for="wallpaper-select" class="text-xl font-medium text-white whitespace-nowrap">Choose Style:</label>
+                        <select 
+                            id="wallpaper-select" 
+                            class="w-full md:w-64 p-3 bg-gray-800 border border-red-700 text-white rounded-lg shadow-xl focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-200 cursor-pointer"
+                            onchange="updateWallpaper()"
+                        >
+                            <option value="" disabled selected>Select a Wallpaper</option>
+                            <option value="style-1">Desktop 1</option>
+                            <option value="style-2">Desktop 2</option>
+                            <option value="style-3">Mobile 1</option>
+                            <option value="style-4">Mobile 2</option>
+                            <option value="style-5">Mobile 3</option>
+                            <option value="style-6">Mobile 3 Black</option>
+                        </select>
+                    </div>
+
+                    <!-- Wallpaper Display Card -->
+                    <!-- Added mx-auto for better centering of the potentially smaller mobile card on desktop -->
+                    <div id="wallpaper-card" class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 hidden mx-auto">
+                        <!-- Aspect Container: Added ID for JS manipulation -->
+                        <div id="wallpaper-aspect-container" class="aspect-video w-full overflow-hidden rounded-lg mb-6 border border-gray-700">
+                            <!-- Image will be displayed here -->
+                            <img id="wallpaper-image" src="" alt="Selected Wallpaper" class="w-full h-full object-cover transition-opacity duration-500 opacity-0" 
+                                onerror="this.onerror=null; this.src='https://placehold.co/1280x720/1f2937/d1d5db?text=Image+Not+Found';"
+                            >
+                        </div>
+                        
+                        <!-- Download Button -->
+                        <a id="download-button" href="#" download="youngdollazz_wallpaper.jpg" class="inline-block w-full px-8 py-3 text-xl font-bold bg-red-700 text-white rounded-full shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-[1.01] active:scale-98">
+                            Download Image
+                        </a>
+                        <p id="wallpaper-info" class="mt-4 text-sm text-gray-400"></p>
+                    </div>
+
+                    <div id="wallpaper-placeholder" class="p-8 bg-[#222] rounded-xl shadow-xl shadow-red-900/50">
+                        <p class="text-xl text-gray-400">Select a style from the dropdown menu to view a wallpaper.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         
         <!-- Music Section -->
         <section id="music" class="py-16 md:py-24 border-b border-gray-800">
@@ -361,19 +417,127 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu Toggle and Wallpaper Logic -->
     <script>
+        // Data structure for wallpapers. Added 'isMobile' flag and updated mobile resolutions/placeholders.
+        const wallpapers = {
+            'style-1': {
+                name: 'Desktop 1',
+                url: 'wallpapers/desktop-wallpaper-1.png',
+                filename: 'wallpapers/desktop-wallpaper-1.png',
+                resolution: '1920x1080 (Desktop)',
+                isMobile: false
+            },
+            'style-2': {
+                name: 'Desktop 2',
+                url: 'wallpapers/desktop-wallpaper-2.png',
+                filename: 'wallpapers/desktop-wallpaper-2.png',
+                resolution: '1920x1080 (Desktop)',
+                isMobile: false
+            },
+            'style-3': {
+                name: 'Mobile 1',
+                url: 'wallpapers/iPhone-wallpaper.png',
+                filename: 'wallpapers/iPhone-wallpaper.png',
+                resolution: '1080x1920 (Mobile)',
+                isMobile: true
+            },
+            'style-4': {
+                name: 'Mobile 2',
+                // Using a portrait placeholder URL now
+                url: 'wallpapers/iPhone-wallpaper-2.png',
+                filename: 'wallpapers/iPhone-wallpaper-2.png',
+                resolution: '1080x1920 (Mobile)',
+                isMobile: true
+            },
+            'style-5': {
+                name: 'Mobile 3',
+                // Using a portrait placeholder URL now
+                url: 'wallpapers/iPhone-wallpaper-3.png',
+                filename: 'wallpapers/iPhone-wallpaper-3.png',
+                resolution: '1080x1920 (Mobile)',
+                isMobile: true
+            },
+            'style-6': {
+                name: 'Mobile 3 Black',
+                // Using a portrait placeholder URL now
+                url: 'wallpapers/iPhone-wallpaper-3-black.png',
+                filename: 'wallpapers/iPhone-wallpaper-3-black.png',
+                resolution: '1080x1920 (Mobile)',
+                isMobile: true
+            }
+        };
+
+        function updateWallpaper() {
+            const select = document.getElementById('wallpaper-select');
+            const image = document.getElementById('wallpaper-image');
+            const card = document.getElementById('wallpaper-card');
+            const placeholder = document.getElementById('wallpaper-placeholder');
+            const downloadButton = document.getElementById('download-button');
+            const infoText = document.getElementById('wallpaper-info');
+            // NEW: Get the aspect container
+            const aspectContainer = document.getElementById('wallpaper-aspect-container');
+            
+            const selectedStyle = select.value;
+            
+            if (selectedStyle && wallpapers[selectedStyle]) {
+                const wallpaper = wallpapers[selectedStyle];
+                
+                // --- LOGIC FOR ASPECT RATIO AND MOBILE PREVIEW SIZE ---
+                // Toggle aspect ratio classes based on 'isMobile' flag
+                aspectContainer.classList.toggle('aspect-[9/16]', wallpaper.isMobile);
+                aspectContainer.classList.toggle('aspect-video', !wallpaper.isMobile);
+                
+                // Toggle the card's maximum width for a realistic mobile preview size on desktop
+                card.classList.toggle('md:max-w-xs', wallpaper.isMobile);
+                // --- END LOGIC ---
+
+                // Hide placeholder, show card
+                placeholder.classList.add('hidden');
+                card.classList.remove('hidden');
+
+                // Fade out current image
+                image.classList.remove('opacity-100');
+                image.classList.add('opacity-0');
+
+                // Update image source and metadata after a short delay for the fade effect
+                setTimeout(() => {
+                    image.src = wallpaper.url;
+                    downloadButton.href = wallpaper.url; // Use URL for download href
+                    downloadButton.setAttribute('download', wallpaper.filename);
+                    infoText.textContent = `Style: ${wallpaper.name} | Resolution: ${wallpaper.resolution}`;
+
+                    // Fade in new image
+                    image.onload = () => {
+                        image.classList.remove('opacity-0');
+                        image.classList.add('opacity-100');
+                    };
+                    // Handle case where image might be cached and onload doesn't fire
+                    if (image.complete) {
+                        image.classList.remove('opacity-0');
+                        image.classList.add('opacity-100');
+                    }
+                }, 100); // Small delay to allow fade out
+                
+            } else {
+                // No wallpaper selected
+                card.classList.add('hidden');
+                placeholder.classList.remove('hidden');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
             menuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
-                // Close menu when a link is clicked
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
+            });
+
+            // Close menu when a mobile link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
                 });
             });
         });
