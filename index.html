@@ -264,8 +264,7 @@
             </div>
         </section>
 
-        <!-- Albums Section (NEW) -->
-        <!-- Updated border-b from red-900/50 to blue-900/50 -->
+        <!-- Albums Section (MODIFIED) -->
         <section id="albums" class="py-16 md:py-24 border-b border-blue-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Albums</h2>
@@ -273,34 +272,54 @@
                 <!-- Album Grid (Centered, 1 column on mobile, 2 on medium screens) -->
                 <div class="flex flex-col items-center md:flex-row md:justify-center gap-8 md:gap-12 max-w-2xl mx-auto">
                     
-                    <!-- Album Item 1: Ten Toez (NO BORDER-RADIUS on the card or image) -->
-                    <!-- Updated shadow-2xl shadow-red-900/50 to shadow-2xl shadow-blue-900/50 -->
-                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <!-- Album Item 1: Ten Toez (MODIFIED) -->
+                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group rounded-xl">
                         <!-- Cover Image Container (Square look) -->
-                        <div class="aspect-square overflow-hidden mb-4">
+                        <div class="aspect-square overflow-hidden mb-4 rounded-lg">
                             <img src="assets/banners/tentoez.jfif" alt="Ten Toez Album Cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">TEN TOEZ</h3>
                         <p class="text-sm text-gray-400 mb-4">Album (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="#" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
-                            COMING SOON
-                        </a>
+                        <!-- NEW: Dual Action Buttons -->
+                        <div class="flex space-x-2">
+                            <!-- Link to show the song list modal, passing the album key -->
+                            <button 
+                                onclick="showSongListModal('ten-toez')" 
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-white border border-blue-600 rounded-full hover:bg-blue-700 transition duration-300 active:scale-98"
+                            >
+                                View Song List
+                            </button>
+                            <!-- Main album action button -->
+                            <a href="#" class="flex-1 px-4 py-2 text-sm font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98 text-center">
+                                COMING SOON
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <!-- Album Item 2: DOLLAZZ WORLD (MODIFIED) -->
+                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group rounded-xl">
                         <!-- Cover Image Container (Square look) -->
-                        <div class="aspect-square overflow-hidden mb-4">
-                            <img src="assets/banners/dollazzworld.jfif" alt="Ten Toez Album Cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                        <div class="aspect-square overflow-hidden mb-4 rounded-lg">
+                            <img src="assets/banners/dollazzworld.jfif" alt="Dollazz World Album Cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">DOLLAZZ WORLD</h3>
                         <p class="text-sm text-gray-400 mb-4">Album (2026)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="#" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
-                            COMING 2026
-                        </a>
+                        <!-- NEW: Dual Action Buttons -->
+                        <div class="flex space-x-2">
+                            <!-- Link to show the song list modal, passing the album key -->
+                            <button 
+                                onclick="showSongListModal('dollazz-world')" 
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-white border border-blue-600 rounded-full hover:bg-blue-700 transition duration-300 active:scale-98"
+                            >
+                                View Song List
+                            </button>
+                            <!-- Main album action button -->
+                            <a href="#" class="flex-1 px-4 py-2 text-sm font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98 text-center">
+                                COMING 2026
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Add more album items here if needed -->
@@ -460,6 +479,32 @@
         </div>
     </footer>
 
+    <!-- NEW: Song List Modal Structure -->
+    <div id="song-list-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" onclick="closeModal()">
+        <!-- Darkened Backdrop (Clicking this closes the modal) -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+        <!-- Modal Content Container -->
+        <!-- Stop propagation prevents clicking inside the content from closing the modal -->
+        <div class="relative bg-[#1a1a1a] rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 p-6 sm:p-8" onclick="event.stopPropagation()">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition duration-300 z-10 p-2 rounded-full hover:bg-[#2a2a2a]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Modal Title -->
+            <h3 id="modal-album-title" class="text-3xl font-bold text-white mb-6 pr-10 border-b border-blue-900/50 pb-2">Tracklist</h3>
+            
+            <!-- Song List (Dynamically Populated) -->
+            <div id="modal-song-list" class="space-y-3">
+                <!-- Dynamic song items will be inserted here -->
+            </div>
+
+        </div>
+    </div>
+    <!-- END NEW: Song List Modal Structure -->
+
     <!-- JavaScript for Mobile Menu Toggle and Wallpaper Logic (REVISED) -->
     <script>
         // Data structure for wallpapers.
@@ -508,7 +553,112 @@
             }
         };
 
-        // NEW: Get an array of wallpaper keys and the initial index
+        // NEW: Album Data Structure for Modal Population
+        const albumsData = {
+            'ten-toez': {
+                title: 'TEN TOEZ',
+                songs: [
+                    { title: 'ALL FOR YOU', streamLink: 'https://www.youtube.com/watch?v=MO2uvg47F8U', isAvailable: true },
+                    { title: 'Dirty Diana Ft Lil Perky', streamLink: 'https://www.youtube.com/watch?v=_gbRTLxeeO0&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=2', isAvailable: true },
+                    { title: 'Story Of A Young Nigga', streamLink: 'https://www.youtube.com/watch?v=arn9ElkQedE', isAvailable: false },
+                    { title: 'Cold Killa', streamLink: '#', isAvailable: false },
+                    { title: 'Did It Again', streamLink: 'https://www.youtube.com/watch?v=ROCK8V4hFY4&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=5', isAvailable: true },
+                    { title: 'Peaceful Nights', streamLink: '#', isAvailable: false },
+                    { title: 'Money Called', streamLink: '#', isAvailable: false },
+                    { title: 'Independant', streamLink: '#', isAvailable: false },
+                ]
+            },
+            'dollazz-world': {
+                title: 'DOLLAZZ WORLD',
+                songs: [
+                    { title: 'VACATION', streamLink: '#', isAvailable: false },
+                    { title: '20 MINS', streamLink: 'https://www.youtube.com/watch?v=nu2ilDZtYVU', isAvailable: false },
+                ]
+            }
+        };
+
+        /**
+         * Opens the modal and populates it with the song list for the given album key.
+         * @param {string} albumKey The key matching an album in albumsData.
+         */
+        function showSongListModal(albumKey) {
+            const album = albumsData[albumKey];
+            if (!album) {
+                console.error('Album data not found for key:', albumKey);
+                return;
+            }
+
+            const modal = document.getElementById('song-list-modal');
+            const modalTitle = document.getElementById('modal-album-title');
+            const songListContainer = document.getElementById('modal-song-list');
+            const modalContent = modal.querySelector('.relative');
+
+            // Set modal title
+            modalTitle.textContent = album.title + ' Tracklist';
+            
+            // Build song list HTML
+            let songListHtml = '';
+            album.songs.forEach((song, index) => {
+                const trackNumber = index + 1;
+                
+                let streamButtonHtml;
+                if (song.isAvailable) {
+                    // Available song: Stream button
+                    streamButtonHtml = `
+                        <a href="${song.streamLink}" target="_blank" class="px-3 py-1 text-xs font-bold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-95 whitespace-nowrap">
+                            STREAM
+                        </a>
+                    `;
+                } else {
+                    // Unavailable song: Placeholder text
+                    streamButtonHtml = `<span class="text-xs text-gray-500 font-medium">Coming Soon</span>`;
+                }
+                
+                songListHtml += `
+                    <div class="flex justify-between items-center p-3 bg-[#2a2a2a] rounded-lg shadow-inner border border-gray-700 hover:border-blue-500 transition duration-300">
+                        <div class="flex-1 truncate">
+                            <span class="text-sm font-light text-gray-400 mr-2">${trackNumber}.</span>
+                            <span class="text-base font-medium text-white">${song.title}</span>
+                        </div>
+                        <div class="ml-4">
+                            ${streamButtonHtml}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            songListContainer.innerHTML = songListHtml;
+
+            // Show modal with transition
+            modal.classList.remove('hidden');
+            modal.classList.add('flex'); // Start visible as flex
+            // Trigger transition after brief delay
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+        }
+
+        /**
+         * Closes the song list modal with a transition.
+         */
+        function closeModal() {
+            const modal = document.getElementById('song-list-modal');
+            const modalContent = modal.querySelector('.relative');
+            
+            // Start transition
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            // Hide modal after transition completes (300ms)
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                // Clear content to reset state
+                document.getElementById('modal-song-list').innerHTML = '';
+                document.getElementById('modal-album-title').textContent = '';
+            }, 300);
+        }
+
+        // Wallpaper logic (original code)
         const wallpaperKeys = Object.keys(wallpapers);
         let currentWallpaperIndex = 0; // Start with the first wallpaper
 
