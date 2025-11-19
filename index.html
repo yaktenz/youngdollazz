@@ -25,7 +25,7 @@
             background-color: rgba(12, 14, 13); /* Main body background color */
             /* Custom scrollbar styles for Firefox */
             /* Updated scrollbar color from red to a light blue (#3b82f6 is blue-500) */
-            scrollbar-color: #3b82f6 #1f2937; 
+            scrollbar-color: #ff0000 #37371f; 
             scrollbar-width: thin;
         }
 
@@ -37,7 +37,7 @@
             background: #1f2937; /* Gray-800 track */
         }
         ::-webkit-scrollbar-thumb {
-            background-color: #3b82f6; /* Blue-500 thumb */
+            background-color: #ff6666; /* Blue-500 thumb */
             border-radius: 20px;
             border: 3px solid rgba(12, 14, 13); /* Border matching new body background */
         }
@@ -51,7 +51,7 @@
 <body class="text-white min-h-screen antialiased">
 
     <!-- Updated Header: border-b from red-900/50 to blue-900/50 -->
-    <header class="sticky top-0 z-50 bg-[#111] shadow-xl border-b border-blue-900/50">
+    <header id="main-header" class="sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Updated Flex container for Centered Logo and Distributed Links -->
             <div class="flex items-center justify-between h-20 md:justify-around">
@@ -94,30 +94,30 @@
             </div>
         </div>
         <!-- Mobile Menu (Hidden by default) - Updated border-t from red-900/50 to blue-900/50 -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-blue-900/50">
-            <a href="#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Releases</a>
-            <a href="#albums" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Albums</a>
-            <a href="#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-gray-800 hover:text-white">Music</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-red-900/50">
+            <a href="#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Releases</a>
+            <a href="#albums" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Albums</a>
+            <a href="#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Music</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section: Latest Release -->
-        <section id="hero" class="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-40 bg-cover bg-center" style="background-image: url('assets/banners/banner.jpg');">
+        <section id="hero" class="relative overflow-hidden pb-24 md:pb-40 bg-cover bg-center" style="background-image: url('assets/banners/banner.jpg');">
             <!-- Overlay for contrast -->
             <div class="absolute inset-0 bg-black/70"></div>
 
-            <div class="relative max-w-4xl mx-auto px-4 text-center z-10">
+            <div class="relative max-w-4xl mx-auto px-4 text-center z-10 pt-20 md:pt-32">
                 <!-- Updated text color from red-500 to blue-500 -->
-                <p class="text-xl font-semibold text-blue-500 uppercase tracking-widest mb-4">New Release</p>
-                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-shadow-lg">
+                <p class="text-xl font-semibold text-red-500 uppercase tracking-widest mb-4">New Release</p>
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-shadow-lg mt-4">
                     ALL FOR YOU
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
                     Out Now, All My Platforms
                 </p>
                 <!-- Updated button colors from red-700/red-600 to blue-700/blue-600 -->
-                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 active:scale-95">
+                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-red-700 text-white rounded-full shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-105 active:scale-95">
                     STREAM NOW
                 </a>
             </div>
@@ -125,7 +125,7 @@
 
         <!-- Featured Releases Section (NEW MULTI-COLUMN LAYOUT) -->
         <!-- Updated border-b from red-900/50 to blue-900/50 -->
-        <section id="featured-releases" class="py-16 md:py-24 border-b border-blue-900/50">
+        <section id="featured-releases" class="py-16 md:py-24 border-b border-red-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Releases</h2>
 
@@ -134,22 +134,22 @@
                     
                     <!-- Release Item 1: ALL FOR YOU -->
                     <!-- Updated shadow-2xl shadow-red-900/50 to shadow-2xl shadow-blue-900/50 -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <img src="assets/releases/allforyou.png" alt="ALL FOR YOU" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/banners/diditagain.png" alt="ALL FOR YOU" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">ALL FOR YOU</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
                     <!-- Release Item 2: Another Placeholder Release -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -159,27 +159,27 @@
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
-                            <img src="assets/releases/shipmentteam.jfif" alt="Shipment Team" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                            <img src="assets/banners/diditagain.png" alt="Go Buy a Ounce" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">SHIPMENT TEAM</h3>
-                        <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
+                        <h3 class="text-xl font-bold text-white mb-2">GO BUY A OUNCE</h3>
+                        <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=nu2ilDZtYVU" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=hpap0_wac1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -189,12 +189,12 @@
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=arn9ElkQedE" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=arn9ElkQedE" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -204,12 +204,12 @@
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=tJLZql-GcBI" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=tJLZql-GcBI" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -219,12 +219,12 @@
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=WtPlvOPYb1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=WtPlvOPYb1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -234,13 +234,13 @@
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
                     
                     <!-- Release Item 3: Older Single Placeholder -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
                             <!-- Placeholder image for demonstration. Replace with actual asset. -->
@@ -250,7 +250,7 @@
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
                         <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
-                        <a href="https://www.youtube.com/watch?v=_gbRTLxeeO0" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98">
+                        <a href="https://www.youtube.com/watch?v=_gbRTLxeeO0" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
@@ -259,14 +259,14 @@
         </section>
 
         <!-- Albums Section (MODIFIED) -->
-        <section id="albums" class="py-16 md:py-24 border-b border-blue-900/50">
+        <section id="albums" class="py-16 md:py-24 border-b border-red-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Albums</h2>
 
                 <!-- Album Grid (Centered, 1 column on mobile, 2 on medium screens) -->
                 <div class="flex flex-col items-center md:flex-row md:justify-center gap-8 md:gap-12 max-w-2xl mx-auto">
                     
-                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-blue-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group rounded-xl">
+                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group rounded-xl">
                         <div class="aspect-square overflow-hidden mb-4 rounded-lg">
                             <img src="assets/banners/diditagain.png" alt="Did It Again" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
@@ -278,12 +278,12 @@
                             <!-- Link to show the song list modal, passing the album key -->
                             <button 
                                 onclick="showSongListModal('ten-toez')" 
-                                class="flex-1 px-4 py-2 text-sm font-semibold text-white border border-blue-600 rounded-full hover:bg-blue-700 transition duration-300 active:scale-98"
+                                class="flex-1 px-4 py-2 text-sm font-semibold text-white border border-red-600 rounded-full hover:bg-blue-700 transition duration-300 active:scale-98"
                             >
                                 View Song List
                             </button>
                             <!-- Main album action button -->
-                            <a href="https://youtube.com/playlist?list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&si=AldRcwm0WSZmu5jJ" class="flex-1 px-4 py-2 text-sm font-semibold bg-blue-700 text-white rounded-full hover:bg-blue-600 transition duration-300 active:scale-98 text-center">
+                            <a href="https://youtube.com/playlist?list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&si=AldRcwm0WSZmu5jJ" class="flex-1 px-4 py-2 text-sm font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98 text-center">
                                 Stream Now
                             </a>
                         </div>
@@ -296,7 +296,7 @@
         </section>
         
         <!-- Music Section -->
-        <section id="music" class="py-16 md:py-24 border-b border-gray-800">
+        <section id="music" class="py-16 md:py-24 border-b border-red-800">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Listen Anywhere</h2>
                 
@@ -644,6 +644,21 @@
                 displayWallpaper(currentWallpaperIndex);
             }
         });
+
+        // NEW: Navbar background on scroll
+        document.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (window.scrollY > 10) {
+                header.classList.add('bg-[#111]', 'shadow-xl', 'border-b', 'border-blue-900/50');
+                mobileMenu.classList.add('bg-black/90'); // Ensure mobile menu gets a background
+            } else {
+                header.classList.remove('bg-[#111]', 'shadow-xl', 'border-b', 'border-blue-900/50');
+                mobileMenu.classList.remove('bg-black/90');
+            }
+        });
+
     </script>
 </body>
 </html>
