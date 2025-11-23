@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoungDollazz | Links</title>
+    <link rel="icon" type="image/x-icon" href="assets/webicon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font: Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0e0d; /* Matches main site */
+            color: white;
+            /* Custom scrollbar styles */
+            scrollbar-color: #ff0000 #37371f; 
+            scrollbar-width: thin;
+        }
+
+        /* Custom scrollbar styles for Webkit browsers */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ff6666; 
+            border-radius: 20px;
+            border: 3px solid rgba(12, 14, 13);
+        }
+
+        /* Animation for the background gradient */
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #0c0e0d, #1a0505, #2b0b0b, #0c0e0d);
+            background-size: 400% 400%;
+            animation: gradient-move 15s ease infinite;
+        }
+
+        /* Glassmorphism effect for the card */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Link Hover Animation */
+        .link-item {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .link-item:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col animated-bg selection:bg-red-500 selection:text-white">
+
+    <!-- Header / Navbar (Imported from index.html) -->
+    <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 md:justify-around">
+                
+                <!-- Left Links (Hidden on Mobile) -->
+                <nav class="hidden md:flex space-x-8">
+                    <!-- Updated hrefs to point back to index.html -->
+                    <a href="index.html#featured-releases" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Releases</a>
+                    <a href="index.html#albums" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Albums</a>
+                </nav>
+
+                <!-- Logo/Artist Image (Centered on Desktop) -->
+                <div class="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 md:relative md:left-auto md:transform-none">
+                    <a href="index.html" class="block p-1 transition duration-500">
+                        <img 
+                            src="assets/favicon.png" 
+                            onerror="this.onerror=null; this.src='assets/favicon.png';" 
+                            alt="YoungDollazz Logo" 
+                            class="w-19 h-10 object-contain shadow-lg"
+                        >
+                    </a>
+                </div>
+                
+                <!-- Right Links (Hidden on Mobile) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Music</a>
+                    <a href="social.html" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Social</a>
+                </nav>
+                
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button" class="md:hidden text-white hover:text-blue-500 focus:outline-none" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+
+                <!-- Spacer div for mobile layout -->
+                <div class="w-16 h-16 md:hidden"></div>
+
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-red-900/50">
+            <a href="index.html#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Releases</a>
+            <a href="index.html#albums" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Albums</a>
+            <a href="index.html#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Music</a>
+            <a href="social.html" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Social</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container (Centered) -->
+    <main class="flex-grow flex items-center justify-center p-4 py-12">
+        <div class="w-full max-w-md mx-auto">
+            
+            <!-- Profile Header -->
+            <div class="flex flex-col items-center mb-8 text-center">
+                <!-- Profile Image / Logo -->
+                <div class="relative w-24 h-24 mb-4">
+                    <div class="absolute inset-0 bg-red-600 rounded-full blur-md opacity-50 animate-pulse"></div>
+                    <img 
+                        src="assets/webicon.png" 
+                        onerror="this.onerror=null; this.src='https://via.placeholder.com/150/000000/FFFFFF?text=YD';" 
+                        alt="YoungDollazz" 
+                        class="relative w-full h-full rounded-full object-contain border-2 border-red-900/50 bg-black shadow-2xl"
+                    >
+                </div>
+                
+                <!-- Name & Tagline -->
+                <h1 class="text-2xl font-black tracking-tight mb-1">YOUNGDOLLAZZ</h1>
+                <p class="text-gray-400 text-sm font-medium tracking-wide uppercase">Did It Again</p>
+            </div>
+
+            <!-- Links Stack -->
+            <div class="flex flex-col space-y-4">
+
+                <!-- Priority Link: Latest Release -->
+                <a href="https://www.youtube.com/watch?v=r3LEqIbJ4mY&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=11" target="_blank" class="link-item relative group overflow-hidden rounded-xl p-[1px]">
+                    <!-- Animated Border Gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-900 opacity-80 group-hover:opacity-100 transition duration-500"></div>
+                    
+                    <!-- Button Content -->
+                    <div class="relative flex items-center justify-between bg-[#111] group-hover:bg-opacity-90 px-5 py-4 rounded-[10px] transition h-full">
+                        <div class="flex items-center space-x-4">
+                            <!-- Tiny Thumbnail for 'Geeked' -->
+                            <img src="assets/banners/banner.jpg" class="w-10 h-10 rounded object-cover shadow-sm" alt="Geeked">
+                            <div class="flex flex-col text-left">
+                                <span class="font-bold text-white">LATEST RELEASE: GEEKED</span>
+                                <span class="text-xs text-red-400">Watch Video</span>
+                            </div>
+                        </div>
+                        <!-- Icon -->
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+                <!-- Standard Link: Official Site -->
+                <a href="index.html" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-red-500/50 group">
+                    <svg class="w-5 h-5 text-gray-300 group-hover:text-red-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="font-semibold">Official Website</span>
+                </a>
+
+                <!-- Standard Link: YouTube -->
+                <a href="https://www.youtube.com/@YoungDollazz1700" target="_blank" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-red-500/50 group">
+                    <img src="assets/yt.png" class="w-6 h-6 rounded-full" alt="YT">
+                    <span class="font-semibold">Subscribe on YouTube</span>
+                </a>
+
+                <!-- Standard Link: SoundCloud -->
+                <a href="https://soundcloud.com/youngdollazz1700" target="_blank" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-orange-500/50 group">
+                    <img src="assets/soundcloud.png" class="w-6 h-6 rounded-full" alt="SC">
+                    <span class="font-semibold">Stream on SoundCloud</span>
+                </a>
+
+                <!-- Standard Link: BandLab -->
+                <a href="https://www.bandlab.com/youngdollazz1700" target="_blank" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-blue-500/50 group">
+                    <img src="assets/bandlab.png" class="w-6 h-6 rounded-full" alt="BL">
+                    <span class="font-semibold">Follow on BandLab</span>
+                </a>
+            </div>
+
+            <!-- Footer Socials (Matched with index.html assets) -->
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="https://www.bandlab.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="BandLab">
+                    <img src="assets/bandlab.png" alt="BandLab" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-blue-500">
+                </a>
+                <a href="https://soundcloud.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="SoundCloud">
+                    <img src="assets/soundcloud.png" alt="SoundCloud" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-orange-500">
+                </a>
+                <a href="https://www.youtube.com/@YoungDollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="YouTube">
+                    <img src="assets/yt.png" alt="YouTube" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
+                </a>
+            </div>
+
+            <!-- Branding Footer -->
+            <div class="mt-8 text-center">
+                <img src="assets/favicon.png" class="w-8 h-8 mx-auto mb-2 opacity-50 grayscale" alt="Logo">
+                <p class="text-xs text-gray-600 font-medium">© 2025 YOUNGDOLLAZZ</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts for Navbar functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when a mobile link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+
+        // Navbar background on scroll
+        document.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (window.scrollY > 10) {
+                header.classList.add('bg-[#111]', 'shadow-xl', 'border-b', 'border-red-900/50');
+                if(mobileMenu) mobileMenu.classList.add('bg-black/90');
+            } else {
+                header.classList.remove('bg-[#111]', 'shadow-xl', 'border-b', 'border-red-900/50');
+                if(mobileMenu) mobileMenu.classList.remove('bg-black/90');
+            }
+        });
+    </script>
+
+</body>
+</html>
