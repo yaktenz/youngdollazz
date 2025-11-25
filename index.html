@@ -24,7 +24,6 @@
             font-family: 'Inter', sans-serif;
             background-color: rgba(12, 14, 13); /* Main body background color */
             /* Custom scrollbar styles for Firefox */
-            /* Updated scrollbar color from red to a light blue (#3b82f6 is blue-500) */
             scrollbar-color: #ff0000 #37371f; 
             scrollbar-width: thin;
         }
@@ -77,12 +76,12 @@
                 
                 <!-- Right Links (Hidden on Mobile) -->
                 <nav class="hidden md:flex space-x-8">
+                    <!-- Added Merch Link here -->
                     <a href="#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Music</a>
                     <a href="social.html" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Social</a>
                 </nav>
                 
                 <!-- Mobile Menu Button (Hamburger) - Remains on the far right on mobile -->
-                <!-- Updated hover:text-red-500 to hover:text-blue-500 -->
                 <button id="mobile-menu-button" class="md:hidden text-white hover:text-blue-500 focus:outline-none" aria-label="Open menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -126,7 +125,6 @@
         </section>
 
         <!-- Featured Releases Section (NEW MULTI-COLUMN LAYOUT) -->
-        <!-- Updated border-b from red-900/50 to blue-900/50 -->
         <section id="featured-releases" class="py-16 md:py-24 border-b border-red-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Releases</h2>
@@ -135,7 +133,6 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                     
                     <!-- Release Item 1: ALL FOR YOU -->
-                    <!-- Updated shadow-2xl shadow-red-900/50 to shadow-2xl shadow-blue-900/50 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
@@ -144,114 +141,97 @@
                         <h3 class="text-xl font-bold text-white mb-2">ALL FOR YOU</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
-                    <!-- Release Item 2: Another Placeholder Release -->
+                    <!-- Release Item 2 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/releases/diditagain.jpg" alt="Did It Again" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">DID IT AGAIN</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
+                    <!-- Release Item 3 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/banners/diditagain.png" alt="Go Buy a Ounce" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">GO BUY A OUNCE</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=hpap0_wac1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
+                    <!-- Release Item 4 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/releases/cantescape.jpg" alt="Cant Escape" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Can't Escape</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://soundcloud.com/youngdollazz1700/cant-escape-prod-rollie?si=cc6be0ed29a344839a48e5e99bfef9f4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-orange-700 text-white rounded-full hover:bg-orange-600 transition duration-300 active:scale-98">
                             STREAM ON SOUNDCLOUD
                         </a>
                     </div>
 
+                    <!-- Release Item 5 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/releases/differentpriorities.jfif" alt="Different Priorities Ft. T$moke" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">DIFFERENT PRIORITIES FT. T$MOKE</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">DIFFERENT PRIORITIES</h3>
                         <p class="text-sm text-gray-400 mb-4">Collab (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=tJLZql-GcBI" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
+                    <!-- Release Item 6 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/releases/iwonder.jfif" alt="I Wonder Ft. Lil Perky" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">I WONDER FT. LIL PERKY</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">I WONDER</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=WtPlvOPYb1o" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
 
+                    <!-- Release Item 7 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/releases/3.am.jfif" alt="3.A.M" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">3.A.M</h3>
                         <p class="text-sm text-gray-400 mb-4">Single (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
                     
-                    <!-- Release Item 3: Older Single Placeholder -->
+                    <!-- Release Item 8 -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <!-- Cover Image -->
                         <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <!-- Placeholder image for demonstration. Replace with actual asset. -->
                             <img src="assets/releases/dirtydiana.png" alt="Placeholder cover" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Dirty Diana</h3>
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
-                        <!-- Stream Button - Updated from red-700/red-600 to blue-700/blue-600 -->
                         <a href="https://www.youtube.com/watch?v=_gbRTLxeeO0" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
@@ -260,7 +240,113 @@
             </div>
         </section>
 
-        <!-- Albums Section (MODIFIED) -->
+         <!-- NEW: Merchandise Section -->
+        <section id="merch" class="py-16 md:py-24 border-b border-red-900/50 bg-[#0f0f0f]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Buy Merchandise</h2>
+                <p class="text-gray-400 mb-12">Shop the Collection</p>
+
+                <!-- Merch Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    
+                    <!-- Merch Item 1 -->
+                    <!-- Link to Purchase Page -->
+                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/did-it-again-x-1700-shirt?product=2&variation=2397" target="_blank" class="block group relative">
+                        <!-- Card Container -->
+                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
+                            
+                            <!-- Image Wrapper (Handles Hover Swap) -->
+                            <div class="relative aspect-[4/5] bg-[#222] overflow-hidden">
+                                <!-- Front Image (Visible by default, fades out on hover) -->
+                                <!-- NOTE: Replace src with your actual image paths -->
+                                <img 
+                                    src="assets/merch/1.jpg" 
+                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
+                                    alt="Merch Front" 
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                                >
+                                
+                                <!-- Back Image (Hidden by default, fades in on hover) -->
+                                <img 
+                                    src="assets/merch/12.jpg" 
+                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
+                                    alt="Merch Back" 
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                                >
+
+                                <!-- Optional 'Shop Now' overlay appearing on hover -->
+                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
+                                </div>
+                            </div>
+
+                            <!-- Info Section -->
+                            <div class="p-4 text-left">
+                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">YoungDollazz Did It Again X 1700 T-Shirt</h3>
+                                <p class="text-gray-400 text-sm">$20.40</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Merch Item 2 -->
+                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/did-it-again-2025-hoodie?product=212&variation=5819" target="_blank" class="block group relative">
+                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
+                            <div class="relative aspect-[4/5] bg-[#222] overflow-hidden">
+                                <img 
+                                    src="assets/merch/22.jpg" 
+                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
+                                    alt="Merch Front" 
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                                >
+                                <img 
+                                    src="assets/merch/2.jpg" 
+                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
+                                    alt="Merch Back" 
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                                >
+                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
+                                </div>
+                            </div>
+                            <div class="p-4 text-left">
+                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">Did It Again 2025 YoungDollazz Hoodie</h3>
+                                <p class="text-gray-400 text-sm">$33.32</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Merch Item 3 -->
+                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/youngdollazz-did-it-again-mug?product=1565&variation=104921" target="_blank" class="block group relative">
+                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
+                            <div class="relative aspect-[4/5] bg-[#222] overflow-hidden">
+                                <img 
+                                    src="assets/merch/3.jpg" 
+                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
+                                    alt="Merch Front" 
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                                >
+                                <img 
+                                    src="assets/merch/33.jpg" 
+                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Side+View'"
+                                    alt="Merch Back" 
+                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                                >
+                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
+                                </div>
+                            </div>
+                            <div class="p-4 text-left">
+                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">YoungDollazz Did It Again Mug</h3>
+                                <p class="text-gray-400 text-sm">$10.99</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Albums Section -->
         <section id="albums" class="py-16 md:py-24 border-b border-red-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Albums</h2>
@@ -288,9 +374,6 @@
                             <a href="https://youtube.com/playlist?list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&si=AldRcwm0WSZmu5jJ" class="flex-1 px-4 py-2 text-sm font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98 text-center">
                                 Stream Now
                             </a>
-                        </div>
-                    </div>
-
                         </div>
                     </div>
                 </div>
@@ -332,17 +415,6 @@
     <!-- Updated border-t from red-900/50 to blue-900/50 -->
     <footer class="bg-black border-t border-red-900/50 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <!-- Updated Logo in Footer -->
-            <!-- Changed object-cover to object-contain -->
-            <a href="#" class="block mb-6">
-                <img 
-                    src="assets/favicon.png" 
-                    onerror="this.onerror=null; this.src='assets/favicon.png';" 
-                    alt="YoungDollazz Logo" 
-                    class="w-13 h-13 object-contain shadow-lg mx-auto transition duration-500"
-                >
-            </a>
 
             <!-- Social Media Icons (PNG Images used for consistency) -->
             <div class="flex justify-center space-x-6 mb-8">
@@ -554,15 +626,23 @@
             // Safety check for index bounds
             if (index < 0 || index >= wallpaperKeys.length) return;
 
-            currentWallpaperIndex = index; // Update the global index
-            const selectedKey = wallpaperKeys[currentWallpaperIndex];
-            const wallpaper = wallpapers[selectedKey];
-            
+            // Get elements first to check existence
             const image = document.getElementById('wallpaper-image');
             const card = document.getElementById('wallpaper-card');
             const downloadButton = document.getElementById('download-button');
             const infoText = document.getElementById('wallpaper-info');
             const aspectContainer = document.getElementById('wallpaper-aspect-container');
+
+            // Guard clause: If any required element is missing, stop to prevent errors
+            // This is crucial because the HTML for the wallpaper section seems to be missing
+            if (!image || !card || !downloadButton || !infoText || !aspectContainer) {
+                console.warn("Wallpaper elements missing from DOM. Skipping wallpaper logic.");
+                return;
+            }
+
+            currentWallpaperIndex = index; // Update the global index
+            const selectedKey = wallpaperKeys[currentWallpaperIndex];
+            const wallpaper = wallpapers[selectedKey];
             
             // --- LOGIC FOR ASPECT RATIO AND MOBILE PREVIEW SIZE ---
             // Set the aspect ratio and max-width based on if it's a mobile wallpaper
@@ -643,7 +723,8 @@
             });
 
             // NEW: Initialize the wallpaper view with the first item on load
-            if (wallpaperKeys.length > 0) {
+            // Check if wallpaper elements exist before initializing to prevent errors if HTML is missing
+            if (wallpaperKeys.length > 0 && document.getElementById('wallpaper-image')) {
                 displayWallpaper(currentWallpaperIndex);
             }
         });
