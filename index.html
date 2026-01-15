@@ -117,15 +117,15 @@
 
             <div class="relative max-w-4xl mx-auto px-4 text-center z-10 pt-20 md:pt-32">
                 <!-- Updated text color from red-500 to blue-500 -->
-                <p class="text-xl font-semibold text-red-500 uppercase tracking-widest mb-4">New Release</p>
+                <p class="text-xl font-semibold text-green-500 uppercase tracking-widest mb-4">New Release</p>
                 <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-shadow-lg mt-4">
-                    GEEKED
+                    WHO I WAS
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
                     Out Now, All My Platforms
                 </p>
                 <!-- Updated button colors from red-700/red-600 to blue-700/blue-600 -->
-                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-red-700 text-white rounded-full shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-105 active:scale-95">
+                <a href="#featured-releases" class="inline-block px-10 py-4 text-xl font-bold bg-green-700 text-white rounded-full shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-105 active:scale-95">
                     STREAM NOW
                 </a>
             </div>
@@ -139,6 +139,20 @@
                 <!-- Grid of Releases (2 columns on mobile, 3 on medium screens) -->
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                     
+
+                    <!-- Release Item 2 -->
+                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                        <div class="aspect-square rounded-lg overflow-hidden mb-4">
+                            <img src="assets/banners/banner.jpg" alt="Did It Again" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">WHO I WAS</h3>
+                        <p class="text-sm text-gray-400 mb-4">Single (2026)</p>
+                        
+                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
+                            STREAM NOW
+                        </a>
+                    </div>
+
                     <!-- Release Item 1: ALL FOR YOU -->
                     <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
                         <!-- Cover Image -->
@@ -149,19 +163,6 @@
                         <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
                         
                         <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
-                            STREAM NOW
-                        </a>
-                    </div>
-
-                    <!-- Release Item 2 -->
-                    <div class="bg-[#222] rounded-xl shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
-                        <div class="aspect-square rounded-lg overflow-hidden mb-4">
-                            <img src="assets/releases/diditagain.jpg" alt="Did It Again" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">DID IT AGAIN</h3>
-                        <p class="text-sm text-gray-400 mb-4">Did It Again (2025)</p>
-                        
-                        <a href="https://www.youtube.com/watch?v=ROCK8V4hFY4" target="_blank" class="inline-block w-full px-4 py-2 text-md font-semibold bg-red-700 text-white rounded-full hover:bg-red-600 transition duration-300 active:scale-98">
                             STREAM NOW
                         </a>
                     </div>
@@ -247,325 +248,6 @@
             </div>
         </section>
 
-         <!-- NEW: Merchandise Section -->
-        <section id="merch" class="py-16 md:py-24 border-b border-red-900/50 bg-[#0f0f0f]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Buy Merchandise</h2>
-                <p class="text-gray-400 mb-12">Shop the Holiday Collection!</p>
-
-                <!-- Merch Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    
-                    <!-- Merch Item 1 -->
-                    <!-- Link to Purchase Page -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/merry-christmas-fn-design-col?product=2&variation=2397" class="block group relative">
-                        <!-- Card Container -->
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            
-                            <!-- Image Wrapper (Handles Hover Swap) -->
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <!-- Front Image (Visible by default, fades out on hover) -->
-                                <!-- NOTE: Replace src with your actual image paths -->
-                                <img 
-                                    src="assets/merch/4.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                
-                                <!-- Back Image (Hidden by default, fades in on hover) -->
-                                <img 
-                                    src="assets/merch/44.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-
-                                <!-- Optional 'Shop Now' overlay appearing on hover -->
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-
-                            <!-- Info Section -->
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">Merry Christmas Fn Designer Collection</h3>
-                                <p class="text-gray-400 text-sm">$15.90</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Merch Item 2 -->
-                    <!-- Link to Purchase Page -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/younggrinchzz-hat?product=794&variation=103544" class="block group relative">
-                        <!-- Card Container -->
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            
-                            <!-- Image Wrapper (Handles Hover Swap) -->
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <!-- Front Image (Visible by default, fades out on hover) -->
-                                <!-- NOTE: Replace src with your actual image paths -->
-                                <img 
-                                    src="assets/merch/7.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                
-                                <!-- Back Image (Hidden by default, fades in on hover) -->
-                                <img 
-                                    src="assets/merch/77.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-
-                                <!-- Optional 'Shop Now' overlay appearing on hover -->
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-
-                            <!-- Info Section -->
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">YoungGrinchzz Merch Collection</h3>
-                                <p class="text-gray-400 text-sm">$4.88</p>
-                            </div>
-                        </div>
-                    </a>
-
-<!-- Merch Item 1 -->
-                    <!-- Link to Purchase Page -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/merry-christmas-fn-design-col?product=212&variation=5819" class="block group relative">
-                        <!-- Card Container -->
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            
-                            <!-- Image Wrapper (Handles Hover Swap) -->
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <!-- Front Image (Visible by default, fades out on hover) -->
-                                <!-- NOTE: Replace src with your actual image paths -->
-                                <img 
-                                    src="assets/merch/6.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                
-                                <!-- Back Image (Hidden by default, fades in on hover) -->
-                                <img 
-                                    src="assets/merch/66.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-
-                                <!-- Optional 'Shop Now' overlay appearing on hover -->
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-
-                            <!-- Info Section -->
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">Merry Christmas Fn Designer Collection</h3>
-                                <p class="text-gray-400 text-sm">$33.32</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Merch Item 1 -->
-                    <!-- Link to Purchase Page -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/merry-christmas-fn-design-col?product=212&variation=5819" class="block group relative">
-                        <!-- Card Container -->
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            
-                            <!-- Image Wrapper (Handles Hover Swap) -->
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <!-- Front Image (Visible by default, fades out on hover) -->
-                                <!-- NOTE: Replace src with your actual image paths -->
-                                <img 
-                                    src="assets/merch/5.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                
-                                <!-- Back Image (Hidden by default, fades in on hover) -->
-                                <img 
-                                    src="assets/merch/55.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-
-                                <!-- Optional 'Shop Now' overlay appearing on hover -->
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-
-                            <!-- Info Section -->
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">Merry Christmas Fn Designer Collection</h3>
-                                <p class="text-gray-400 text-sm">$33.32</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Merch Item 2 -->
-                    <!-- Link to Purchase Page -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/did-it-again-x-1700-shirt?product=2&variation=2397" class="block group relative">
-                        <!-- Card Container -->
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            
-                            <!-- Image Wrapper (Handles Hover Swap) -->
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <!-- Front Image (Visible by default, fades out on hover) -->
-                                <!-- NOTE: Replace src with your actual image paths -->
-                                <img 
-                                    src="assets/merch/1.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                
-                                <!-- Back Image (Hidden by default, fades in on hover) -->
-                                <img 
-                                    src="assets/merch/12.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-
-                                <!-- Optional 'Shop Now' overlay appearing on hover -->
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-
-                            <!-- Info Section -->
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">Did It Again X 1700 T-Shirt</h3>
-                                <p class="text-gray-400 text-sm">$20.40</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Merch Item 3 -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/did-it-again-2025-hoodie?product=212&variation=5819" class="block group relative">
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <img 
-                                    src="assets/merch/22.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                <img 
-                                    src="assets/merch/2.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Back+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">Did It Again 2025 Hoodie</h3>
-                                <p class="text-gray-400 text-sm">$33.32</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Merch Item 4 -->
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/youngdollazz-did-it-again-mug?product=1565&variation=104920" class="block group relative">
-                        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl shadow-red-900/20 hover:shadow-red-900/50 transition-all duration-300">
-                            <div class="relative aspect-square bg-[#222] overflow-hidden">
-                                <img 
-                                    src="assets/merch/3.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/fff?text=Front+View'"
-                                    alt="Merch Front" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                                >
-                                <img 
-                                    src="assets/merch/33.jpg" 
-                                    onerror="this.src='https://placehold.co/600x750/111/red?text=Side+View'"
-                                    alt="Merch Back" 
-                                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                                >
-                                <div class="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <span class="inline-block px-6 py-2 bg-red-700 text-white font-bold rounded-full text-sm shadow-lg">SHOP NOW</span>
-                                </div>
-                            </div>
-                            <div class="p-4 text-left">
-                                <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition-colors">YoungDollazz Did It Again Mug</h3>
-                                <p class="text-gray-400 text-sm">$10.99</p>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW: News Section -->
-        <section id="news" class="py-16 md:py-24 border-b border-red-900/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-white">Latest News</h2>
-
-                <!-- News Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-9xl mx-auto">
-                    
-                    <!-- News Post 1 -->
-                    <div class="bg-[#1a1a1a] rounded-xl shadow-2xl shadow-red-900/30 overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                        <!-- Image container with aspect ratio for screenshot -->
-                        <div class="aspect-video bg-[#222] overflow-hidden">
-                            <a href="assets/banners/ss.png"><img 
-                                src="assets/banners/ss.png" 
-                                alt="News post image" 
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            ></a>
-                        </div>
-                        <!-- Content -->
-                        <div class="p-6 text-left flex flex-col flex-grow">
-                            <p class="text-sm text-gray-400 mb-2">November 26, 2025 (edited)</p>
-                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-500 transition-colors">BandLab Suspended For "Spam"</h3>
-                            <p class="text-gray-300 text-base mb-4 flex-grow">
-                                on Today November 25 2025 my account was suspended by BandLab after updating the link in my bio. Good Job BandLab…
-<br><br>
-Also I won’t be returning to BandLab or releasing any music on the platform again bc thats literally just a waste of time atp but if they unban me it’s all good 💪
-<br><br>
-Edit: BandLab is just having this huge problem where if you change anything on your profile your account gets suspended. This has happened to several people. Making music may be complicated for me now but ill work around it just bandlab has gotta go. Be patient also more music releasing soon!
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- News Post 1 -->
-                    <div class="bg-[#1a1a1a] rounded-xl shadow-2xl shadow-red-900/30 overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                        <!-- Image container with aspect ratio for screenshot -->
-                        <div class="aspect-video bg-[#222] overflow-hidden">
-                            <a href="assets/discord.png"><img 
-                                src="assets/discord.png" 
-                                alt="News post image" 
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            ></a>
-                        </div>
-                        <!-- Content -->
-                        <div class="p-6 text-left flex flex-col flex-grow">
-                            <p class="text-sm text-gray-400 mb-2">November 29, 2025</p>
-                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-500 transition-colors">Join the Discord Server!</h3>
-                            <p class="text-gray-300 text-base mb-4 flex-grow">For a while now ive had my main YouTube channel a Discord. It got a little bit popular. Around 400 memebers as the time of this post. So Join Now! To Chat with me.
-                                <br>Or just get notified of new Releases. This is a Community. Get notified of unreleased music before its released. get chances to play games w me & More!<br><br>
-                                <a class="underlinelink" href="https://discord.gg/a7eNTUaYPh">https://discord.gg/a7eNTUaYPh</a>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
         <!-- Albums Section -->
         <section id="albums" class="py-16 md:py-24 border-b border-red-900/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -574,8 +256,8 @@ Edit: BandLab is just having this huge problem where if you change anything on y
                 <!-- Album Grid (Centered, 1 column on mobile, 2 on medium screens) -->
                 <div class="flex flex-col items-center md:flex-row md:justify-center gap-8 md:gap-12 max-w-2xl mx-auto">
                     
-                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group rounded-xl">
-                        <div class="aspect-square overflow-hidden mb-4 rounded-lg">
+                    <div class="w-full md:max-w-sm bg-[#222] shadow-2xl shadow-red-900/50 p-4 transform hover:scale-[1.03] transition duration-500 group">
+                        <div class="aspect-square overflow-hidden mb-4">
                             <img src="assets/banners/diditagain.png" alt="Did It Again" class="w-full h-full object-cover group-hover:opacity-90 transition duration-300">
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">DID IT AGAIN</h3>
@@ -651,7 +333,7 @@ Edit: BandLab is just having this huge problem where if you change anything on y
             </div>
 
             <p class="text-gray-500 text-sm">
-                &copy; 2025 YOUNGDOLLAZZ. All Rights Reserved.
+                &copy; 2025 - 2026 YOUNGDOLLAZZ. All Rights Reserved.
             </p>
         </div>
     </footer>
@@ -684,52 +366,6 @@ Edit: BandLab is just having this huge problem where if you change anything on y
 
     <!-- JavaScript for Mobile Menu Toggle and Wallpaper Logic (REVISED) -->
     <script>
-        // Data structure for wallpapers.
-        const wallpapers = {
-            'style-1': {
-                name: 'Desktop 1',
-                url: 'wallpapers/desktop-wallpaper-1.png',
-                filename: 'youngdollazz_desktop_1.png', // New descriptive filename for download
-                resolution: '1920x1080 (Desktop)',
-                isMobile: false
-            },
-            'style-2': {
-                name: 'Desktop 2',
-                url: 'wallpapers/desktop-wallpaper-2.png',
-                filename: 'youngdollazz_desktop_2.png',
-                resolution: '1920x1080 (Desktop)',
-                isMobile: false
-            },
-            'style-3': {
-                name: 'Mobile 1',
-                url: 'wallpapers/iPhone-Wallpaper-1.png',
-                filename: 'youngdollazz_mobile_1.png',
-                resolution: '1080x1920 (Mobile)',
-                isMobile: true
-            },
-            'style-4': {
-                name: 'Mobile 2',
-                url: 'wallpapers/iPhone-Wallpaper-2.png',
-                filename: 'youngdollazz_mobile_2.png',
-                resolution: '1080x1920 (Mobile)',
-                isMobile: true
-            },
-            'style-5': {
-                name: 'Mobile 3',
-                url: 'wallpapers/iPhone-Wallpaper-3.png',
-                filename: 'youngdollazz_mobile_3.png',
-                resolution: '1080x1920 (Mobile)',
-                isMobile: true
-            },
-            'style-6': {
-                name: 'Mobile 3 Black',
-                url: 'wallpapers/iPhone-Wallpaper-3-Black.png',
-                filename: 'youngdollazz_mobile_3_black.png',
-                resolution: '1080x1920 (Mobile)',
-                isMobile: true
-            }
-        };
-
         // NEW: Album Data Structure for Modal Population
         const albumsData = {
             'ten-toez': {
@@ -832,99 +468,6 @@ Edit: BandLab is just having this huge problem where if you change anything on y
             }, 300);
         }
 
-        // Wallpaper logic (original code)
-        const wallpaperKeys = Object.keys(wallpapers);
-        let currentWallpaperIndex = 0; // Start with the first wallpaper
-
-        /**
-         * Updates the displayed wallpaper based on the given index.
-         * @param {number} index The index of the wallpaper to display.
-         */
-        function displayWallpaper(index) {
-            // Safety check for index bounds
-            if (index < 0 || index >= wallpaperKeys.length) return;
-
-            // Get elements first to check existence
-            const image = document.getElementById('wallpaper-image');
-            const card = document.getElementById('wallpaper-card');
-            const downloadButton = document.getElementById('download-button');
-            const infoText = document.getElementById('wallpaper-info');
-            const aspectContainer = document.getElementById('wallpaper-aspect-container');
-
-            // Guard clause: If any required element is missing, stop to prevent errors
-            // This is crucial because the HTML for the wallpaper section seems to be missing
-            if (!image || !card || !downloadButton || !infoText || !aspectContainer) {
-                console.warn("Wallpaper elements missing from DOM. Skipping wallpaper logic.");
-                return;
-            }
-
-            currentWallpaperIndex = index; // Update the global index
-            const selectedKey = wallpaperKeys[currentWallpaperIndex];
-            const wallpaper = wallpapers[selectedKey];
-            
-            // --- LOGIC FOR ASPECT RATIO AND MOBILE PREVIEW SIZE ---
-            // Set the aspect ratio and max-width based on if it's a mobile wallpaper
-            if (wallpaper.isMobile) {
-                // For mobile: vertical aspect ratio and constrained max-width
-                aspectContainer.classList.remove('aspect-video');
-                // aspect-[9/16] is a Tailwind arbitrary value utility class
-                aspectContainer.classList.add('aspect-[9/16]'); 
-                card.classList.add('md:max-w-xs'); // Make mobile previews narrower on desktop
-            } else {
-                // For desktop: horizontal aspect ratio and wider max-width
-                aspectContainer.classList.add('aspect-video');
-                aspectContainer.classList.remove('aspect-[9/16]');
-                card.classList.remove('md:max-w-xs');
-            }
-            // --- END LOGIC ---
-
-            // Fade out current image
-            image.classList.remove('opacity-100');
-            image.classList.add('opacity-0');
-            infoText.textContent = "Loading..."; // Update info text while fading
-
-            // Update image source and metadata after a short delay for the fade effect
-            setTimeout(() => {
-                image.src = wallpaper.url;
-                downloadButton.href = wallpaper.url;
-                downloadButton.setAttribute('download', wallpaper.filename);
-                
-                // Function to fade in the image once loaded
-                const fadeIn = () => {
-                    image.classList.remove('opacity-0');
-                    image.classList.add('opacity-100');
-                    infoText.textContent = `${wallpaper.name} | ${wallpaper.resolution}`;
-                    image.removeEventListener('load', fadeIn); // Clean up
-                };
-                
-                // Add event listener for when the image finishes loading
-                image.addEventListener('load', fadeIn);
-
-                // Handle case where image might be cached and onload doesn't fire
-                if (image.complete) {
-                    fadeIn();
-                }
-            }, 100); // Small delay to allow fade out transition
-        }
-
-        /**
-         * Navigates to the next or previous wallpaper, wrapping around at the ends.
-         * @param {('next'|'prev')} direction The direction of navigation.
-         */
-        function navigateWallpaper(direction) {
-            let newIndex = currentWallpaperIndex;
-            
-            if (direction === 'next') {
-                // Modulo operator handles the wrap-around
-                newIndex = (currentWallpaperIndex + 1) % wallpaperKeys.length;
-            } else if (direction === 'prev') {
-                // Handles negative index by adding array length before modulo
-                newIndex = (currentWallpaperIndex - 1 + wallpaperKeys.length) % wallpaperKeys.length;
-            }
-            
-            displayWallpaper(newIndex);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -939,12 +482,6 @@ Edit: BandLab is just having this huge problem where if you change anything on y
                     mobileMenu.classList.add('hidden');
                 });
             });
-
-            // NEW: Initialize the wallpaper view with the first item on load
-            // Check if wallpaper elements exist before initializing to prevent errors if HTML is missing
-            if (wallpaperKeys.length > 0 && document.getElementById('wallpaper-image')) {
-                displayWallpaper(currentWallpaperIndex);
-            }
         });
 
         // NEW: Navbar background on scroll
