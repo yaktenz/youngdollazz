@@ -3,250 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz | LinkTree</title>
+    <title>YoungDollazz | Links</title>
     <link rel="icon" type="image/x-icon" href="assets/webicon.png">
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font: Inter -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syncopate:wght@400;700&display=swap');
+
+        :root {
+            --accent: #ff3e3e;
+            --bg-dark: #080808;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0c0e0d; /* Matches main site */
-            color: white;
-            /* Custom scrollbar styles */
-            scrollbar-color: #ff0000 #37371f; 
-            scrollbar-width: thin;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Custom scrollbar styles for Webkit browsers */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1f2937; }
-        ::-webkit-scrollbar-thumb {
-            background-color: #ff6666; 
-            border-radius: 20px;
-            border: 3px solid rgba(12, 14, 13);
+        h1, h2, .nav-link, .link-title {
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
         }
 
-        /* Animation for the background gradient */
-        @keyframes gradient-move {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Animated Background */
+        .hero-gradient {
+            background: radial-gradient(circle at 50% -20%, #1a0505 0%, #080808 70%);
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
         }
 
-        .animated-bg {
-            background: linear-gradient(-45deg, #0c0e0d, #1a0505, #2b0b0b, #0c0e0d);
-            background-size: 400% 400%;
-            animation: gradient-move 15s ease infinite;
-        }
-
-        /* Glassmorphism effect for the card */
-        .glass-panel {
-            background: rgba(20, 20, 20, 0.6);
+        /* Glassmorphism Cards */
+        .glass-btn {
+            background: var(--glass);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Link Hover Animation */
-        .link-item {
-            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, border-color 0.3s ease;
-        }
-        .link-item:hover {
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 62, 62, 0.1);
         }
+
+        .glass-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .glass-btn:hover::before {
+            opacity: 1;
+        }
+
+        /* Profile Glow */
+        .profile-glow {
+            animation: pulse-glow 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 62, 62, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 62, 62, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 62, 62, 0); }
+        }
+
+        /* Priority Link Animation */
+        .priority-border {
+            background: linear-gradient(90deg, #ff0000, #ff4d4d, #ff0000);
+            background-size: 200% 100%;
+            animation: borderMove 3s linear infinite;
+        }
+
+        @keyframes borderMove {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #080808; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col animated-bg selection:bg-red-500 selection:text-white">
+<body class="antialiased selection:bg-red-500 selection:text-white">
 
-    <!-- Header / Navbar (Imported from index.html) -->
-    <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 md:justify-around">
-                
-                <!-- Left Links (Hidden on Mobile) -->
-                <nav class="hidden md:flex space-x-8">
-                    <!-- Updated hrefs to point back to index.html -->
-                    <a href="index.html#featured-releases" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Releases</a>
-                    <a href="index.html#albums" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Albums</a>
-                </nav>
+    <!-- Background Layers -->
+    <div class="hero-gradient"></div>
+    <div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-900/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-                <!-- Logo/Artist Image (Centered on Desktop) -->
-                <div class="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 md:relative md:left-auto md:transform-none">
-                    <a href="index.html" class="block p-1 transition duration-500">
-                        <img 
-                            src="assets/favicon.png" 
-                            onerror="this.onerror=null; this.src='assets/favicon.png';" 
-                            alt="YoungDollazz Logo" 
-                            class="w-19 h-10 object-contain shadow-lg"
-                        >
-                    </a>
-                </div>
-                
-                <!-- Right Links (Hidden on Mobile) -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html#music" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Music</a>
-                    <a href="social.html" class="text-lg font-medium text-gray-300 hover:text-white py-2 rounded-lg transition duration-300">Social</a>
-                </nav>
-                
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-button" class="md:hidden text-white hover:text-blue-500 focus:outline-none" aria-label="Open menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+    <!-- Premium Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-500 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="group">
+                <img src="assets/favicon.png" alt="Logo" class="h-10 w-auto transition-transform group-hover:scale-110">
+            </a>
 
-                <!-- Spacer div for mobile layout -->
-                <div class="w-16 h-16 md:hidden"></div>
-
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="index.html#featured" class="nav-link text-xs tracking-[0.3em] hover:text-red-500 transition">Music</a>
+                <a href="index.html#albums" class="nav-link text-xs tracking-[0.3em] hover:text-red-500 transition">Albums</a>
+                <a href="#" class="nav-link text-xs tracking-[0.3em] text-red-500">Social</a>
+                <a href="index.html" class="px-6 py-2 border border-white/20 rounded-full text-xs tracking-[0.2em] hover:bg-white hover:text-black transition duration-500">Back Home</a>
             </div>
-        </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/90 pb-4 border-t border-red-900/50">
-            <a href="index.html#featured-releases" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Releases</a>
-            <a href="index.html#albums" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Albums</a>
-            <a href="index.html#music" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Music</a>
-            <a href="social.html" class="block px-4 py-2 text-xl font-medium text-gray-200 hover:bg-[#222] hover:text-white">Social</a>
-        </div>
-    </header>
 
-    <!-- Main Content Container (Centered) -->
-    <main class="flex-grow flex items-center justify-center p-4 py-12">
-        <div class="w-full max-w-md mx-auto">
+            <!-- Mobile Toggle -->
+            <button id="menu-toggle" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[90] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500">
+        <a href="index.html#featured" class="text-3xl font-bold tracking-tighter hover:text-red-600">MUSIC</a>
+        <a href="index.html#albums" class="text-3xl font-bold tracking-tighter hover:text-red-600">ALBUMS</a>
+        <a href="index.html" class="text-3xl font-bold tracking-tighter hover:text-red-600">HOME</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-32 px-4 relative z-10">
+        <div class="w-full max-w-lg mx-auto flex flex-col gap-6">
             
             <!-- Profile Header -->
-            <div class="flex flex-col items-center mb-8 text-center">
-                <!-- Profile Image / Logo -->
-                <div class="relative w-24 h-24 mb-4">
-                    <div class="absolute inset-0 bg-red-600 rounded-full blur-md opacity-50 animate-pulse"></div>
+            <div class="flex flex-col items-center text-center mb-8">
+                <div class="relative w-32 h-32 mb-6">
+                    <div class="absolute inset-0 rounded-full profile-glow bg-red-600 rounded-full"></div>
                     <img 
                         src="assets/webicon.png" 
                         onerror="this.onerror=null; this.src='https://via.placeholder.com/150/000000/FFFFFF?text=YD';" 
                         alt="YoungDollazz" 
-                        class="relative w-full h-full rounded-full object-contain border-2 border-red-900/50 bg-black shadow-2xl"
+                        class="relative w-full h-full rounded-full object-cover border-2 border-white/10 bg-black"
                     >
+                    <!-- Verified Badge -->
+                    <div class="absolute bottom-1 right-1 bg-blue-500 text-white text-[10px] w-6 h-6 flex items-center justify-center rounded-full border-2 border-black">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
                 
-                <!-- Name & Tagline -->
-                <h1 class="text-2xl font-black tracking-tight mb-1">YOUNGDOLLAZZ</h1>
-                <p class="text-gray-400 text-sm font-medium tracking-wide uppercase">Did It Again</p>
+                <h1 class="text-3xl font-bold tracking-tighter mb-2 italic">YOUNGDOLLAZZ</h1>
+                
+                <!-- Mini Socials -->
+                <div class="flex gap-6 mt-6">
+                    <a href="https://www.youtube.com/@YoungDollazz1700" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fa-brands fa-youtube text-xl"></i></a>
+                    <a href="https://soundcloud.com/youngdollazz1700" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fa-brands fa-soundcloud text-xl"></i></a>
+                    <a href="https://discord.gg/a7eNTUaYPh" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fa-brands fa-discord text-xl"></i></a>
+                </div>
             </div>
 
-            <!-- Links Stack -->
-            <div class="flex flex-col space-y-4">
-
-                <!-- Priority Link: Latest Release -->
-                <a href="https://www.youtube.com/watch?v=r3LEqIbJ4mY&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=11" target="_blank" class="link-item relative group overflow-hidden rounded-xl p-[1px]">
-                    <!-- Animated Border Gradient -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-900 opacity-80 group-hover:opacity-100 transition duration-500"></div>
-                    
-                    <!-- Button Content -->
-                    <div class="relative flex items-center justify-between bg-[#111] group-hover:bg-opacity-90 px-5 py-4 rounded-[10px] transition h-full">
-                        <div class="flex items-center space-x-4">
-                            <!-- Tiny Thumbnail for 'Geeked' -->
-                            <img src="assets/banners/banner.jpg" class="w-10 h-10 rounded object-cover shadow-sm" alt="Geeked">
-                            <div class="flex flex-col text-left">
-                                <span class="font-bold text-white">LATEST RELEASE: WHO I WAS</span>
-                                <span class="text-xs text-green-400">Stream Now</span>
-                            </div>
-                        </div>
-                        <!-- Icon -->
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <!-- Priority Link: Latest Release -->
+            <a href="https://www.youtube.com/watch?v=J1e12TyAxoA" target="_blank" class="group relative block p-[1px] rounded-2xl overflow-hidden transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-0 priority-border"></div>
+                <div class="relative bg-black rounded-2xl p-4 flex items-center gap-4 h-full">
+                    <img src="assets/banners/banner.jpg" class="w-16 h-16 rounded-lg object-cover shadow-lg group-hover:brightness-110 transition">
+                    <div class="flex-1">
+                        <span class="block text-[10px] text-red-500 tracking-widest font-bold uppercase mb-1">New Release</span>
+                        <span class="block text-lg font-bold italic tracking-wide">WHO I WAS</span>
                     </div>
-                </a>
+                    <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-black group-hover:bg-white transition">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+            </a>
 
-                <!-- Standard Link: Official Site -->
-                <a href="index.html" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-red-500/50 group">
-                    <img src="assets/webicon.png" class="w-6 h-6 rounded-full" alt="SC">
-                    <span class="font-semibold">Official Website</span>
-                </a>
+            <!-- Standard Links -->
+            <a href="index.html" class="glass-btn p-5 rounded-xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                        <i class="fa-solid fa-globe text-gray-300"></i>
+                    </div>
+                    <span class="font-bold tracking-wide text-sm">OFFICIAL WEBSITE</span>
+                </div>
+                <i class="fa-solid fa-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
 
-                <a href="https://my-store-d4bf5f.creator-spring.com/" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-pink-500/50 group">
-                    <img src="assets/teespring.png" class="w-6 h-6 rounded-full" alt="Teespring">
-                    <span class="font-semibold">TeeSpring</span>
-                </a>
+            <a href="https://my-store-d4bf5f.creator-spring.com/" target="_blank" class="glass-btn p-5 rounded-xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-pink-900/20 flex items-center justify-center">
+                        <i class="fa-solid fa-shirt text-pink-400"></i>
+                    </div>
+                    <span class="font-bold tracking-wide text-sm">MERCH STORE</span>
+                </div>
+                <i class="fa-solid fa-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
 
-                <!-- Standard Link: YouTube -->
-                <a href="https://www.youtube.com/@YoungDollazz1700" target="_blank" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-red-500/50 group">
-                    <img src="assets/yt.png" class="w-6 h-6 rounded-full" alt="YT">
-                    <span class="font-semibold">Subscribe on YouTube</span>
-                </a>
+            <a href="https://www.youtube.com/@YoungDollazz1700" target="_blank" class="glass-btn p-5 rounded-xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-red-900/20 flex items-center justify-center">
+                        <i class="fa-brands fa-youtube text-red-500"></i>
+                    </div>
+                    <span class="font-bold tracking-wide text-sm">SUBSCRIBE ON YOUTUBE</span>
+                </div>
+                <i class="fa-solid fa-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
 
-                <!-- Standard Link: SoundCloud -->
-                <a href="https://soundcloud.com/youngdollazz1700" target="_blank" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-orange-500/50 group">
-                    <img src="assets/soundcloud.png" class="w-6 h-6 rounded-full" alt="SC">
-                    <span class="font-semibold">Stream on SoundCloud</span>
-                </a>
+            <a href="https://soundcloud.com/youngdollazz1700" target="_blank" class="glass-btn p-5 rounded-xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-orange-900/20 flex items-center justify-center">
+                        <i class="fa-brands fa-soundcloud text-orange-500"></i>
+                    </div>
+                    <span class="font-bold tracking-wide text-sm">STREAM ON SOUNDCLOUD</span>
+                </div>
+                <i class="fa-solid fa-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
 
-                <a href="https://discord.gg/a7eNTUaYPh" target="_blank" class="link-item glass-panel rounded-xl px-6 py-4 flex items-center justify-center space-x-3 hover:bg-white/5 hover:border-blue-500/50 group">
-                    <img src="assets/discord.png" class="w-6 h-6 rounded-full" alt="SC">
-                    <span class="font-semibold">Join Community Discord</span>
-                </a>
-            </div>
-
-            <!-- Footer Socials (Matched with index.html assets) -->
-            <div class="mt-12 flex justify-center space-x-6">
-                <a href="https://soundcloud.com/youngdollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="SoundCloud">
-                    <img src="assets/soundcloud.png" alt="SoundCloud" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-orange-500">
-                </a>
-                <a href="https://www.youtube.com/@YoungDollazz1700" class="transition duration-300 transform hover:scale-110" aria-label="YouTube">
-                    <img src="assets/yt.png" alt="YouTube" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-red-500">
-                </a>
-                <a href="https://discord.gg/a7eNTUaYPh" class="transition duration-300 transform hover:scale-110" aria-label="Spotify">
-                    <!-- Updated hover:border-red-500 to hover:border-blue-500 -->
-                    <img src="assets/discord.png" alt="YouTube" class="w-8 h-8 rounded-full border-2 border-transparent hover:border-blue-500">
-                </a>
-            </div>
-
-            <!-- Branding Footer -->
-            <div class="mt-8 text-center">
-                <img src="assets/favicon.png" class="w-8 h-8 mx-auto mb-2 opacity-50 grayscale" alt="Logo">
-                <p class="text-xs text-gray-600 font-medium">© 2025 YOUNGDOLLAZZ</p>
-            </div>
+            <a href="https://discord.gg/a7eNTUaYPh" target="_blank" class="glass-btn p-5 rounded-xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-indigo-900/20 flex items-center justify-center">
+                        <i class="fa-brands fa-discord text-indigo-400"></i>
+                    </div>
+                    <span class="font-bold tracking-wide text-sm">JOIN DISCORD COMMUNITY</span>
+                </div>
+                <i class="fa-solid fa-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
 
         </div>
     </main>
 
-    <!-- Scripts for Navbar functionality -->
+    <!-- Simple Footer -->
+    <footer class="py-10 text-center border-t border-white/5 bg-black/50 backdrop-blur-sm">
+        <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase">© 2025 YoungDollazz</p>
+    </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (menuButton && mobileMenu) {
-                menuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-
-                // Close menu when a mobile link is clicked
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('opacity-0');
+            
+            if (isHidden) {
+                // Open menu
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                // Close menu
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars-staggered"></i>';
+                document.body.style.overflow = 'auto'; // Enable scrolling
             }
         });
 
-        // Navbar background on scroll
-        document.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (window.scrollY > 10) {
-                header.classList.add('bg-[#111]', 'shadow-xl', 'border-b', 'border-red-900/50');
-                if(mobileMenu) mobileMenu.classList.add('bg-black/90');
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 20) {
+                nav.classList.add('bg-black/80', 'backdrop-blur-lg');
             } else {
-                header.classList.remove('bg-[#111]', 'shadow-xl', 'border-b', 'border-red-900/50');
-                if(mobileMenu) mobileMenu.classList.remove('bg-black/90');
+                nav.classList.remove('bg-black/80', 'backdrop-blur-lg');
             }
         });
     </script>
-
 </body>
-
 </html>
