@@ -1,322 +1,586 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz | Official Site</title>
+    <title>YOUNGDOLLAZZ | OFFICIAL WEBSITE</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syncopate:wght@400;700&display=swap');
 
+    <style>
         :root {
-            --accent: #ff3e3e;
-            --bg-dark: #080808;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --bg-color: #050505;
+            --surface-color: #111111;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --accent-color: #c6c5ff;
+            --border-color: #333333;
+            
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, .nav-link {
-            font-family: 'Syncopate', sans-serif;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* Animated Background */
-        .hero-gradient {
-            background: radial-gradient(circle at 50% -20%, #2a0a0a 0%, #080808 70%);
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
         }
 
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.4s ease, padding 0.4s ease;
         }
 
-        .glass-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 62, 62, 0.1);
+        nav.scrolled {
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* Smooth reveal for images */
-        .reveal-img {
-            filter: grayscale(40%) contrast(110%);
-            transition: 0.5s ease;
-        }
-        
-        .glass-card:hover .reveal-img {
-            filter: grayscale(0%) contrast(100%);
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--text-main);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #080808; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
 
-        .btn-primary {
-            position: relative;
-            overflow: hidden;
+        .nav-links li a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--text-main);
+            background: transparent;
+            color: var(--text-main);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
-        
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--bg-color);
         }
 
-        .btn-primary:hover::after { left: 100%; }
+        .btn-accent {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: url('assets/p7uMUv8iGUM-MQ.jpg') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(5,5,5,1) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 6rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .music {
+            padding: 6rem 5%;
+            background-color: var(--bg-color);
+        }
+
+        .release-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+
+        .release-info {
+            max-width: 500px;
+        }
+
+        .release-info h3 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .release-info h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .release-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .streaming-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .stream-btn {
+            font-size: 2rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .stream-btn:hover {
+            color: var(--text-main);
+        }
+
+        .albums {
+            padding: 6rem 5%;
+            background-color: var(--surface-color);
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .album-card {
+            background-color: var(--bg-color);
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .album-cover {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .album-details {
+            padding: 1.5rem;
+        }
+
+        .album-details h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .album-details p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .merch {
+            padding: 6rem 5%;
+            background-color: var(--bg-color);
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .merch-item {
+            background-color: var(--surface-color);
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .merch-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .merch-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #222;
+        }
+
+        .merch-info {
+            padding: 1.5rem;
+        }
+
+        .merch-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .merch-info p {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--surface-color);
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-socials a {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 900px) {
+            .hero-content h1 { font-size: 4rem; }
+            .release-container { flex-direction: column; text-align: center; gap: 2rem; }
+            .streaming-links { justify-content: center; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger { display: block; z-index: 1001; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s ease;
+                z-index: 1000;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1.5rem 0; }
+            .nav-links li a { font-size: 1.5rem; }
+            .hero-content h1 { font-size: 3rem; }
+        }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="group">
-                <img src="assets/favicon.png" alt="Logo" class="h-10 w-auto transition-transform group-hover:scale-110">
-            </a>
-
-            <div class="hidden md:flex items-center space-x-12">
-                <a href="#featured" class="nav-link text-xs tracking-[0.3em] hover:text-red-500 transition">Music</a>
-                <a href="#albums" class="nav-link text-xs tracking-[0.3em] hover:text-red-500 transition">Albums</a>
-                <a href="social.html" class="nav-link text-xs tracking-[0.3em] hover:text-red-500 transition">Social</a>
-                <a href="#music" class="px-6 py-2 border border-white/20 rounded-full text-xs tracking-[0.2em] hover:bg-white hover:text-black transition duration-500">Listen</a>
-            </div>
-
-            <button id="menu-toggle" class="md:hidden text-2xl">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </button>
+    <nav id="navbar">
+        <a href="#" class="logo">DOLLAZZ.</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#music" class="nav-link">Music</a></li>
+            <li><a href="#albums" class="nav-link">Albums</a></li>
+            <li><a href="#store" class="nav-link">Store</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-black z-[90] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500">
-        <a href="#featured" class="text-3xl font-bold tracking-tighter hover:text-red-600">RELEASES</a>
-        <a href="#albums" class="text-3xl font-bold tracking-tighter hover:text-red-600">ALBUMS</a>
-        <a href="social.html" class="text-3xl font-bold tracking-tighter hover:text-red-600">SOCIAL</a>
-    </div>
-
-    <section class="hero-gradient relative min-h-screen flex items-center justify-center pt-20">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-900/20 blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/10 blur-[120px] rounded-full"></div>
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>YOUNGDOLLAZZ</h1>
+            <p>"AirPlane Mode" Out Now</p>
+            <a href="https://youtu.be/p7uMUv8iGUM?si=BFGcS45BWdMKxjib" class="btn">Listen Now</a>
         </div>
+    </header>
 
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <span class="inline-block mb-4 px-4 py-1 border border-red-500/30 rounded-full text-red-500 text-xs tracking-[0.4em] uppercase font-bold animate-pulse">
-                New Song Available Now
-            </span>
-            <h1 class="text-7xl md:text-[10rem] font-bold leading-none tracking-tighter mb-8 italic">
-                WHO I <span class="text-transparent" style="-webkit-text-stroke: 1px white;">WAS</span>
-            </h1>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
-                <a href="https://www.youtube.com/watch?v=J1e12TyAxoA" class="btn-primary px-12 py-5 bg-white text-black rounded-full font-bold tracking-widest hover:scale-105 transition">
-                    STREAM SINGLE
-                </a>
-                <a href="#albums" class="px-12 py-5 border border-white/20 rounded-full font-bold tracking-widest hover:bg-white/10 transition">
-                    VIEW ALBUMS
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="featured" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-                <div>
-                    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Latest Drops</h2>
-                    <p class="text-gray-500 mt-4 tracking-widest uppercase text-sm">Official Discography 2025-2026</p>
-                </div>
-                <div class="h-[1px] flex-1 bg-white/10 mx-10 hidden md:block mb-4"></div>
-                <a href="#" class="text-red-500 font-bold tracking-widest text-xs hover:mr-2 transition-all">VIEW ALL RELEASES →</a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card rounded-2xl p-4 group">
-                    <div class="relative aspect-square overflow-hidden rounded-xl mb-6">
-                        <img src="assets/banners/banner.jpg" class="reveal-img w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                            <i class="fa-solid fa-play text-4xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-bold tracking-tight">WHO I WAS</h3>
-                    <p class="text-gray-500 text-xs mb-6 tracking-widest">SINGLE · 2026</p>
-                    <a href="https://www.youtube.com/watch?v=J1e12TyAxoA" target="_blank" class="block w-full text-center py-3 bg-white/5 hover:bg-red-600 rounded-lg transition text-xs font-bold tracking-widest">LISTEN</a>
-                </div>
-
-                <div class="glass-card rounded-2xl p-4 group">
-                    <div class="relative aspect-square overflow-hidden rounded-xl mb-6">
-                        <img src="assets/banners/diditagain.png" class="reveal-img w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                            <i class="fa-solid fa-play text-4xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-bold tracking-tight">ALL FOR YOU</h3>
-                    <p class="text-gray-500 text-xs mb-6 tracking-widest">DID IT AGAIN · 2025</p>
-                    <a href="https://www.youtube.com/watch?v=MO2uvg47F8U" target="_blank" class="block w-full text-center py-3 bg-white/5 hover:bg-red-600 rounded-lg transition text-xs font-bold tracking-widest">LISTEN</a>
-                </div>
-
-                <div class="glass-card rounded-2xl p-4 group">
-                    <div class="relative aspect-square overflow-hidden rounded-xl mb-6">
-                        <img src="assets/releases/cantescape.jpg" class="reveal-img w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-lg font-bold tracking-tight">CAN'T ESCAPE</h3>
-                    <p class="text-gray-500 text-xs mb-6 tracking-widest">SOUNDCLOUD</p>
-                    <a href="https://soundcloud.com/youngdollazz1700/cant-escape-prod-rollie" class="block w-full text-center py-3 bg-orange-600/20 hover:bg-orange-600 rounded-lg transition text-xs font-bold tracking-widest">SOUNDCLOUD</a>
-                </div>
-
-                <div class="glass-card rounded-2xl p-4 group">
-                    <div class="relative aspect-square overflow-hidden rounded-xl mb-6">
-                        <img src="assets/releases/3.am.jfif" class="reveal-img w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-lg font-bold tracking-tight">3.A.M</h3>
-                    <p class="text-gray-500 text-xs mb-6 tracking-widest">SINGLE · 2025</p>
-                    <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I&list=PLJysUITYnwpEvpI7IIOvOwPM4XGysbdILK" class="block w-full text-center py-3 bg-white/5 hover:bg-red-600 rounded-lg transition text-xs font-bold tracking-widest">LISTEN</a>
+    <section id="music" class="music">
+        <div class="release-container">
+            <img src="assets/music/airplanemode.png" alt="AIRPLANE MODE" style="width: 250px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div class="release-info">
+                <h3>Featured Release</h3>
+                <h2>AIRPLANE MODE</h2>
+                <p>"Airplane Mode" Stream on YouTube now.</p>
+                <div class="streaming-links">
+                    <a href="https://www.youtube.com/watch?v=p7uMUv8iGUM" class="stream-btn"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="albums" class="py-32 bg-zinc-950 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="w-full lg:w-1/2">
-                    <div class="relative group">
-                        <div class="absolute -inset-4 bg-red-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
-                        <img src="assets/banners/diditagain.png" class="relative rounded-2xl shadow-2xl w-full aspect-square object-cover shadow-red-900/20">
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2">
-                    <span class="text-red-500 font-bold tracking-[0.5em] text-xs uppercase">Full Length Album</span>
-                    <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mt-4 mb-8 italic">DID IT AGAIN</h2>
-                    <p class="text-gray-400 text-lg leading-relaxed mb-10">Featuring the singles "Geeked", "Peaceful Nights", and "Money Called". And more!</p>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <button onclick="showSongListModal('ten-toez')" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-red-600 hover:text-white transition duration-500">
-                            VIEW TRACKLIST
-                        </button>
-                        <a href="https://www.youtube.com/playlist?list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz" class="px-8 py-4 border border-white/20 rounded-full font-bold hover:bg-white/10 transition">
-                            STREAM ON YT
-                        </a>
-                    </div>
+    <section id="albums" class="albums">
+        <h2 class="section-title">Albums</h2>
+        <div class="album-grid">
+            <div class="album-card">
+                <img src="assets/music/album/diditagain.png" alt="Did It Again" class="album-cover">
+                <div class="album-details">
+                    <h4>Did It Again</h4>
+                    <p>2025</p>
+                    <a href="https://youtube.com/playlist?list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&si=j9gSUL79HFtwgo2X" class="btn btn-accent">Listen</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="music" class="py-32">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold tracking-tighter mb-16 italic">CONNECT WITH THE MOVEMENT</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="https://www.youtube.com/@YoungDollazz1700" class="group p-10 glass-card rounded-3xl">
-                    <i class="fa-brands fa-youtube text-4xl mb-6 group-hover:text-red-600 transition"></i>
-                    <h4 class="font-bold tracking-widest text-sm">YOUTUBE</h4>
-                </a>
-                <a href="https://soundcloud.com/youngdollazz1700" class="group p-10 glass-card rounded-3xl">
-                    <i class="fa-brands fa-soundcloud text-4xl mb-6 group-hover:text-orange-500 transition"></i>
-                    <h4 class="font-bold tracking-widest text-sm">SOUNDCLOUD</h4>
-                </a>
-                <a href="https://discord.gg/a7eNTUaYPh" class="group p-10 glass-card rounded-3xl">
-                    <i class="fa-brands fa-discord text-4xl mb-6 group-hover:text-indigo-500 transition"></i>
-                    <h4 class="font-bold tracking-widest text-sm">DISCORD</h4>
-                </a>
+    <style>
+        @media (min-width: 900px) {
+            #albums.albums {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            .album-grid {
+                max-width: 400px;
+                margin: 0 auto;
+                display: flex !important;
+                justify-content: center !important;
+            }
+            .album-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            .album-cover {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 899px) {
+            .album-grid {
+                display: flex !important;
+                justify-content: center !important;
+            }
+        }
+    </style>
+
+    <section id="store" class="merch">
+        <h2 class="section-title">Official Store</h2>
+        <div class="merch-grid">
+            <div class="merch-item">
+                <img src="assets/store/dark-mug.png" alt="Dollazz Hoodie" class="merch-img">
+                <div class="merch-info">
+                    <h4>YoungDollazz Did It Again Mug</h4>
+                    <p>$10.99</p>
+                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/youngdollazz-did-it-again-mug?product=1565&variation=104920" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="assets/store/dark-hoodie.png" alt="Signature Tee" class="merch-img">
+                <div class="merch-info">
+                    <h4>Did It Again 2025 YoungDollazz Hoodie</h4>
+                    <p>$33.32</p>
+                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/did-it-again-2025-hoodie?product=212&variation=5819" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="assets/store/xmas.png" alt="Cap" class="merch-img">
+                <div class="merch-info">
+                    <h4>Merry Christmas Fn Designer Shirt</h4>
+                    <p>$15.90</p>
+                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/merry-christmas-fn-design-col?product=2&variation=2397" class="btn">Add to Cart</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 border-t border-white/5 text-center">
-        <img src="assets/favicon.png" class="h-8 mx-auto mb-8 opacity-50 grayscale">
-        <p class="text-gray-600 text-xs tracking-[0.5em]">&copy; 2025 - 2026 YOUNGDOLLAZZ. ALL RIGHTS RESERVED.</p>
+    <!-- Connect With Me Section -->
+    <section id="connect" class="connect-section" style="padding:3rem 0;background:var(--surface-color);text-align:center;">
+        <h2 class="section-title" style="margin-bottom:1.5rem;">Connect With Me</h2>
+        <div class="connect-links" style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/@YoungDollazz1700" target="_blank" rel="noopener" class="connect-btn" title="YouTube" style="color:#ff0000;font-size:2.25rem;">
+                <i class="fab fa-youtube"></i>
+                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">YouTube</div>
+            </a>
+            <a href="https://soundcloud.com/youngdollazz1700" target="_blank" rel="noopener" class="connect-btn" title="SoundCloud" style="color:#ff5500;font-size:2.25rem;">
+                <i class="fab fa-soundcloud"></i>
+                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">SoundCloud</div>
+            </a>
+            <a href="https://discord.gg/a7eNTUaYPh" target="_blank" rel="noopener" class="connect-btn" title="Discord" style="color:#7289da;font-size:2.25rem;">
+                <i class="fab fa-discord"></i>
+                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">Discord</div>
+            </a>
+            <a href="https://my-store-d4bf5f.creator-spring.com/" target="_blank" rel="noopener" class="connect-btn" title="Teespring Store" style="color:#4caf50;font-size:2.25rem;">
+                <i class="fas fa-tshirt"></i>
+                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">Teespring</div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-socials">
+            <a href="https://soundcloud.com/youngdollazz1700" target="_blank" rel="noopener"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://discord.gg/a7eNTUaYPh" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@YoungDollazz1700"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <p class="copyright">&copy; 2026 YoungDollazz. All Rights Reserved. </p>
     </footer>
 
-    <div id="song-list-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-6 transition-all duration-500">
-        <div class="absolute inset-0 bg-black/95 backdrop-blur-xl" onclick="closeModal()"></div>
-        <div class="relative glass-card w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl p-8 md:p-12">
-            <button onclick="closeModal()" class="absolute top-8 right-8 text-2xl hover:text-red-500 transition">&times;</button>
-            <h3 id="modal-album-title" class="text-4xl font-bold tracking-tighter mb-12 italic"></h3>
-            <div id="modal-song-list" class="space-y-4"></div>
-        </div>
-    </div>
-
     <script>
-        const albumsData = {
-            'ten-toez': {
-                title: 'Did It Again',
-                songs: [
-                    { title: 'Did It Again', link: 'https://www.youtube.com/watch?v=ROCK8V4hFY4' },
-                    { title: 'Dirty Diana Ft Lil Perky', link: 'https://www.youtube.com/watch?v=_gbRTLxeeO0' },
-                    { title: 'ALL FOR YOU', link: 'https://www.youtube.com/watch?v=MO2uvg47F8U' },
-                    { title: 'Cold Killa', link: 'https://youtu.be/ZCBeanxF3M0' },
-                    { title: 'Money Called', link: 'https://youtu.be/K4iHR50pXsU' },
-                    { title: 'Peaceful Nights', link: 'https://youtu.be/lcM4yRisbbs' },
-                    { title: 'Story Of A Young Nigga', link: 'https://youtu.be/5eGLM0M_4cA' },
-                    { title: 'Distance', link: 'https://www.youtube.com/watch?v=1pH0a5GpMvI' },
-                    { title: 'Vacation', link: 'https://www.youtube.com/watch?v=q5WxXukhhDc&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=9' },
-                    { title: 'Go Buy a Ounce', link: 'https://www.youtube.com/watch?v=hpap0_wac1o&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=10' },
-                    { title: 'Geeked', link: 'https://www.youtube.com/watch?v=r3LEqIbJ4mY' },
-                    { title: 'Cant Escape', link: 'https://www.youtube.com/watch?v=TukRX2fhb4M&list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&index=12' }
-                ]
-            }
-        };
-
-        function showSongListModal(key) {
-            const album = albumsData[key];
-            const modal = document.getElementById('song-list-modal');
-            const list = document.getElementById('modal-song-list');
-            document.getElementById('modal-album-title').innerText = album.title;
-            
-            list.innerHTML = album.songs.map((s, i) => `
-                <div class="flex items-center justify-between p-4 border-b border-white/5 hover:bg-white/5 transition group rounded-xl">
-                    <div class="flex items-center gap-6">
-                        <span class="text-xs text-gray-600 font-mono">${(i+1).toString().padStart(2, '0')}</span>
-                        <span class="font-bold tracking-tight group-hover:text-red-500 transition">${s.title}</span>
-                    </div>
-                    <a href="${s.link}" target="_blank" class="text-[10px] tracking-widest font-bold px-4 py-2 border border-white/10 rounded-full hover:bg-white hover:text-black transition">PLAY</a>
-                </div>
-            `).join('');
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('song-list-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if(window.scrollY > 50) {
-                nav.classList.add('bg-black/80', 'backdrop-blur-lg', 'py-4');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                nav.classList.remove('bg-black/80', 'backdrop-blur-lg', 'py-4');
+                navbar.classList.remove('scrolled');
             }
         });
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('opacity-0');
-            mobileMenu.classList.toggle('opacity-0');
-            mobileMenu.classList.toggle('pointer-events-none');
-            menuBtn.innerHTML = isHidden ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            const icon = hamburger.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
         });
     </script>
 </body>
