@@ -1,587 +1,1106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOUNGDOLLAZZ | OFFICIAL WEBSITE</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAYONAISE.GG | OFFICIAL SITE</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    :root {
+      --color-bg: #111;
+      --color-card: #1a1a1a;
+      --color-accent: #4ad6b8;
+      --color-accent-alt: #41c2e6;
+      --color-accent-hover: #38a887;
+      --color-btn: #ff1766;
+      --color-btn-hover: #d21253;
+      --color-btn-text: #fff;
+      --color-header: #fff;
+      --color-sub: #bbb;
+      --color-muted: #666;
+      --color-border: #262626;
+      --color-link: #41c2e6;
+      --color-link-hover: #fff;
+      --shadow-card: 0 8px 32px 0 rgba(0,0,0,0.15);
+    }
 
-    <style>
-        :root {
-            --bg-color: #050505;
-            --surface-color: #111111;
-            --text-main: #ffffff;
-            --text-muted: #888888;
-            --accent-color: #c6c5ff;
-            --border-color: #333333;
-            
-            --font-heading: 'Oswald', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: var(--color-bg);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      overflow-x: hidden;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    html {
+      scroll-padding-top: 88px;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 clamp(14px, 4vw, 20px);
+      width: 100%;
+    }
 
-        ul {
-            list-style: none;
-        }
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      background: rgba(17,17,17,0.96);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
+      transition: background 0.25s, box-shadow 0.25s, padding 0.25s;
+      padding: 18px 0;
+    }
+    nav.nav-scrolled {
+      background: #131313f6;
+      padding: 10px 0;
+    }
+    .nav-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: clamp(10px, 2vw, 22px);
+      min-width: 0;
+      position: relative;
+    }
+    .logo {
+      color: var(--color-header);
+      font-size: clamp(1.05rem, 3.2vw + 0.55rem, 2.1rem);
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      font-family: Arial, sans-serif;
+      transition: color 0.2s;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.1;
+    }
+    .logo span {
+      color: var(--color-accent);
+    }
+    .main-menu {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: clamp(14px, 2vw, 26px);
+    }
+    .main-menu a {
+      color: var(--color-header);
+      text-decoration: none;
+      padding: 4px 3px;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: color 0.19s;
+      position: relative;
+    }
+    .main-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent-alt), var(--color-accent));
+      border-radius: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.22s cubic-bezier(0.76,0,0.24,1);
+      opacity: 1;
+      pointer-events: none;
+    }
+    .main-menu a:hover,
+    .main-menu a:focus {
+      color: var(--color-accent);
+    }
+    .main-menu a:hover::after,
+    .main-menu a:focus::after {
+      transform: scaleX(1);
+    }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+    .subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, var(--color-btn) 60%, var(--color-accent-alt) 120%);
+      color: var(--color-btn-text);
+      font-size: clamp(0.88rem, 1.1vw + 0.65rem, 1.05rem);
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      border: none;
+      border-radius: 24px;
+      padding: 11px clamp(18px, 2.5vw, 34px);
+      margin-left: 0;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      box-shadow: 0 4px 22px 0 rgba(255, 23, 102, 0.14),0 2px 10px -5px #0007;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.18s, box-shadow 0.19s;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .subscribe-btn::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.14) 7%, transparent 69%);
+      pointer-events: none;
+    }
+    .subscribe-btn:hover, .subscribe-btn:focus {
+      background: linear-gradient(90deg, var(--color-btn-hover), var(--color-accent));
+      transform: scale(1.05);
+      box-shadow: 0 7px 28px 0 rgba(255, 23, 102, 0.22),0 3px 16px -7px #000c;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      margin-left: auto;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-menu-btn svg {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+    #mobile-menu {
+      display: none;
+      background: var(--color-card);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-height: min(70vh, calc(100dvh - 72px));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 5px 18px 0 rgba(0,0,0,0.16);
+    }
+    #mobile-menu.open {
+      display: block;
+      animation: fadeInMenu 0.22s;
+    }
+    @keyframes fadeInMenu {
+      from { opacity: 0; transform: translateY(-16px);}
+      to { opacity: 1; transform: none;}
+    }
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 13px;
+      padding: 28px 0;
+    }
+    .mobile-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: 1.04rem;
+      background: transparent;
+      border-radius: 5px;
+      padding: 12px 0px;
+      width: 100%;
+      text-align: center;
+      transition: color 0.18s, background 0.16s;
+    }
+    .mobile-links a:hover {
+      color: var(--color-accent);
+      background: #232323;
+    }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-color);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-color);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: background-color 0.4s ease, padding 0.4s ease;
-        }
-
-        nav.scrolled {
-            background-color: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: var(--text-main);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links li a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links li a:hover {
-            color: var(--accent-color);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border: 2px solid var(--text-main);
-            background: transparent;
-            color: var(--text-main);
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: var(--text-main);
-            color: var(--bg-color);
-        }
-
-        .btn-accent {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        .btn-accent:hover {
-            background: var(--accent-color);
-            color: var(--bg-color);
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: url('assets/p7uMUv8iGUM-MQ.jpg') center/cover no-repeat;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(5,5,5,1) 100%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 6rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-        }
-
-        .music {
-            padding: 6rem 5%;
-            background-color: var(--bg-color);
-        }
-
-        .release-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-
-        .release-info {
-            max-width: 500px;
-        }
-
-        .release-info h3 {
-            font-size: 1rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .release-info h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .release-info p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .streaming-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .stream-btn {
-            font-size: 2rem;
-            color: var(--text-muted);
-            transition: color 0.3s ease;
-        }
-
-        .stream-btn:hover {
-            color: var(--text-main);
-        }
-
-        .albums {
-            padding: 6rem 5%;
-            background-color: var(--surface-color);
-        }
-
-        .album-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .album-card {
-            background-color: var(--bg-color);
-            border-radius: 4px;
-            overflow: hidden;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .album-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
-        }
-
-        .album-cover {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .album-details {
-            padding: 1.5rem;
-        }
-
-        .album-details h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .album-details p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .merch {
-            padding: 6rem 5%;
-            background-color: var(--bg-color);
-        }
-
-        .merch-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .merch-item {
-            background-color: var(--surface-color);
-            border-radius: 4px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .merch-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .merch-img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            background-color: #222;
-        }
-
-        .merch-info {
-            padding: 1.5rem;
-        }
-
-        .merch-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .merch-info p {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: var(--surface-color);
-            padding: 4rem 5% 2rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-socials a {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            transition: color 0.3s ease;
-        }
-
-        .footer-socials a:hover {
-            color: var(--accent-color);
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media screen and (max-width: 900px) {
-            .hero-content h1 { font-size: 4rem; }
-            .release-container { flex-direction: column; text-align: center; gap: 2rem; }
-            .streaming-links { justify-content: center; }
-        }
-
-        @media screen and (max-width: 768px) {
-            .hamburger { display: block; z-index: 1001; }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background-color: var(--bg-color);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.4s ease;
-                z-index: 1000;
-            }
-            .nav-links.active { right: 0; }
-            .nav-links li { margin: 1.5rem 0; }
-            .nav-links li a { font-size: 1.5rem; }
-            .hero-content h1 { font-size: 3rem; }
-        }
-    </style>
+    @media (min-width: 901px) {
+      #mobile-menu {
+        display: none !important;
+      }
+      .main-menu {
+        margin-left: auto;
+      }
+      .main-menu a,
+      .subscribe-btn {
+        white-space: nowrap;
+      }
+      .logo {
+        flex-shrink: 0;
+      }
+    }
+    @media (max-width: 900px) {
+      .main-menu,
+      .subscribe-btn {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .logo {
+        flex: 1 1 auto;
+        margin-right: 4px;
+      }
+      html {
+        scroll-padding-top: 76px;
+      }
+    }
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      width: 100%;
+      max-width: 100%;
+      padding-top: max(92px, calc(env(safe-area-inset-top, 0px) + 76px));
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      padding-left: max(14px, env(safe-area-inset-left, 0px));
+      padding-right: max(14px, env(safe-area-inset-right, 0px));
+      background: linear-gradient(to bottom, rgba(17,17,17,0.4), rgba(17,17,17,1)), url('assets/banners/1.jpg') center center/cover no-repeat fixed;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 900px), (hover: none) {
+      .hero {
+        background-attachment: scroll;
+      }
+    }
+    .hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 0 clamp(12px, 4vw, 18px);
+      width: 100%;
+      max-width: 100%;
+    }
+    .hero-badge {
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 18px;
+      padding: 7px clamp(14px, 4vw, 28px);
+      border: 2px solid var(--color-accent);
+      border-radius: 22px;
+      background: rgba(74,214,184,0.09);
+      font-size: 0.91rem;
+      color: var(--color-accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+    .hero-title {
+      font-size: clamp(1.85rem, 6vw + 0.6rem, 2.4rem);
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 30px;
+      letter-spacing: 0.04em;
+      line-height: 1.08;
+      font-family: Arial, sans-serif;
+      overflow-wrap: anywhere;
+    }
+    .hero-title span,
+    .text-glow {
+      color: var(--color-accent-alt);
+      text-shadow: 0 0 14px var(--color-accent-alt), 0 1px 0 #0009;
+    }
+    @media (min-width: 700px) {
+      .hero-title { font-size: 3.8rem;}
+    }
+    @media (min-width: 1100px) {
+      .hero-title { font-size: 5rem;}
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      margin: 36px 0 0 0;
+    }
+    .hero-actions a {
+      padding: 14px clamp(18px, 5vw, 36px);
+      max-width: 100%;
+      border: none;
+      border-radius: 20px;
+      font-size: clamp(0.9rem, 2.5vw + 0.55rem, 1.05rem);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      letter-spacing: 0.13em;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: var(--color-card);
+      color: var(--color-accent-alt);
+      margin: 0;
+      box-shadow: 0 3px 12px 0 rgba(65,194,230,0.08);
+      transition: background .21s, color .18s, box-shadow .17s;
+      outline: none;
+    }
+    .hero-actions a:first-child {
+      background: linear-gradient(90deg,var(--color-btn), var(--color-accent-alt));
+      color: #fff;
+      border: none;
+      margin-right: 0;
+      box-shadow: 0 8px 25px -8px #41c2e657,0 1px 8px 1px #000a;
+    }
+    .hero-actions a:first-child:hover {
+      background: linear-gradient(90deg,var(--color-btn-hover), var(--color-accent));
+      color: #fff;
+    }
+    .hero-actions a:last-child {
+      border: 2px solid var(--color-accent-alt);
+      background: #181818;
+      color: var(--color-accent-alt);
+      margin: 0;
+    }
+    .hero-actions a:last-child:hover {
+      background: var(--color-accent-alt);
+      color: #181818;
+    }
+    @media (min-width: 600px) {
+      .hero-actions { flex-direction: row; gap: 24px;}
+    }
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      transform: translate(-50%, 0);
+      animation: bounce 1.3s infinite;
+      opacity: 0.92;
+    }
+    .scroll-indicator svg {
+      display: block;
+      width: 26px;
+      height: 26px;
+      color: var(--color-accent-alt);
+      stroke: var(--color-accent-alt);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0);}
+      50% { transform: translate(-50%, 10px);}
+    }
+    /* Section Structure */
+    section[id] {
+      scroll-margin-top: 88px;
+    }
+    .section {
+      padding: clamp(48px, 10vw, 84px) 0;
+    }
+    .section-title {
+      font-size: clamp(1.45rem, 4vw + 0.6rem, 2.2rem);
+      font-weight: bold;
+      margin-bottom: 7px;
+      margin-top: 0;
+      letter-spacing: .06em;
+      color: var(--color-header);
+      font-family: Arial, sans-serif;
+    }
+    .section-title span {
+      color: var(--color-accent-alt);
+    }
+    .section-underline {
+      height: 5px;
+      width: 70px;
+      background: var(--color-accent-alt);
+      border-radius: 6px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    .videos-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 42px;
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .videos-header { flex-direction: column; align-items: flex-start; gap: 10px;}
+    }
+    .videos-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+      @media (min-width: 760px) {
+        .videos-list { grid-template-columns: repeat(2, 1fr);}
+      }
+      @media (min-width: 1080px) {
+        .videos-list { grid-template-columns: repeat(3, 1fr);}
+      }
+    .video-card {
+      background: var(--color-card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+      border: 1.5px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.18s, border 0.15s, transform 0.17s;
+    }
+    .video-card:hover {
+      transform: translateY(-5px) scale(1.015);
+      box-shadow: 0 12px 33px -10px var(--color-accent-alt);
+      border-color: var(--color-accent-alt);
+    }
+    .video-thumb-area {
+      height: 210px;
+      position: relative;
+      overflow: hidden;
+      background: #181a1c;
+    }
+    .video-thumb-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.33s;
+    }
+    .video-card:hover .video-thumb-area img {
+      transform: scale(1.08);
+    }
+    .video-duration {
+      position: absolute;
+      right: 13px;
+      bottom: 10px;
+      background: #181818ec;
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 5px;
+      font-size: 0.96rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 2px 6px #111d;
+    }
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.19s;
+    }
+    .video-card:hover .video-overlay {
+      opacity: 1;
+      background: rgba(65,194,230,0.12);
+    }
+    @media (hover: none) {
+      .video-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.35);
+      }
+      .video-card:active .video-overlay {
+        background: rgba(65, 194, 230, 0.18);
+      }
+    }
+    .play-btn-circle {
+      width: 58px;
+      height: 58px;
+      background: var(--color-accent-alt);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 16px 0 var(--color-accent-alt), 0 2px 4px 2px #111c;
+    }
+    .play-btn-circle img {
+      width: 30px;
+      margin-left: 8px;
+      height: 30px;
+      filter: drop-shadow(0 2px 6px #18181899);
+    }
+    .video-body {
+      padding: 22px 18px 16px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .video-card h3 {
+      font-size: clamp(1rem, 2.4vw + 0.75rem, 1.14rem);
+      margin: 0 0 10px 0;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      transition: color 0.15s;
+      color: var(--color-header);
+      line-height: 1.23;
+      overflow-wrap: anywhere;
+    }
+    .video-card:hover h3 {
+      color: var(--color-accent-alt);
+    }
+    .video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px 14px;
+      flex-wrap: wrap;
+      color: var(--color-sub);
+      font-size: clamp(0.82rem, 2vw + 0.65rem, 0.97rem);
+      margin-top: 13px;
+      font-family: Arial, sans-serif;
+      opacity: 0.84;
+    }
+    .video-meta span:last-child {
+      text-align: right;
+      flex: 1 1 12rem;
+      min-width: 0;
+      line-height: 1.35;
+    }
+    @media (max-width: 520px) {
+      .video-meta {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .video-meta span:last-child {
+        text-align: left;
+        flex: none;
+      }
+    }
+    .videos-footer {
+      margin-top: 29px;
+      text-align: center;
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .videos-footer {
+        display: block;
+      }
+      .desktop-link {
+        display: none !important;
+      }
+    }
+    .videos-footer a, .desktop-link {
+      color: var(--color-accent-alt);
+      font-size: 1.03rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.18s;
+      font-family: Arial, sans-serif;
+      letter-spacing: .09em;
+      border-bottom: 2.5px solid transparent;
+      padding-bottom: 2px;
+    }
+    .videos-footer a:hover, .desktop-link:hover {
+      color: #fff;
+      border-bottom: 2.5px solid var(--color-accent-alt);
+    }
+    .music-bg {
+      background: linear-gradient(to bottom, var(--color-bg), var(--color-card));
+      padding: 82px 0 82px 0;
+      width: 100%;
+    }
+    .music-title {
+      text-align: center;
+      font-size: clamp(1.4rem, 4vw + 0.65rem, 2.19rem);
+      padding: 0 4px;
+      font-weight: bold;
+      color: var(--color-header);
+      margin-bottom: 36px;
+      margin-top: 0;
+      letter-spacing: .08em;
+      font-family: Arial, sans-serif;
+    }
+    .music-title span { color: var(--color-accent-alt);}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 0;
+    }
+    @media (min-width: 700px) {
+      .music-grid { grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (min-width: 1080px) {
+      .music-grid { grid-template-columns: repeat(4, 1fr);}
+    }
+    .music-card {
+      background: var(--color-card);
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1.5px solid var(--color-border);
+      transition: box-shadow 0.21s, border 0.15s, transform 0.16s;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+    }
+    .music-card:hover {
+      transform: translateY(-4px) scale(1.015);
+      box-shadow: 0 10px 33px -10px var(--color-accent-alt);
+      border-color: var(--color-accent-alt);
+    }
+    .music-thumb-area {
+      width: 100%;
+      aspect-ratio: 1/1;
+      position: relative;
+      overflow: hidden;
+      background: #181a1c;
+    }
+    .music-thumb-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .32s;
+      display: block;
+    }
+    .music-card:hover .music-thumb-area img {
+      transform: scale(1.07);
+    }
+    .music-content {
+      padding: 26px 16px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: Arial, sans-serif;
+      gap: 0px;
+      flex: 1;
+    }
+    .music-card h3 {
+      font-weight: bold;
+      font-size: 1.12rem;
+      margin: 0 0 2px 0;
+      color: var(--color-header);
+      transition: color .13s;
+      font-family: Arial, sans-serif;
+    }
+    .music-card:hover h3 {
+      color: var(--color-accent-alt);
+    }
+    .music-card p {
+      font-size: 0.95rem;
+      color: #9ccacc;
+      margin-bottom: 16px;
+      margin-top: 0;
+      font-family: Arial, sans-serif;
+      opacity: 0.9;
+    }
+    .listen-btn {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 22px;
+      border: 2px solid var(--color-accent-alt);
+      color: var(--color-accent-alt);
+      background: none;
+      font-size: 1.05rem;
+      font-weight: bold;
+      letter-spacing: .10em;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      margin-top: 11px;
+      transition: background 0.18s, color 0.18s, border 0.14s;
+    }
+    .listen-btn:hover {
+      background: var(--color-accent-alt);
+      color: #181818;
+      border-color: #41c2e6e6;
+    }
+    .music-footer {
+      text-align: center;
+      margin-top: 54px;
+    }
+    .music-footer a {
+      font-size: 1.09rem;
+      font-family: Arial, sans-serif;
+      color: var(--color-link);
+      opacity: 0.82;
+      text-decoration: none;
+      border-bottom: 2px solid #2383ad33;
+      padding-bottom: 2px;
+      letter-spacing: .11em;
+      font-weight: bold;
+      transition: color 0.17s, border-color 0.14s, opacity 0.17s;
+    }
+    .music-footer a:hover {
+      color: #fff;
+      opacity: 1;
+      border-color: var(--color-accent-alt);
+    }
+    footer {
+      background: #181818;
+      border-top: 2.5px solid #252532;
+      padding: 46px 0 24px 0;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      color: var(--color-sub);
+      font-family: Arial, sans-serif;
+    }
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      text-align: left;
+      margin-bottom: 0;
+    }
+    .footer-logo {
+      font-size: clamp(1.25rem, 3vw + 0.65rem, 1.8rem);
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: .1em;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+    }
+    .footer-logo span {
+      color: var(--color-accent-alt);
+    }
+    .footer-copy {
+      color: #7acacc;
+      font-size: clamp(0.82rem, 2vw + 0.65rem, 0.99rem);
+      margin-top: 7px;
+      font-family: Arial, sans-serif;
+      line-height: 1.45;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .footer-socials a {
+      display: block;
+    }
+    .social-icon {
+      filter: grayscale(60%) brightness(155%);
+      opacity: 0.9;
+      transition: all 0.21s;
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+    }
+    .social-icon:hover {
+      filter: grayscale(0%) brightness(102%);
+      opacity: 1;
+      transform: scale(1.08);
+    }
+    @media (max-width: 900px) {
+      .footer-content {
+        flex-direction: column;
+        gap: 21px;
+        align-items: flex-start;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 11px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-accent-alt);
+      border-radius: 18px;
+      border: 3.5px solid #191919;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-accent);
+    }
+  </style>
 </head>
 <body>
 
-    <nav id="navbar">
-        <a href="#" class="logo">DOLLAZZ.</a>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#music" class="nav-link">Music</a></li>
-            <li><a href="#albums" class="nav-link">Albums</a></li>
-            <li><a href="#store" class="nav-link">Store</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+  <nav id="navbar">
+    <div class="container nav-row">
+      <a href="#" class="logo">MAYONAISE<span>.GG</span></a>
+      <div class="main-menu">
+        <a href="#home">Home</a>
+        <a href="#videos">Videos</a>
+        <a href="#music">Music</a>
+        <a href="https://discord.gg/invite/a7eNTUaYPh" target="_blank" rel="noopener noreferrer" class="discord-btn">JOIN DISCORD</a>
+      </div>
+      <a href="https://www.youtube.com/@TheRealMayo_?sub_confirmation=1" target="_blank" class="subscribe-btn">SUBSCRIBE</a>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" role="dialog" aria-label="Site menu">
+      <div class="mobile-links">
+        <a href="#home">Home</a>
+        <a href="#videos">Videos</a>
+        <a href="#music">Music</a>
+        <a href="https://www.youtube.com/@TheRealMayo_?sub_confirmation=1" target="_blank" rel="noopener noreferrer">Subscribe</a>
+        <a href="https://discord.gg/invite/a7eNTUaYPh" target="_blank" rel="noopener noreferrer">Join Discord</a>
+      </div>
+    </div>
+  </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>YOUNGDOLLAZZ</h1>
-            <p>"Double Up" Out Now</p>
-            <a href="https://www.youtube.com/watch?v=iNlTH0d9ZR4" class="btn">Listen Now</a>
-        </div>
-    </header>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        Join Discord to Catch Up!
+      </div>
+      <h1 class="hero-title">
+        MAYO<span class="text-glow">NAISE</span>
+      </h1>
+      <div class="hero-actions">
+        <a href="https://www.youtube.com/@TheRealMayo_?sub_confirmation=1">SUBSCRIBE</a>
+        <a href="https://discord.gg/invite/a7eNTUaYPh">Join Discord</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
 
-    <section id="music" class="music">
-        <div class="release-container">
-            <img src="assets/music/double-up.png" alt="AIRPLANE MODE" style="width: 250px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-            <div class="release-info">
-                <h3>Featured Release</h3>
-                <h2>Double Up</h2>
-                <p>"Double Up" Stream on YouTube and SoundCloud Now!</p>
-                <div class="streaming-links">
-                    <a href="https://www.youtube.com/watch?v=iNlTH0d9ZR4" class="stream-btn"><i class="fab fa-youtube"></i></a>
-                    <a href="https://soundcloud.com/youngdollazz1700/double-up-prod-elusive" class="stream-btn"><i class="fab fa-soundcloud"></i></a>
-                </div>
+  <section id="videos" class="section">
+    <div class="container">
+      <div class="videos-header">
+        <div>
+          <h2 class="section-title">LATEST <span>VIDEOS</span></h2>
+          <div class="section-underline"></div>
+        </div>
+        <a href="https://www.youtube.com/@TheRealMayo_" class="desktop-link">VIEW ALL VIDEOS &rarr;</a>
+      </div>
+      <div class="videos-list">
+        <div class="video-card">
+          <div class="video-thumb-area">
+            <img src="assets/thumbnails/1.jpg" alt="Gameplay">
+            <div class="video-duration">18:22</div>
+            <div class="video-overlay">
+              <div class="play-btn-circle">
+                <a href="https://youtu.be/CtxTIQyDMvI?si=ouNk9XvSEhmEVGJo" target="_blank">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="Play">
+                </a>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <section id="albums" class="albums">
-        <h2 class="section-title">Albums</h2>
-        <div class="album-grid">
-            <div class="album-card">
-                <img src="assets/music/album/diditagain.png" alt="Did It Again" class="album-cover">
-                <div class="album-details">
-                    <h4>Did It Again</h4>
-                    <p>2025</p>
-                    <a href="https://youtube.com/playlist?list=PLJysUITYnpEuHFlC5JhAlA64TpQBrIIrz&si=j9gSUL79HFtwgo2X" class="btn btn-accent">Listen</a>
-                </div>
+          </div>
+          <div class="video-body">
+            <h3>Watch Dogs in 2026: The Game That Warned Us About the Future</h3>
+            <div class="video-meta">
+              <span>Watch Dogs</span>
+              <span>100 Views • Jul 15, 2026</span>
             </div>
+          </div>
         </div>
-    </section>
+        <div class="video-card">
+          <div class="video-thumb-area">
+            <img src="assets/thumbnails/2.jpg" alt="Gameplay">
+            <div class="video-duration">6:17</div>
+            <div class="video-overlay">
+              <div class="play-btn-circle">
+                <a href="https://youtu.be/CtxTIQyDMvI?si=ouNk9XvSEhmEVGJo" target="_blank">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="Play">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="video-body">
+            <h3>Red Dead Redemption in 2025…</h3>
+            <div class="video-meta">
+              <span>Red Dead Redemption</span>
+              <span>240 Views • Jan 7, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb-area">
+            <img src="assets/thumbnails/3.jpg" alt="Gameplay">
+            <div class="video-duration">13:38</div>
+            <div class="video-overlay">
+              <div class="play-btn-circle">
+                <a href="https://youtu.be/_2S_-Xo6ypk?si=O6iLPMK9o889DdVU" target="_blank">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="Play">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="video-body">
+            <h3>GTA RP: CRAZIEST & FUNNIEST MOMENTS OF DECEMBER 2025 COMPILATION 😂</h3>
+            <div class="video-meta">
+              <span>GTA RP</span>
+              <span>56 Views • Dec 20, 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="videos-footer">
+        <a href="https://www.youtube.com/@TheRealMayo_">VIEW ALL VIDEOS &rarr;</a>
+      </div>
+    </div>
+  </section>
 
-    <style>
-        @media (min-width: 900px) {
-            #albums.albums {
-                padding-top: 3rem !important;
-                padding-bottom: 3rem !important;
-            }
-            .album-grid {
-                max-width: 400px;
-                margin: 0 auto;
-                display: flex !important;
-                justify-content: center !important;
-            }
-            .album-card {
-                width: 100%;
-                max-width: 350px;
-            }
-            .album-cover {
-                max-width: 100%;
-                height: auto;
-            }
+  <section id="music" class="music-bg">
+    <div class="container">
+      <h2 class="music-title">LISTEN TO MY <span>MUSIC</span></h2>
+      <div class="music-grid">
+        <div class="music-card">
+          <div class="music-thumb-area">
+            <img src="assets/thumbnails/diditagain.png" alt="Song/Album Cover">
+          </div>
+          <div class="music-content">
+            <div>
+              <h3>Geeked Prod. Wavrmuzik</h3>
+              <p>Genre: Rap</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=oZnrJPvEEIQ" target="_blank" class="listen-btn">LISTEN NOW</a>
+          </div>
+        </div>
+        <div class="music-card">
+          <div class="music-thumb-area">
+            <img src="assets/thumbnails/diditagain.png" alt="Song/Album Cover">
+          </div>
+          <div class="music-content">
+            <div>
+              <h3>Peaceful Nights (Prod. Luto Beats)</h3>
+              <p>Genre: Rap</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=lcM4yRisbbs" target="_blank" class="listen-btn">LISTEN NOW</a>
+          </div>
+        </div>
+        <div class="music-card">
+          <div class="music-thumb-area">
+            <img src="assets/thumbnails/3am.jpg" alt="Song/Album Cover">
+          </div>
+          <div class="music-content">
+            <div>
+              <h3>3.A.M (Prod By SayBreezy)</h3>
+              <p>Genre: Rap</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=kk7DuYfRK0I" target="_blank" class="listen-btn">LISTEN NOW</a>
+          </div>
+        </div>
+        <div class="music-card">
+          <div class="music-thumb-area">
+            <img src="assets/thumbnails/wkbl.jpg" alt="Song/Album Cover">
+          </div>
+          <div class="music-content">
+            <div>
+              <h3>Whatchu Know Bout Love (Prod. Elusive)</h3>
+              <p>Genre: Rap</p>
+            </div>
+            <a href="https://youtu.be/5zZB6KtAUb4?si=Mdfs8tZjg6KhU8Wt" target="_blank" class="listen-btn">LISTEN NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="music-footer">
+        <a href="https://www.youtube.com/@YoungDollazz1700" target="_blank">VIEW ALL RELEASES &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">MAYONAISE<span>.GG</span></a>
+        <p class="footer-copy">© 2026 MAYONAISE YT | OFFICIAL WEBSITE | All rights reserved.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.youtube.com/@TheRealMayo_" aria-label="YouTube">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube" class="social-icon">
+        </a>
+        <a href="https://discord.gg/invite/a7eNTUaYPh" aria-label="Discord">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord" class="social-icon">
+        </a>
+        <a href="https://soundcloud.com/youngdollazz1700" aria-label="SoundCloud">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/soundcloud.png" alt="SoundCloud" class="social-icon">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (!navbar) return;
+      if (window.scrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function setMenuOpen(open) {
+      if (!mobileMenu || !mobileBtn) return;
+      mobileMenu.classList.toggle('open', open);
+      mobileBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setMenuOpen(!mobileMenu.classList.contains('open'));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!mobileMenu.classList.contains('open')) return;
+        if (e.target === mobileBtn || mobileBtn.contains(e.target)) return;
+        if (mobileMenu.contains(e.target)) return;
+        setMenuOpen(false);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 901) setMenuOpen(false);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMenuOpen(false);
+      });
+    }
+
+    document.querySelectorAll('#mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setMenuOpen(false);
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        const targetId = this.getAttribute('href');
+          if(targetId.length > 1){
+          e.preventDefault();
+          var el = document.querySelector(targetId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          if (window.innerWidth < 901 && typeof setMenuOpen === 'function') setMenuOpen(false);
         }
-        @media (max-width: 899px) {
-            .album-grid {
-                display: flex !important;
-                justify-content: center !important;
-            }
-        }
-    </style>
-
-    <section id="store" class="merch">
-        <h2 class="section-title">Official Store</h2>
-        <div class="merch-grid">
-            <div class="merch-item">
-                <img src="assets/store/dark-mug.png" alt="Dollazz Hoodie" class="merch-img">
-                <div class="merch-info">
-                    <h4>YoungDollazz Did It Again Mug</h4>
-                    <p>$10.99</p>
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/youngdollazz-did-it-again-mug?product=1565&variation=104920" class="btn">Add to Cart</a>
-                </div>
-            </div>
-            <div class="merch-item">
-                <img src="assets/store/dark-hoodie.png" alt="Signature Tee" class="merch-img">
-                <div class="merch-info">
-                    <h4>Did It Again 2025 YoungDollazz Hoodie</h4>
-                    <p>$33.32</p>
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/did-it-again-2025-hoodie?product=212&variation=5819" class="btn">Add to Cart</a>
-                </div>
-            </div>
-            <div class="merch-item">
-                <img src="assets/store/xmas.png" alt="Cap" class="merch-img">
-                <div class="merch-info">
-                    <h4>Merry Christmas Fn Designer Shirt</h4>
-                    <p>$15.90</p>
-                    <a href="https://my-store-d4bf5f.creator-spring.com/listing/merry-christmas-fn-design-col?product=2&variation=2397" class="btn">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="connect" class="connect-section" style="padding:3rem 0;background:var(--surface-color);text-align:center;">
-        <h2 class="section-title" style="margin-bottom:1.5rem;">Connect With Me</h2>
-        <div class="connect-links" style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
-            <a href="https://www.youtube.com/@YoungDollazz1700" target="_blank" rel="noopener" class="connect-btn" title="YouTube" style="color:#ff0000;font-size:2.25rem;">
-                <i class="fab fa-youtube"></i>
-                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">YouTube</div>
-            </a>
-            <a href="https://soundcloud.com/youngdollazz1700" target="_blank" rel="noopener" class="connect-btn" title="SoundCloud" style="color:#ff5500;font-size:2.25rem;">
-                <i class="fab fa-soundcloud"></i>
-                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">SoundCloud</div>
-            </a>
-            <a href="https://discord.gg/a7eNTUaYPh" target="_blank" rel="noopener" class="connect-btn" title="Discord" style="color:#7289da;font-size:2.25rem;">
-                <i class="fab fa-discord"></i>
-                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">Discord</div>
-            </a>
-            <a href="https://my-store-d4bf5f.creator-spring.com/" target="_blank" rel="noopener" class="connect-btn" title="Teespring Store" style="color:#4caf50;font-size:2.25rem;">
-                <i class="fas fa-tshirt"></i>
-                <div style="font-size:.9rem;color:var(--text-main);margin-top:.25rem;">Teespring</div>
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-socials">
-            <a href="https://soundcloud.com/youngdollazz1700" target="_blank" rel="noopener"><i class="fab fa-soundcloud"></i></a>
-            <a href="https://discord.gg/a7eNTUaYPh" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@YoungDollazz1700"><i class="fab fa-youtube"></i></a>
-        </div>
-        
-        <p class="copyright">&copy; 2026 YoungDollazz. All Rights Reserved. </p>
-    </footer>
-
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-        const navItems = document.querySelectorAll('.nav-link');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
-            const icon = hamburger.querySelector('i');
-            if(navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>
