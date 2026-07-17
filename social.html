@@ -78,7 +78,7 @@
             border: 3px solid transparent;
             background: linear-gradient(var(--primary-accent), var(--secondary-accent)) border-box;
             -webkit-mask:
-                linear-gradient(#fff 0 0) padding-box,
+                linear-gradient(#fff 0 0) padding-box, 
                 linear-gradient(#fff 0 0);
             -webkit-mask-composite: destination-out;
             mask-composite: exclude;
@@ -167,14 +167,12 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .link-item.featured {
             background: rgba(255, 23, 73, 0.17);
             border: 1px solid rgba(255, 23, 73, 0.41);
-            animation: pulseGlow 2s infinite, slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: pulseGlow 2s infinite;
         }
 
         @keyframes pulseGlow {
@@ -245,7 +243,11 @@
             opacity: 0.6;
         }
 
-        /* Custom Scrollbar Styles */
+        .link-item {
+            opacity: 0;
+            animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
         ::-webkit-scrollbar {
             width: 9px;
             background: rgba(60,0,20, 0.4);
@@ -259,16 +261,22 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
         }
+
         ::-webkit-scrollbar-track {
             background: rgba(255,255,255,0.02);
         }
+
         html {
             scrollbar-color: #ff1749 #410012;
             scrollbar-width: thin;
         }
+
         body {
             scrollbar-color: #ff1749 #410012;
             scrollbar-width: thin;
+        }
+
+        .links-container .link-item {
         }
 
         @keyframes slideIn {
@@ -299,7 +307,7 @@
             <div class="profile-img"></div>
             <img src="assets/favicon.png" alt="Artist Profile" class="profile-img-inner">
         </div>
-
+        
         <h1 class="artist-name">YoungDollazz</h1>
         <p class="bio">Music Artist</p>
 
@@ -312,12 +320,6 @@
         </div>
 
         <div class="links-container">
-
-            <a href="#" class="link-item featured">
-                <div class="link-icon-left"><i class="fas fa-play-circle" style="color: #fff;"></i></div>
-                <div class="link-text">Stream "Midnight Pulse"</div>
-                <div class="link-icon-right"><i class="fas fa-chevron-right" style="color: #fff;"></i></div>
-            </a>
 
             <a href="https://discord.gg/a7eNTUaYPh" class="link-item" target="_blank" rel="noopener">
                 <div class="link-icon-left"><i class="fab fa-discord" style="color: #fff;"></i></div>
