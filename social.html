@@ -1,362 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YoungDollazz | Link Page</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayonaise Gaming | Gaming</title>
+  <meta name="theme-color" content="#0d0818" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Vice Links" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/avatar.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vice-pink: #f143a2;
+      --vice-coral: #ff726a;
+      --vice-sunset: #ff9347;
+      --vice-purple: #6c43c2;
+      --vice-cyan: #00f0ff;
+      --glass-bg: rgba(16, 12, 28, 0.68);
+      --glass-border: rgba(255, 255, 255, 0.16);
+    }
 
-    <style>
-        :root {
-            --primary-accent: #ff1749;
-            --secondary-accent: #ff6a00;
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --glass-bg: rgba(255, 255, 255, 0.07);
-            --glass-border: rgba(255, 255, 255, 0.13);
-            --glass-hover: rgba(255, 100, 100, 0.15);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    html {
+      scrollbar-color: var(--vice-pink) #160f25;
+      scrollbar-width: thin;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            background: linear-gradient(-45deg, #300010, #ff1749, #2e0606, #300010);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            overflow-x: hidden;
-        }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    ::-webkit-scrollbar-track {
+      background: #160f25;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--vice-sunset), var(--vice-pink), var(--vice-purple));
+      border: 2px solid #160f25;
+      border-radius: 999px;
+    }
 
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--vice-coral), var(--vice-pink));
+    }
 
-        .profile-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
+    body {
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: #0d0818;
+      background-image: url('assets/bg-desktop.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid transparent;
-            background: linear-gradient(var(--primary-accent), var(--secondary-accent)) border-box;
-            -webkit-mask:
-                linear-gradient(#fff 0 0) padding-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: destination-out;
-            mask-composite: exclude;
-            padding: 3px;
-            box-shadow: 0 0 25px rgba(255, 23, 73, 0.25);
-            transition: transform 0.3s ease;
-        }
+    @media (max-width: 768px) {
+      body {
+        background-image: url('assets/bg-mobile.png');
+        background-attachment: scroll;
+      }
+    }
 
-        .profile-wrapper:hover .profile-img {
-            transform: scale(1.05);
-        }
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(13, 8, 24, 0.45) 0%,
+        rgba(13, 8, 24, 0.78) 100%
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
 
-        .profile-img-inner {
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 104px;
-            height: 104px;
-            border-radius: 50%;
-            object-fit: cover;
-            z-index: -1;
-        }
+    #snowfall {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
 
-        .artist-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            text-align: center;
-            background: linear-gradient(to right, #fff, #ffcac7 80%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
 
-        .bio {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 25px;
-            font-weight: 400;
-            line-height: 1.5;
-        }
+    .profile-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 35px;
-        }
+    .avatar-ring {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--vice-sunset), var(--vice-pink), var(--vice-purple));
+      box-shadow: 0 0 25px rgba(241, 67, 162, 0.55);
+      margin-bottom: 16px;
+    }
 
-        .social-icon {
-            color: var(--text-main);
-            font-size: 1.4rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: #161026;
+      display: block;
+    }
 
-        .social-icon:hover {
-            opacity: 1;
-            transform: translateY(-3px) scale(1.1);
-            color: var(--primary-accent);
-            text-shadow: 0 0 15px rgba(255, 23, 73, 0.3);
-        }
+    #profile-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      line-height: 1;
+      background: linear-gradient(90deg, #ffffff 20%, var(--vice-coral) 60%, var(--vice-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+    }
 
-        .links-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+    #profile-bio {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
 
-        .link-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 18px 24px;
-            border-radius: 16px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-        }
+    .links-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-        .link-item.featured {
-            background: rgba(255, 23, 73, 0.17);
-            border: 1px solid rgba(255, 23, 73, 0.41);
-            animation: pulseGlow 2s infinite;
-        }
+    .link-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: #ffffff;
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 16px 22px;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
 
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 23, 73, 0.28); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 23, 73, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 23, 73, 0); }
-        }
+    .link-card.featured {
+      border: 1px solid rgba(241, 67, 162, 0.75);
+      background: linear-gradient(
+        90deg,
+        rgba(241, 67, 162, 0.22) 0%,
+        rgba(108, 67, 194, 0.22) 100%
+      );
+      box-shadow: 0 0 20px rgba(241, 67, 162, 0.25);
+    }
 
-        .link-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.11), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
-        }
+    .link-card:hover {
+      transform: translateY(-3px) scale(1.015);
+      border-color: var(--vice-sunset);
+      background: rgba(28, 20, 48, 0.85);
+      box-shadow: 0 10px 25px rgba(241, 67, 162, 0.35), 0 0 12px rgba(255, 147, 71, 0.3);
+    }
 
-        .link-item:hover::before {
-            transform: translateX(100%);
-        }
+    .link-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
 
-        .link-item:hover {
-            background: var(--glass-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(80, 0, 30, 0.28);
-            border-color: rgba(255, 40, 80, 0.22);
-        }
+    .link-title {
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
 
-        .link-icon-left {
-            font-size: 1.3rem;
-            width: 30px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
+    .link-subtitle {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.68);
+    }
 
-        .link-text {
-            flex-grow: 1;
-            text-align: center;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
+    .link-arrow {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--vice-coral);
+      transition: transform 0.22s ease, color 0.22s ease;
+    }
 
-        .link-icon-right {
-            font-size: 1rem;
-            width: 30px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.3s ease;
-        }
+    .link-card:hover .link-arrow {
+      transform: translate(3px, -3px);
+      color: var(--vice-cyan);
+    }
 
-        .link-item:hover .link-icon-right {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-align: center;
-            opacity: 0.6;
-        }
-
-        .link-item {
-            opacity: 0;
-            animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        ::-webkit-scrollbar {
-            width: 9px;
-            background: rgba(60,0,20, 0.4);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--primary-accent) 30%, var(--secondary-accent) 70%);
-            border-radius: 6px;
-            border: 2px solid rgba(80,0,30,0.5);
-            box-shadow: 0 2px 8px rgba(255, 23, 73, 0.17);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.02);
-        }
-
-        html {
-            scrollbar-color: #ff1749 #410012;
-            scrollbar-width: thin;
-        }
-
-        body {
-            scrollbar-color: #ff1749 #410012;
-            scrollbar-width: thin;
-        }
-
-        .links-container .link-item {
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-    </style>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const linkItems = document.querySelectorAll('.links-container .link-item');
-        let delay = 0.2;
-        linkItems.forEach((item, idx) => {
-            item.style.animationDelay = delay + idx * 0.1 + 's';
-        });
-    });
-    </script>
+    .footer {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-wrapper">
-            <div class="profile-img"></div>
-            <img src="assets/favicon.png" alt="Artist Profile" class="profile-img-inner">
+  <div class="bg-overlay"></div>
+  <canvas id="snowfall" aria-hidden="true"></canvas>
+
+  <main class="container">
+    
+    <header class="profile-header">
+      <div class="avatar-ring">
+        <img src="assets/avatar.png" alt="Profile Picture" class="avatar" />
+      </div>
+      
+      <h1 id="profile-name">MAYONAISE</h1>
+      <p id="profile-bio">WELCOME TO MY WORLD OF GAMING</p>
+    </header>
+
+    <nav id="links-container" class="links-list"></nav>
+
+    <footer class="footer">
+      <span>MAYONAISE GAMING</span>
+    </footer>
+
+  </main>
+
+  <script>
+    const MY_LINKS = [
+      {
+        title: "YouTube Channel",
+        subtitle: "Gameplay, clips & highlights",
+        url: "https://www.youtube.com/@TheRealMayo_",
+        highlight: true
+      },
+      {
+        title: "Official Website",
+        subtitle: "Visit my Website",
+        url: "https://yaktenz.github.io/mayonaise.gg",
+        highlight: false
+      },
+      {
+        title: "Discord Server",
+        subtitle: "Join the community",
+        url: "https://discord.gg/invite/a7eNTUaYPh",
+        highlight: false
+      },
+      {
+        title: "SoundCloud",
+        subtitle: "Listen to my music",
+        url: "https://soundcloud.com/youngdollazz1700",
+        highlight: false
+      },
+      {
+        title: "Music Website",
+        subtitle: "Listen to my music",
+        url: "https://yaktenz.github.io/youngdollazz/",
+        highlight: false
+      },
+      {
+        title: "TikTok (Coming Soon)",
+        subtitle: "Follow me on TikTok",
+        url: "#",
+        highlight: false
+      },
+      {
+        title: "Music Channel",
+        subtitle: "@youngdollazz1700",
+        url: "https://www.youtube.com/@YoungDollazz1700",
+        highlight: false
+      }
+    ];
+
+    const container = document.getElementById("links-container");
+
+    MY_LINKS.forEach(link => {
+      const a = document.createElement("a");
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.className = link.highlight ? "link-card featured" : "link-card";
+
+      a.innerHTML = `
+        <div class="link-text">
+          <span class="link-title">${link.title}</span>
+          ${link.subtitle ? `<span class="link-subtitle">${link.subtitle}</span>` : ""}
         </div>
-        
-        <h1 class="artist-name">YoungDollazz</h1>
-        <p class="bio">Music Artist</p>
+        <span class="link-arrow">&#8599;</span>
+      `;
 
-        <div class="social-icons">
-            <a href="https://soundcloud.com/youngdollazz1700" class="social-icon" aria-label="SoundCloud" target="_blank" rel="noopener"><i class="fab fa-soundcloud"></i></a>
-            <a href="https://discord.gg/a7eNTUaYPh" class="social-icon" aria-label="Discord" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@YoungDollazz1700" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-            <a href="https://my-store-d4bf5f.creator-spring.com/" class="social-icon" aria-label="Store" target="_blank" rel="noopener"><i class="fas fa-tshirt"></i></a>
-            <a href="https://yaktenz.github.io/youngdollazz/" class="social-icon" aria-label="Website" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
-        </div>
+      container.appendChild(a);
+    });
 
-        <div class="links-container">
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let snowCanvas = null;
+    let snowFrame = null;
+    let snowflakes = [];
 
-            <a href="https://discord.gg/a7eNTUaYPh" class="link-item" target="_blank" rel="noopener">
-                <div class="link-icon-left"><i class="fab fa-discord" style="color: #fff;"></i></div>
-                <div class="link-text">Join on Discord</div>
-                <div class="link-icon-right"><i class="fas fa-chevron-right" style="color: #fff;"></i></div>
-            </a>
+    function resizeSnowfall() {
+      if (!snowCanvas) return;
 
-            <a href="https://www.youtube.com/@YoungDollazz1700" class="link-item" target="_blank" rel="noopener">
-                <div class="link-icon-left"><i class="fab fa-youtube" style="color: #fff;"></i></div>
-                <div class="link-text">Watch on YouTube</div>
-                <div class="link-icon-right"><i class="fas fa-chevron-right" style="color: #fff;"></i></div>
-            </a>
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      snowCanvas.width = window.innerWidth * pixelRatio;
+      snowCanvas.height = window.innerHeight * pixelRatio;
+      snowCanvas.getContext("2d").setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      snowflakes = Array.from(
+        { length: Math.min(90, Math.max(35, Math.floor(window.innerWidth / 14))) },
+        () => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          radius: Math.random() * 2 + 1,
+          speed: Math.random() * 1.4 + 0.5,
+          drift: Math.random() * 0.8 + 0.2,
+          phase: Math.random() * Math.PI * 2
+        })
+      );
+    }
 
-            <a href="https://soundcloud.com/youngdollazz1700" class="link-item" target="_blank" rel="noopener">
-                <div class="link-icon-left"><i class="fab fa-soundcloud" style="color: #fff;"></i></div>
-                <div class="link-text">SoundCloud</div>
-                <div class="link-icon-right"><i class="fas fa-chevron-right" style="color: #fff;"></i></div>
-            </a>
+    function animateSnowfall() {
+      if (!snowCanvas) return;
 
-            <a href="https://my-store-d4bf5f.creator-spring.com/" class="link-item" target="_blank" rel="noopener">
-                <div class="link-icon-left"><i class="fas fa-tshirt"></i></div>
-                <div class="link-text">Official Merch Store</div>
-                <div class="link-icon-right"><i class="fas fa-chevron-right"></i></div>
-            </a>
+      const context = snowCanvas.getContext("2d");
+      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      context.fillStyle = "rgba(255, 255, 255, 0.85)";
 
-            <a href="https://yaktenz.github.io/youngdollazz/" class="link-item" target="_blank" rel="noopener">
-                <div class="link-icon-left"><i class="fas fa-globe"></i></div>
-                <div class="link-text">Official Website</div>
-                <div class="link-icon-right"><i class="fas fa-chevron-right"></i></div>
-            </a>
+      snowflakes.forEach(flake => {
+        flake.y += flake.speed;
+        flake.x += Math.sin(flake.y * 0.01 + flake.phase) * flake.drift;
 
-        </div>
+        if (flake.y > window.innerHeight + flake.radius) {
+          flake.y = -flake.radius;
+          flake.x = Math.random() * window.innerWidth;
+        }
+        if (flake.x < -flake.radius) flake.x = window.innerWidth + flake.radius;
+        if (flake.x > window.innerWidth + flake.radius) flake.x = -flake.radius;
 
-        <footer>
-            &copy; 2026 YoungDollazz. All rights reserved.
-        </footer>
-    </div>
+        context.beginPath();
+        context.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+        context.fill();
+      });
+
+      snowFrame = window.requestAnimationFrame(animateSnowfall);
+    }
+
+    function updateSnowfall() {
+      const isDecember = new Date().getMonth() === 11;
+
+      if (!isDecember || reducedMotion.matches) {
+        if (snowFrame !== null) window.cancelAnimationFrame(snowFrame);
+        snowFrame = null;
+        if (snowCanvas) snowCanvas.remove();
+        snowCanvas = null;
+        snowflakes = [];
+        return;
+      }
+
+      if (snowCanvas) return;
+
+      snowCanvas = document.getElementById("snowfall") || document.createElement("canvas");
+      snowCanvas.id = "snowfall";
+      snowCanvas.setAttribute("aria-hidden", "true");
+      if (!snowCanvas.isConnected) document.body.appendChild(snowCanvas);
+      resizeSnowfall();
+      animateSnowfall();
+    }
+
+    function scheduleSeasonCheck() {
+      const now = new Date();
+      const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+      window.setTimeout(() => {
+        updateSnowfall();
+        scheduleSeasonCheck();
+      }, Math.max(1000, nextMonth.getTime() - now.getTime() + 100));
+    }
+
+    window.addEventListener("resize", resizeSnowfall);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) updateSnowfall();
+    });
+    reducedMotion.addEventListener("change", updateSnowfall);
+
+    updateSnowfall();
+    scheduleSeasonCheck();
+  </script>
 
 </body>
 </html>
